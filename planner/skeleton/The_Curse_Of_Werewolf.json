@@ -1,0 +1,12 @@
+{
+    "title": "Curse of the Werewolf",
+    "description": "The player becomes afflicted with a curse and must find a cure before the next full moon to prevent a terrible transformation.",
+    "subquest": [
+        "Seek out the renowned herbalist for information on the curse.",
+        "Collect rare ingredients from dangerous locations to create the antidote.",
+        "Solve the ancient riddles to unlock the secret werewolf lore.",
+        "Find the hidden werewolf den to obtain a crucial clue.",
+        "Face and defeat the alpha werewolf to break the curse.",
+        "Administer the antidote before the next full moon to prevent transformation."
+    ]
+}

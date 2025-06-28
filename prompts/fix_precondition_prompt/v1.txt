@@ -1,0 +1,85 @@
+You are creating a text adventure game like Zork. In the game, there are rooms, items, and characters, each with their own attributes. In addition, a player can perform actions that change the game state. 
+Given an action and the prerequisite conditions, and the current state of the game, you want to determine whether or not the action is possible to perform, and, if not, what changes need to be made to the game state in order to make it possible.
+
+Preconditions: 
+
+1. Attribute Check {node1.attribute_a==value} // The node can be any node in the game. The attribute can be any string, and the value can be any integer, string, or boolean. Allowed operators are ==, !=, >, <, >=, <=.
+2. Inventory Check: {player has item1} // The player must have all of the specified nodes in their inventory.
+3. Location Check: {player in room1}; {node1 in room2}
+
+When an action cannot be performed, you must return the minimum number of changes that need to be made to the game state in order to make the action possible. If the action is already possible, return an empty JSON array.
+
+1. Move {node1} to {node2/inventory/environment} // Move node1 to node2 or to the player's inventory or to the environment. When a node with this name exists, prioritize using this operation.
+2. Set {node.some_attribute} to {value} // Set the attribute of a node to a value. The attribute can be any string, and the value can be any integer, string, or boolean.
+3. Add {node_name} of type {Item/Character} to {node/inventory/environment} with description {item description}// Add a node to the game. Use this sparingly! This operation should only be used when there is no other way to make the action possible.
+
+Input
+Action: craft {sword} with {wood}
+Preconditions: {player has wood} and {wood.is_material==True}
+Current Game State:
+{player has wood}: satisfied.
+{wood.is_material==True}: not satisfied.
+Info:
+Attribute "is_material" is not specified for wood. We do not know if it is True.
+
+Output
+Reasoning: The player has wood, but the attribute "is_meterial" is not specified for node "wood". Therefore, the player cannot craft a sword with wood. The minimum number of changes that need to be made to the game state is to set the attribute "is_material" to True for node "wood".
+Answer: ["Set {wood.is_material} to {True}"]
+
+Input
+Action: open {chest}
+Preconditions: {chest.is_container==True} and  {chest.is_open==False} and ({chest.is_locked==False} or {player has key})
+Current Game State:
+{chest.is_container==True}: satisfied.
+{chest.is_open==False}: satisfied.
+{chest.is_locked==False}: not satisfied.
+{player has key}: not satisfied.
+Info:
+chest.is_locked is not False. chest.is_locked = True.
+Player does not have key. Player has [].
+No node found with name "key" in the current location. However, the following node(s) can be found: "key" at living room.
+
+Output
+Reasoning: The player does not have the key, and the chest is locked. Therefore, the player cannot open the chest. One possible solution is to give the player the key, so that the player can open the chest. Since the key is not in the current location, we need to move the key to the player's inventory. The minimum number of changes that need to be made to the game state is to move the key to the player's inventory.
+Answer: ["Move {key} to {player}"]
+
+Input
+Action: buy {sword} with {gold}
+Preconditions: {player has gold} and {sword.is_for_sale==True} and {sword.price<=gold.value}
+Current Game State:
+{player has gold}: satisfied.
+{sword.is_for_sale==True}: satisfied.
+{sword.price<=gold.value}: not satisfied.
+Info: 
+Attribute "price" is not specified for sword. We do not know if sword.price <= gold.value.
+Attribute "value" is not specified for gold. We do not know if sword.price <= gold.value.
+
+Output
+Reasoning: The player has gold, but the attribute "value" is not specified for node "gold". Similarly, the attribute "price" is not specified for node "sword". Therefore, the player cannot buy a sword with gold. The minimum number of changes that need to be made to the game state is to set the attribute "value" to some value for node "gold" and to set the attribute "price" to some value for node "sword". Let's say we set the attribute "value" to 100 for node "gold" and the attribute "price" to 50 for node "sword".
+Answer: ["Set {gold.value} to {100}", "Set {sword.price} to {50}"]
+
+Input
+Action: shoot {bandit}
+Preconditions: {player has gun} and {gun.is_weapon==True} and {bandit.is_friendly==False}
+Current Game State:
+{player has gun}: satisfied.
+{gun.is_weapon==True}: satisfied.
+{bandit.is_friendly==False}: satisfied
+Info: 
+None.
+
+Output
+Reasoning: The player has a gun, the gun is a weapon, and the bandit is not friendly. Therefore, all the preconditions for the action "shoot bandit" are met. No changes need to be made to the game state in order to make the action possible.
+Answer: []
+
+${previous_attempts?}$
+
+Input
+Action: ${action}$
+Preconditions: ${preconditions}$
+Current Game State:
+${current_game_state}$
+Info:
+${info}$
+
+Output

@@ -1,0 +1,130 @@
+{
+    "game_logics": {
+      "explorer finds energy crystal.": {
+        "item needed": [],
+        "location": ["at barren planet"],
+        "preceding_events": [],
+        "description": ["An energy crystal is found on a barren planet. It glows faintly."],
+        "results": ["has energy crystal"]
+      },
+      "explorer repairs ship with energy crystal.": {
+        "item needed": ["has energy crystal"],
+        "location": ["at barren planet"],
+        "preceding_events": [],
+        "description": ["The energy crystal is used to repair the ship's systems."],
+        "results": ["has ship"]
+      },
+      "explorer arrives at the ancient ruins with the ship.": {
+        "item needed": ["has ship"],
+        "location": ["at ancient ruins"],
+        "preceding_events": [],
+        "description": ["The energy crystal is used to repair the ship's systems."],
+        "results": []
+      },
+      "explorer uncovers a hidden map.": {
+        "item needed": [],
+        "location": ["at ancient ruins"],
+        "preceding_events": [],
+        "description": ["The energy crystal is used to repair the ship's systems."],
+        "results": ["has hidden map"]
+      },
+      "explorer discovers ancient alien device.": {
+        "item needed": ["has hidden map"],
+        "location": ["at ancient ruins"],
+        "preceding_events": [],
+        "description": ["An ancient alien device is found. It seems to require a power source."],
+        "results": ["has alien device"]
+      },
+      "explorer activates alien device with energy crystal.": {
+        "item needed": ["has energy crystal", "has alien device"],
+        "location": ["at ancient ruins"],
+        "preceding_events": ["explorer discovers ancient alien device."],
+        "description": ["The alien device activates, revealing a map to a hidden energy source."],
+        "results": []
+      },
+      "explorer navigates through the asteroids.": {
+        "item needed": [],
+        "location": ["at asteroid belt"],
+        "preceding_events": [],
+        "description": ["The hidden energy source is found deep within an asteroid belt."],
+        "results": []
+      },
+      "explorer locates hidden energy source.": {
+        "item needed": [],
+        "location": ["at asteroid belt"],
+        "preceding_events": ["explorer activates alien device with energy crystal."],
+        "description": ["The hidden energy source is found deep within an asteroid belt."],
+        "results": ["has hidden energy source"]
+      },
+      "explorer decides to activate the hidden energy source.": {
+        "item needed": ["has hidden energy source"],
+        "location": ["at asteroid belt"],
+        "preceding_events": ["explorer locates hidden energy source."],
+        "description": ["The galactic council requests the energy source to save the galaxy. Do you share it or keep it for your own survival?"],
+        "results": []
+      },
+      "explorer is questioned in front of the council members.": {
+        "item needed": [],
+        "location": ["at asteroid belt"],
+        "preceding_events": ["explorer decides to activate the hidden energy source."],
+        "description": ["The galactic council requests the energy source to save the galaxy. Do you share it or keep it for your own survival?"],
+        "results": []
+      },
+      "ultimately, the explorer is hailed as a hero.": {
+        "item needed": [],
+        "location": ["at galactic council"],
+        "preceding_events": ["explorer is questioned in front of the council members."],
+        "description": ["The energy source is shared, and the galaxy is restored to balance. You are celebrated as a hero."],
+        "results": []
+      },
+      "explorer goes on an adventure to the edges of the world.": {
+        "item needed": [],
+        "location": ["at edges of the world"],
+        "preceding_events": ["ultimately, the explorer is hailed as a hero."],
+        "description": ["You enjoy your time and travel to the edges of the world"],
+        "results": []
+      },
+      "explorer discovers alternate energy source.": {
+        "item needed": [],
+        "location": ["at edges of the world"],
+        "preceding_events": [],
+        "description": ["A risky journey near a black hole reveals an alternate energy source."],
+        "results": ["has alternate energy source"]
+      },
+      "explorer uses alternate energy, but at a great cost.": {
+        "item needed": ["has alternate energy source"],
+        "location": ["at edges of the world"],
+        "preceding_events": ["explorer discovers alternate energy source."],
+        "description": ["The alternate energy source is used, but with dangerous consequences."],
+        "results": []
+      },
+      "explorer arrives at his home planet, horrified at what he's done.": {
+        "item needed": ["has alternate energy source"],
+        "location": ["at home planet"],
+        "preceding_events": ["explorer uses alternate energy, but at a great cost."],
+        "description": ["The alternate energy source is used, but with dangerous consequences."],
+        "results": []
+      }
+    },
+    "map": {
+      "at barren planet": [
+        {"type": "item", "content": "has energy crystal"},
+        {"type": "item", "content": "has ship"}
+      ],
+      "at ancient ruins": [
+        {"type": "item", "content": "has alien device"},
+        {"type": "item", "content": "has hidden map"}
+      ],
+      "at asteroid belt": [
+        {"type": "item", "content": "has hidden energy source"},
+        {"type": "item", "content": "has asteroids"}
+      ],
+      "at galactic council": [
+        {"type": "npc", "content": "has council members"}
+      ],
+      "at edges of the world": [
+        {"type": "item", "content": "has alternate energy source"}
+      ],
+      "at home planet": []
+    }
+  }

@@ -1,0 +1,40 @@
+Introduction:
+You are creating a text-based adventure game similar to Zork. A user inputs a new action into the game, and this new action results in new attributes being applied to a world object.
+All actions have certain preconditions they must satisfy before they can be executed. Determine if this new attribute should be included as an additional precondition for old actions that involve the world object.
+Following is the general format you should follow. If the new attribute should be considered, determine if it must be True or False for the action to still be valid. If not, include nothing for new_action_prediction. 
+Do not include any ```json or ``` in the final output.
+
+Input: {action_description}; {current_action_preconditions}; {item.attribute}
+
+Output:
+{
+    "output": {
+        "isNecessary": "True/False",
+        "new_action_precondition": "{item.attribute == True/False}"/"{}"
+    }
+}
+
+Input: read books at library; (( {player at library} and {books at library} ) and {library.is_room==True} and {books.is_item==True}) and {['books', 'library'] is available to player}; books.burned
+
+Output:
+{
+    "output": {
+        "isNecessary": "True",
+        "new_action_precondition": "{books.burned == False}"
+    }
+}
+
+Input: gather ingredients for a cure with basket at forest; (( {player at forest} and {basket at forest} and {player has basket} and {ingredients.is_gatherable==True} ) and {forest.is_room==True} and {basket.is_item==True} and {ingredients.is_item==True}) and {['ingredients', 'basket', 'forest'] is available to player}; ingredients.washed
+
+Output:
+{
+    "output": {
+        "isNecessary": "False",
+        "new_action_precondition": "{}"
+    }
+}
+
+Input:
+${input}$
+
+Output:

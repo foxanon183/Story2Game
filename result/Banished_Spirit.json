@@ -1,0 +1,54 @@
+{
+  "game_logics": {
+    "enter the mansion lobby": {
+      "item needed": [],
+      "location": ["at mansion entrance"],
+      "preceding_events": [],
+      "description": [],
+      "results": ["at mansion lobby"]
+    },
+    "find the cursed locket": {
+      "item needed": [],
+      "location": ["at master bedroom"],
+      "preceding_events": ["enter the mansion lobby"],
+      "description": [],
+      "results": ["has cursed locket"]
+    },
+    "summon the trapped spirit": {
+      "item needed": ["has cursed locket"],
+      "location": ["at attic"],
+      "preceding_events": ["find the cursed locket"],
+      "description": [],
+      "results": []
+    },
+    "retrieve the banishing ritual scroll": {
+      "item needed": [],
+      "location": ["at basement"],
+      "preceding_events": ["enter the mansion lobby"],
+      "description": [],
+      "results": ["has ritual scroll"]
+    },
+    "banish the trapped spirit": {
+      "item needed": ["has ritual scroll"],
+      "location": ["at attic"],
+      "preceding_events": ["summon the trapped spirit", "retrieve the banishing ritual scroll"],
+      "description": [],
+      "results": []
+    }
+  },
+  "map": {
+    "at mansion entrance": [
+      {"type": "item", "content": "mansion door"}
+    ],
+    "at mansion lobby": [],
+    "at master bedroom": [
+      {"type": "item", "content": "has cursed locket"}
+    ],
+    "at attic": [
+      {"type": "npc", "content": "trapped spirit"}
+    ],
+    "at basement": [
+      {"type": "item", "content": "has ritual scroll"}
+    ]
+  }
+}

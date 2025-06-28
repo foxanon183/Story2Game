@@ -1,0 +1,104 @@
+{  
+  "game_logics": {  
+    "Uncover the hidden identities of suspicious masked guests.": {  
+      "item needed": ["has magnifying glass"],  
+      "location": ["at parlor"],  
+      "preceding_events": [],  
+      "description": [],  
+      "results": []  
+    },  
+    "adventurer buy lockpicking tool.": {  
+      "item needed": ["has money"],  
+      "location": ["at general store"],  
+      "preceding_events": [],  
+      "description": ["There is a lockpicking tool for sale at"],  
+      "results": ["has lockpicking tool"]  
+    },  
+    "adventurer steal key.": {  
+      "item needed": ["has lockpicking tool"],  
+      "location": ["at dungeon"],  
+      "preceding_events": [],  
+      "description": ["There is a key at the dungeon that"],  
+      "results": ["has key"]  
+    },  
+    "Solve puzzles to uncover hidden truths.": {  
+      "item needed": ["has key"],  
+      "location": ["at dungeon"],  
+      "preceding_events": ["Uncover the hidden identities of suspicious masked guests."],  
+      "description": [],  
+      "results": []  
+    },  
+    "Gather information to piece the puzzle together.": {  
+      "item needed": ["has money"],  
+      "location": ["at tavern"],  
+      "preceding_events": ["Solve puzzles to uncover hidden truths."],  
+      "description": [],  
+      "results": []  
+    },  
+    "adventurer find hat.": {  
+      "item needed": [],  
+      "location": ["at hat shop"],  
+      "preceding_events": [],  
+      "description": ["There is a hat shop."],  
+      "results": ["has hat"]  
+    },  
+    "adventurer find detective hat.": {  
+      "item needed": ["has hat"],  
+      "location": ["at detective agency"],  
+      "preceding_events": [],  
+      "description": ["There is a detective hat at a detective"],  
+      "results": ["has detective hat"]  
+    },  
+    "Confront the mastermind orchestrating the disappearances.": {  
+      "item needed": ["has detective hat"],  
+      "location": ["at castle"],  
+      "preceding_events": ["Gather information to piece the puzzle together."],  
+      "description": [],  
+      "results": []  
+    },  
+    "adventurer find wand.": {  
+      "item needed": ["has book"],  
+      "location": ["at library"],  
+      "preceding_events": [],  
+      "description": ["There is a wand at the library."],  
+      "results": ["has wand"]  
+    },  
+    "Lift the enchantment, restoring peace and revealing secrets.": {  
+      "item needed": ["has wand"],  
+      "location": ["at wizard tower"],  
+      "preceding_events": ["Confront the mastermind orchestrating the disappearances."],  
+      "description": [],  
+      "results": ["has peace restored"]  
+    }  
+  },  
+  "map": {  
+    "at parlor": [
+      {"type": "npc", "content": "has masked guests"}
+    ],  
+    "at dungeon": [
+      {"type": "item", "content": "has key"},
+      {"type": "item", "content": "has puzzles"}
+    ],  
+    "at general store": [  
+      {"type": "item", "content": "has lockpicking tool"},  
+      {"type": "npc", "content": "has merchant"}  
+    ],  
+    "at tavern": [
+      {"type": "npc", "content": "has gossiping attendees"}
+    ],  
+    "at castle": [
+      {"type": "npc", "content": "has mastermind"}
+    ],  
+    "at detective agency": [  
+      {"type": "item", "content": "has detective hat"},  
+      {"type": "npc", "content": "has detective"}  
+    ],  
+    "at hat shop": [
+      {"type": "item", "content": "has hat"}
+    ],  
+    "at wizard tower": [],  
+    "at library": [
+      {"type": "item", "content": "has wand"}
+    ]  
+  }  
+}

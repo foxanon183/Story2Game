@@ -1,0 +1,7 @@
+Correct the grammatical errors in the sentence below, excluding articles (the, a, an).
+
+Sentence: Adventurer kill a dragon at dragon's canyon.
+Output: Adventurer kills a dragon at dragon's canyon.
+
+Sentence: ${input}$
+Output:

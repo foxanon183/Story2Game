@@ -1,0 +1,157 @@
+{
+  "game_logics": {
+    "receive project assignment from project manager": {
+      "item needed": [],
+      "location": ["at company office"],
+      "preceding_events": [],
+      "description": [],
+      "results": ["has project assignment"]
+    },
+    "review project brief and schedule": {
+      "item needed": ["has project assignment"],
+      "location": ["at project planning room"],
+      "preceding_events": ["receive project assignment from project manager"],
+      "description": [],
+      "results": []
+    },
+    "meet with client and gather feedback": {
+      "item needed": [],
+      "location": ["at client meeting room"],
+      "preceding_events": ["review project brief and schedule"],
+      "description": [],
+      "results": ["has feedback"]
+    },
+    "prepare design document and wireframes": {
+      "item needed": ["has feedback"],
+      "location": ["at design studio"],
+      "preceding_events": ["meet with client and gather feedback"],
+      "description": [],
+      "results": ["has design document", "has wireframes"]
+    },
+    "discuss technical feasibility with lead developer": {
+      "item needed": ["has design document", "has wireframes"],
+      "location": ["at technical office"],
+      "preceding_events": ["prepare design document and wireframes"],
+      "description": [],
+      "results": []
+    },
+    "setup repository and development environment on the computer": {
+      "item needed": [],
+      "location": ["at server room"],
+      "preceding_events": ["discuss technical feasibility with lead developer"],
+      "description": [],
+      "results": []
+    },
+    "assign task assignments and deadlines to team members": {
+      "item needed": ["has task assignments", "has deadlines"],
+      "location": ["at dev team area"],
+      "preceding_events": ["setup repository and development environment on the computer"],
+      "description": [],
+      "results": []
+    },
+    "develop core game mechanics": {
+      "item needed": [],
+      "location": ["at dev workstations"],
+      "preceding_events": ["assign task assignments and deadlines to team members"],
+      "description": [],
+      "results": []
+    },
+    "conduct internal playtest and collect user feedback": {
+      "item needed": [],
+      "location": ["at playtest room"],
+      "preceding_events": ["develop core game mechanics"],
+      "description": [],
+      "results": ["has user feedback"]
+    },
+    "revise features based on playtest": {
+      "item needed": ["has user feedback"],
+      "location": ["at revision lab"],
+      "preceding_events": ["conduct internal playtest and collect user feedback"],
+      "description": [],
+      "results": []
+    },
+    "prepare demo build for client": {
+      "item needed": [],
+      "location": ["at demo preparation room"],
+      "preceding_events": ["revise features based on playtest"],
+      "description": [],
+      "results": ["has demo build"]
+    },
+    "present demo to client board": {
+      "item needed": ["has demo build"],
+      "location": ["at client presentation hall"],
+      "preceding_events": ["prepare demo build for client"],
+      "description": [],
+      "results": []
+    },
+    "finalize marketing materials and store page": {
+      "item needed": [],
+      "location": ["at marketing suite"],
+      "preceding_events": ["present demo to client board"],
+      "description": [],
+      "results": ["has marketing materials", "has store page"]
+    },
+    "launch game to public": {
+      "item needed": ["has marketing materials", "has store page"],
+      "location": ["at global launch center"],
+      "preceding_events": ["finalize marketing materials and store page"],
+      "description": [],
+      "results": []
+    }
+  },
+  "map": {
+    "at company office": [
+      {"type": "npc", "content": "project manager"},
+      {"type": "item", "content": "project assignment"}
+    ],
+    "at project planning room": [
+      {"type": "item", "content": "project brief"},
+      {"type": "item", "content": "project schedule"}
+    ],
+    "at client meeting room": [
+      {"type": "npc", "content": "client"},
+      {"type": "item", "content": "feedback"}
+    ],
+    "at design studio": [
+      {"type": "item", "content": "wireframes"},
+      {"type": "item", "content": "design document"},
+      {"type": "npc", "content": "lead designer"}
+    ],
+    "at technical office": [
+      {"type": "npc", "content": "lead developer"},
+      {"type": "item", "content": "technical plan"}
+    ],
+    "at server room": [
+      {"type": "item", "content": "computer"},
+      {"type": "item", "content": "repository server"},
+      {"type": "item", "content": "development environment configuration"}
+    ],
+    "at dev team area": [
+      {"type": "npc", "content": "team members"},
+      {"type": "item", "content": "task assignments"},
+      {"type": "item", "content": "deadlines"}
+    ],
+    "at dev workstations": [
+      {"type": "item", "content": "game mechanic modules"}
+    ],
+    "at playtest room": [
+      {"type": "item", "content": "user feedback"}
+    ],
+    "at revision lab": [
+      {"type": "item", "content": "revised features list"}
+    ],
+    "at demo preparation room": [
+      {"type": "item", "content": "demo build"}
+    ],
+    "at client presentation hall": [
+      {"type": "npc", "content": "client board"}
+    ],
+    "at marketing suite": [
+      {"type": "item", "content": "marketing materials"},
+      {"type": "item", "content": "store page"}
+    ],
+    "at global launch center": [
+      {"type": "item", "content": "live release server"}
+    ]
+  }
+}

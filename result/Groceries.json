@@ -1,0 +1,114 @@
+{
+  "game_logics": {
+    "get the shopping list": {
+      "item needed": [],
+      "location": ["at home"],
+      "preceding_events": [],
+      "description": [],
+      "results": ["has shopping list"]
+    },
+    "find the car keys and credit card": {
+      "item needed": [],
+      "location": ["at living room"],
+      "preceding_events": [],
+      "description": [],
+      "results": ["has car keys", "has credit card"]
+    },
+    "start the car": {
+      "item needed": ["has car keys"],
+      "location": ["at garage"],
+      "preceding_events": ["find the car keys and credit card"],
+      "description": [],
+      "results": []
+    },
+    "check the fuel level": {
+      "item needed": [],
+      "location": ["at garage"],
+      "preceding_events": ["start the car"],
+      "description": [],
+      "results": []
+    },
+    "refuel at gas station": {
+      "item needed": [],
+      "location": ["at gas station"],
+      "preceding_events": ["check the fuel level"],
+      "description": [],
+      "results": []
+    },
+    "drive to grocery store": {
+      "item needed": [],
+      "location": ["at road"],
+      "preceding_events": ["refuel at gas station"],
+      "description": [],
+      "results": ["at grocery store"]
+    },
+    "grab shopping cart": {
+      "item needed": [],
+      "location": ["at grocery store"],
+      "preceding_events": ["drive to grocery store"],
+      "description": [],
+      "results": ["has shopping cart"]
+    },
+    "pick up produce": {
+      "item needed": ["has shopping cart"],
+      "location": ["at produce aisle"],
+      "preceding_events": ["grab shopping cart"],
+      "description": [],
+      "results": ["has produce"]
+    },
+    "pick up dairy products": {
+      "item needed": [],
+      "location": ["at dairy aisle"],
+      "preceding_events": ["grab shopping cart"],
+      "description": [],
+      "results": ["has dairy products"]
+    },
+    "pick up canned goods": {
+      "item needed": [],
+      "location": ["at canned goods aisle"],
+      "preceding_events": ["grab shopping cart"],
+      "description": [],
+      "results": ["has canned goods"]
+    },
+    "check out and pay": {
+      "item needed": ["has credit card"],
+      "location": ["at checkout"],
+      "preceding_events": [],
+      "description": [],
+      "results": []
+    }
+  },
+  "map": {
+    "at home": [
+      {"type": "item", "content": "shopping list"}
+    ],
+    "at living room": [
+      {"type": "item", "content": "car keys"},
+      {"type": "item", "content": "credit card"}
+    ],
+    "at garage": [
+      {"type": "room", "content": "car"}
+    ],
+    "at gas station": [
+      {"type": "item", "content": "fuel pump"}
+    ],
+    "at road": [
+      {"type": "room", "content": "roadway"}
+    ],
+    "at grocery store": [
+      {"type": "item", "content": "shopping cart"}
+    ],
+    "at produce aisle": [
+      {"type": "item", "content": "produce"}
+    ],
+    "at dairy aisle": [
+      {"type": "item", "content": "dairy products"}
+    ],
+    "at canned goods aisle": [
+      {"type": "item", "content": "canned goods"}
+    ],
+    "at checkout": [
+      {"type": "item", "content": "checkout counter"}
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "title": "Cursed Kingdom",
+    "description": "The land is under a curse, and the player must seek out a way to lift it by collecting three rare ingredients and performing a ritual.",
+    "subquest": [
+        "Find the ancient scroll containing the details of the curse.",
+        "Locate the first rare ingredient deep within the enchanted forest.",
+        "Solve the puzzles in the abandoned temple to obtain the second ingredient.",
+        "Brave the treacherous caves to retrieve the third ingredient.",
+        "Seek guidance from the wise sage to learn the ritual.",
+        "Perform the ritual at the cursed kingdom's center to lift the curse."
+    ]
+}

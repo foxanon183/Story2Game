@@ -1,0 +1,12 @@
+{
+    "title": "Whispers in the Forest",
+    "description": "Mysterious whispers lead the player deep into an enchanted forest, where they uncover a hidden civilization and its forgotten secrets.",
+    "subquest": [
+        "Follow the whispers to the ancient tree at the forest's heart.",
+        "Decode the cryptic messages engraved on the tree's bark.",
+        "Discover the hidden entrance to the underground civilization.",
+        "Solve the puzzles in the forgotten ruins to unlock their secrets.",
+        "Uncover the truth behind the whispers and their origin.",
+        "Restore balance to the forest and gain its protection."
+    ]
+}

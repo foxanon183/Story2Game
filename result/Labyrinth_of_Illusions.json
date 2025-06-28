@@ -1,0 +1,124 @@
+{  
+  "game_logics": {  
+    "adventurer buy wand.": {  
+      "item needed": ["has money"],  
+      "location": ["at magic shop"],  
+      "preceding_events": [],  
+      "description": ["There is a wand for sale at a magics"],  
+      "results": ["has wand"]  
+    },  
+    "adventurer cast spells.": {  
+      "item needed": ["has wand"],  
+      "location": ["at magic school"],  
+      "preceding_events": [],  
+      "description": ["There is a magic school where adventurer can learn"],  
+      "results": ["has of spells"]  
+    },  
+    "adventurer buy enchantments.": {  
+      "item needed": ["has money"],  
+      "location": ["at magic shop"],  
+      "preceding_events": [],  
+      "description": ["There is an enchantments shop where adventurer"],  
+      "results": ["has enchantments"]  
+    },  
+    "Solve riddles to distinguish illusions from reality.": {  
+      "item needed": ["has book", "has of spells", "has enchantments"],  
+      "location": ["at library"],  
+      "preceding_events": [],  
+      "description": [],  
+      "results": []  
+    },  
+    "adventurer make hammer.": {  
+      "item needed": [],  
+      "location": ["at forge"],  
+      "preceding_events": [],  
+      "description": ["There is a hammer at the forge."],  
+      "results": ["has hammer"]  
+    },  
+    "adventurer make sword.": {  
+      "item needed": ["has hammer"],  
+      "location": ["at forge"],  
+      "preceding_events": [],  
+      "description": ["There is a sword being made at a forge"],  
+      "results": ["has sword"]  
+    },  
+    "adventurer find magical artifacts.": {  
+      "item needed": ["has sword"],  
+      "location": ["at dungeon"],  
+      "preceding_events": [],  
+      "description": ["There is something magical at the dungeon"],  
+      "results": ["has magical artifacts"]  
+    },  
+    "Gather magical artifacts to reveal hidden passages.": {  
+      "item needed": ["has magical artifacts"],  
+      "location": ["at magical library"],  
+      "preceding_events": ["Solve riddles to distinguish illusions from reality."],  
+      "description": [],  
+      "results": []  
+    },  
+    "adventurer discover knowledge.": {  
+      "item needed": ["has book"],  
+      "location": ["at library"],  
+      "preceding_events": [],  
+      "description": ["There is knowledge to be discovered at the library."],  
+      "results": ["has knowledge"]  
+    },  
+    "Outsmart the labyrinth's keeper in a game of wits.": {  
+      "item needed": ["has knowledge"],  
+      "location": ["at labyrinth"],  
+      "preceding_events": ["Gather magical artifacts to reveal hidden passages."],  
+      "description": [],  
+      "results": ["has keeper outsmarted"]  
+    },  
+    "adventurer obtain library card.": {  
+      "item needed": [],  
+      "location": ["at library"],  
+      "preceding_events": [],  
+      "description": ["There is a library card available at the library."],  
+      "results": ["has library card"]  
+    },  
+    "Discover the ancient tome containing the labyrinth's secret.": {  
+      "item needed": ["has library card"],  
+      "location": ["at library"],  
+      "preceding_events": ["Outsmart the labyrinth's keeper in a game of wits."],  
+      "description": [],  
+      "results": []  
+    },  
+    "Use the knowledge gained to unlock and escape.": {  
+      "item needed": ["has book"],  
+      "location": ["at library"],  
+      "preceding_events": ["Discover the ancient tome containing the labyrinth's secret."],  
+      "description": [],  
+      "results": []  
+    }  
+  },  
+  "map": {  
+    "at library": [  
+      {"type": "item", "content": "has knowledge"},  
+      {"type": "item", "content": "has illusions"},  
+      {"type": "item", "content": "has riddles"},  
+      {"type": "item", "content": "has library card"},  
+      {"type": "npc", "content": "has librarian"}  
+    ],  
+    "at magic shop": [  
+      {"type": "item", "content": "has enchantments"},  
+      {"type": "npc", "content": "has merchant"},  
+      {"type": "item", "content": "has wand"}
+    ],  
+    "at magic school": [
+      {"type": "item", "content": "has of spells"}
+    ],  
+    "at magical library": [],  
+    "at dungeon": [
+      {"type": "item", "content": "has magical artifacts"}
+    ],  
+    "at forge": [  
+      {"type": "item", "content": "has sword"},  
+      {"type": "item", "content": "has hammer"},  
+      {"type": "npc", "content": "has blacksmith"}  
+    ],  
+    "at labyrinth": [
+      {"type": "npc", "content": "has keeper"}
+    ]  
+  }  
+}  

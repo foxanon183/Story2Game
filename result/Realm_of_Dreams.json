@@ -1,0 +1,80 @@
+{
+    "game_logics": {
+      "adventurer find books.": {
+        "item needed": [],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": ["There is a selection of books at the library."],
+        "results": ["has books"]
+      },
+      "adventurer figure out riddles.": {
+        "item needed": ["has books"],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": ["There is a book of riddles at the"],
+        "results": []
+      },
+      "Solve the riddles scattered throughout.": {
+        "item needed": [],
+        "location": ["at dream realms"],
+        "preceding_events": ["adventurer figure out riddles."],
+        "description": [],
+        "results": []
+      },
+      "adventurer find courage.": {
+        "item needed": ["has books"],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": ["There is courage to be found at the library."],
+        "results": ["has courage"]
+      },
+      "Conquer personal fears manifested as powerful dream monsters.": {
+        "item needed": ["has courage"],
+        "location": ["at dream realms"],
+        "preceding_events": ["Solve the riddles scattered throughout."],
+        "description": [],
+        "results": ["has fears conquered"]
+      },
+      "adventurer find keys.": {
+        "item needed": [],
+        "location": ["at dungeon"],
+        "preceding_events": [],
+        "description": ["There is a set of keys at the dunge"],
+        "results": ["has keys"]
+      },
+      "Discover the hidden keys to unlock the way back to reality.": {
+        "item needed": ["has keys"],
+        "location": ["at dungeon"],
+        "preceding_events": ["Conquer personal fears manifested as powerful dream monsters."],
+        "description": [],
+        "results": []
+      },
+      "Traverse the shifting landscapes and overcome dream obstacles.": {
+        "item needed": [],
+        "location": ["at labyrinth"],
+        "preceding_events": ["Discover the hidden keys to unlock the way back to reality."],
+        "description": [],
+        "results": []
+      },
+      "Face the ultimate challenge in the dream realm's final trial.": {
+        "item needed": [],
+        "location": ["at dream realms"],
+        "preceding_events": ["Traverse the shifting landscapes and overcome dream obstacles."],
+        "description": [],
+        "results": []
+      }
+    },
+    "map": {
+      "at dream realms": [],
+      "at library": [
+        {"type": "item", "content": "has answers to riddles"},
+        {"type": "item", "content": "has books"},
+        {"type": "npc", "content": "has librarian"},
+        {"type": "item", "content": "has courage"}
+      ],
+      "at dungeon": [
+        {"type": "item", "content": "has keys"}
+      ],
+      "at labyrinth": []
+    }
+  }

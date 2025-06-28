@@ -1,0 +1,12 @@
+Input
+Action: ${action}$
+Preconditions: ${preconditions}$
+Current Game State:
+${current_game_state}$
+Info:
+${info}$
+
+Your Output (which is wrong)
+${output}$
+Error Message: 
+${error}$

@@ -1,0 +1,12 @@
+{
+    "title": "Sorcerer's Apprentice",
+    "description": "The player becomes an apprentice to a powerful but eccentric sorcerer, and their first task is to retrieve a rare magical creature for a crucial experiment.",
+    "subquest": [
+        "Travel to the enchanted forest to find the rare magical creature.",
+        "Obtain the guidance of the wise forest nymph for assistance.",
+        "Solve the puzzles in the ancient ruins to unlock the creature's hiding place.",
+        "Outsmart the mischievous forest spirits guarding the creature.",
+        "Use the sorcerer's spells to tame and capture the magical creature.",
+        "Return to the sorcerer's tower and present the creature for the experiment."
+    ]
+}

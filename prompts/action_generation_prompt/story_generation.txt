@@ -1,0 +1,323 @@
+Introduction:
+You are creating a text-based adventure game similar to Zork. One of your responsibilities is to design the game engine's action system. Actions can alter the game's state represented by a tree structure with nodes. Each node can be a room, item, or character. 
+Given an input, determine the precondition and effect of the actions, utilizing a set template for defining preconditions and effects.
+
+Preconditions: 
+
+1. Attribute Check {node1.attribute_a == value} // The node can be any node in the game. The attribute can be any string, and the value can be any integer, string, or boolean. Allowed operators are ==, !=, >, <, >=, <=.
+2. Inventory Check: {player has item1} // The player must have all of the specified nodes in their inventory.
+3. Location Check: {player in room1}; {node1 in room2}
+To compose complex preconditions, you can use the standard python logical operators: and, or, not. You can also use parentheses to group expressions.
+{node1.attribute_a==value} and {node2.attribute_b>value} or {player has item1} and ({player in room1} or {node1 in room2})
+
+Effects:
+
+1. Move {node1} to {node2/inventory} // Move node1 to node2 or to the player's inventory or to the environment. Use this when the player takes any item. Rooms cannot be moved.
+2. Set {node}.some_attribute to {value} // Set the attribute of a node to a value. The attribute can be any string, and the value can be any integer, string, or boolean.
+3. Delete {node} // Remove the node from the game. One possible scenario is when some item is consumed by the player.
+4. Add {node_name} of type {Item/Character} to {node/inventory/environment} // Add a node to the game. Use this only when an item is being created, and not when an item is taken.
+5. Display Some message with {node.some_attribute} // Display a message to the player. The game will print f"Some message with {node.some_attribute}"
+
+Based on the above templates, determine the necessary attributes and the effects of different actions. Stick strictly to the available action templates. The conditions should not be too strict or finicky.
+Be careful to remove adjectives that are not important. For example, if a room is referred to as "dark forest" in the input, the room should be called "forest". Remove unecessary adjectives from rooms, items, and characters.
+Additionally, don't include duplicate rooms, items, or characters. For example, if the room "forest" already exists, don't add the room "haunted forest". If two rooms, items, or characters are the same only include one. The rooms, items and characters should not share any objects.
+If the action mentions a room and there is an additional room, be careful as these rooms may be the same referred to with different words. If two rooms are referred to with different words, but mean the same thing, only inlclude the proper room name. For example if the input is: "Traverse treacherous mountains to rescue a trapped baby dragon with rope.; room: at peak.", "treacherous mountains" and "peak" refer to the same room. Therefore in this case, only include the "peak" room in your final output. In this example, treacherous mountains does not appear in the final output.
+
+<example>
+Input:
+Adventurer gets the sword; room: village hall.
+
+Output:
+{
+    "input": "Adventurer gets the sword; room: village hall."
+    "output": {
+        "player": "adventurer",
+        "rooms": ["village hall"],
+        "items": ["sword"],
+        "characters": [],
+        "annotated_form": "{player: adventurer} gets {items[0]: sword}" at {rooms[0]: village hall},
+        "base_form": "get {items[0]} at {rooms[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}", "{items[0] at rooms[0]}"],
+        "additional_preconditions": [],
+        "effects": ["Move {items[0]} to {inventory}"],
+        "display": "You got {items[0]}!"
+    }
+}
+</example>
+
+<example>
+Input:
+The student goes to the library; room: library.
+
+Output:
+{
+    "input": "The student goes to the library; room: library.",
+    "output": {
+        "player": "student",
+        "rooms": ["library"],
+        "items": [],
+        "characters": [],
+        "annotated_form": "{player: student} goes to {rooms[0]: library}",
+        "base_form": "go to {rooms[0]}",
+        "fundamental_preconditions": [],
+        "additional_preconditions": [],
+        "effects": ["Move {player} to {rooms[0]}"],
+        "display": "You are in {rooms[0]}.\n{player.observation}"
+    }
+}
+</example>
+
+<example>
+Input:
+The king eats the apple and the banana; room: throne.
+
+Output:
+{
+    "input": "The king eats the apple and the banana; room: throne.",
+    "output": {
+        "player": "king",
+        "rooms": [throne],
+        "items": ["apple", "banana"],
+        "characters": [],
+        "annotated_form": "{player: king} eats {items[0]: apple} and the {items[1]: banana} at {rooms[0]: throne}",
+        "base_form": "eat {items[0]} and the {items[1]} at {rooms[0]}",
+        "fundamental_preconditions": [],
+        "additional_preconditions": ["{player has items[0]}", "{player has items[1]}", "{items[0].is_edible == True}", "{items[1].is_edible == True}"],
+        "effects": ["Delete {items[0]}", "Delete {items[1]}"],
+        "display": "You ate {items[0]} and {items[1]}!"
+    }
+}
+</example>
+
+<example>
+Input:
+Thomas buys the sword with the gold; room: general store.
+
+Output:
+{
+    "input": "Thomas buys the sword with the gold; room: general store.",
+    "output": {
+        "player": "thomas",
+        "rooms": ["general store"],
+        "items": ["sword", "gold"],
+        "characters": [],
+        "annotated_form": "{player: thomas} buys {items[0]: sword} with {items[1]: gold} at {rooms[0]: general store}",
+        "base_form": "buy {items[0]} with {items[1]} at {rooms[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}", "{items[0] at rooms[0]}"],
+        "additional_preconditions": ["{player has items[1]}", "{items[0].is_for_sale == True}", "{items[1].is_currency == True}"],
+        "effects": ["Move {items[0]} to {inventory}", "Delete {items[1]}", "Set {items[0]}.is_for_sale == False"],
+        "display": "You bought a {items[0]} with {items[1]}!"
+    }
+}
+</example>
+
+<example>
+Input:
+Angela opens the chest; room: dungeon.
+
+Output:
+{
+    "input": "Angela opens the chest; room: dungeon.",
+    "output": {
+        "player": "angela",
+        "rooms": ["dungeon"],
+        "items": ["chest", "key"],
+        "characters": [],
+        "annotated_form": "{player: angela} opens {items[0]: chest} with {items[1]: key} at {rooms[0]: dungeon}",
+        "base_form": "open {items[0]} with {items[1]} at {rooms[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}", "{items[0] at rooms[0]}"],
+        "additional_preconditions": ["items[0].is_container == True", "items[0].is_open == False", "items[0].is_locked == False or {player has items[1]}"],
+        "effects": ["Set {items[0]}.is_open to {True}", "Set {item[0]}.is_locked to {False}"],
+        "display": "You opened {items[0]}!"
+    }
+}
+</example>
+
+<example>
+Input:
+Steve crafts the sword with the iron and the wood; room: living room.
+
+Output:
+{
+    "input": "Steve crafts the sword with the iron and the wood; room: living room.",
+    "output": {
+        "player": "steve",
+        "rooms": ["living room"],
+        "items": ["sword", "iron", "wood"],
+        "characters": [],
+        "annotated_form": "{player: steve} crafts {items[0]: sword} with {items[1]: iron} and {items[2]: wood} at {rooms[0]: living room}",
+        "base_form": "craft {items[0]} with {items[1]} and {items[2]} at {rooms[0]}",
+        "fundamental_preconditions": [],
+        "additional_preconditions": ["{player has items[1]}", "{items[1].is_material == True}", "{player has items[2]}", "{items[2].is_material == True}"],
+        "effects": ["Move {items[0]} of type {Item} to {inventory}", "Delete {item[1]}", "Delete {item[2]}"],
+        "display": "You crafted {items[0]} with {items[1]} and {items[2]}!"
+    }
+}
+</example>
+
+<example>
+Input:
+Player looks around; room: kitchen
+
+Output:
+{
+    "input": "Player looks around; room: kitchen",
+    "output": {
+        "player": "player",
+        "rooms": ["kitchen"],
+        "items": [],
+        "characters": [],
+        "annotated_form": "{player: player} looks around at {rooms[0]: kitchen}",
+        "base_form": "looks around at {rooms[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}"],
+        "additional_preconditions": [],
+        "effects": [],
+        "display": "{player.observation}"
+    }
+}
+</example>
+
+<example>
+Input:
+Tom fatally shot Jerry.
+
+Output:
+{
+    "input": "Tom fatally shot Jerry; room: yard.",
+    "output": {
+        "player": "tom",
+        "rooms": ["yard"],
+        "items": ["gun"],
+        "characters": ["jerry"],
+        "annotated_form": "{player: tom} fatally shot {characters[0]: jerry} with {items[0]: gun} at {rooms[0]: yard}",
+        "base_form": "shot {characters[0]} at {rooms[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}", "{characters[0] at rooms[0]}"],
+        "additional_preconditions": ["{player has items[0]}", "characters[0].is_alive == True"]
+        "effects": ["Set {characters[0]}.is_alive to {False}"],
+        "display": "You fatally shot {characters[0]}, who is now dead!"
+    }
+}
+</example>
+
+<example>
+Input:
+Adventurer finds the hideout.
+
+Output:
+{
+    "input": "Adventurer finds the hideout.; room: at forest.",
+    "output": {
+        "player": "adventurer",
+        "rooms": ["hideout", "forest"],
+        "items": [],
+        "characters": [],
+        "annotated_form": "{player: adventurer} finds {rooms[0]: hideout} at {rooms[1]: forest}.",
+        "base_form": "find {rooms[0]} at {rooms[1]}",
+        "fundamental_preconditions": ["{player at rooms[1]}", "{rooms[0] at rooms[1]}"],
+        "additional_preconditions": [],
+        "effects": ["Move {player} to {rooms[0]}"],
+        "display": "You are in {rooms[0]}.\n{player.observation}"
+    }
+}
+</example>
+
+<example>
+Input:
+Adventurer investigates the abandoned mansion with flashlight.
+
+Output:
+{
+    "input": "Adventurer investigates the abandoned mansion with flashlight.; room: at abandoned mansion.",
+    "output": {
+        "player": "adventurer",
+        "rooms": ["abandoned mansion"],
+        "items": ["flashlight"],
+        "characters": [],
+        "annotated_form": "{player: adventurer} investigates the {rooms[0]: abandoned mansion} with {items[0]: flashlight}.",
+        "base_form": "investigate the {rooms[0]} with {items[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}", "{player has items[0]}"],
+        "additional_preconditions": [],
+        "effects": [],
+        "display": "You are in {rooms[0]}.\n{player.observation}"
+    }
+}
+</example>
+
+<example>
+Input:
+Traverse treacherous mountains to rescue a trapped baby dragon with rope.
+
+Output:
+{
+    "input": "Traverse treacherous mountains to rescue a trapped baby dragon with rope.; room: at peak.",
+    "output": {
+        "player": "player",
+        "rooms": ["peak"],
+        "items": ["baby dragon", "rope"],
+        "characters": [],
+        "annotated_form": "{player} traverses {rooms[0]} to rescue a trapped {items[0]} with {items[1]}.",
+        "base_form": "traverse {rooms[0]} to rescue a trapped {items[0]} with {items[1]}",
+        "fundamental_preconditions": ["{player at rooms[0]}", "{items[0].is_trapped == True}", "{items[1] at rooms[0]}"],
+        "additional_preconditions": [],
+        "effects": ["Move {items[0]} of type {Item} to {inventory}"],
+        "display": "You are in {rooms[0]}.\n{player.observation}"
+    }
+}
+</example>
+
+<example>
+Input:
+Adventurer make rope.
+
+Output:
+ {
+    "input": "Adventurer make rope.; room: at rope maker.",
+    "output": {
+        "player": "adventurer",
+        "rooms": ["rope maker"],
+        "items": ["rope"],
+        "characters": [],
+        "annotated_form": "{player} make {items[0]: rope} at {rooms[0]: rope maker}.",
+        "base_form": "make {items[0]} at {rooms[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}"],
+        "additional_preconditions": [],
+        "effects": ["Add {items[0]} of type {Item} to {inventory}"],
+        "display": "You made a rope!"
+    }
+}
+</example>
+
+<example>
+Input:
+Enter the hideout in the woods.
+
+Output:
+ {
+    "input": "Enter the hideout in the woods.; room: at woods.",
+    "output": {
+        "player": "adventurer",
+        "rooms": ["hideout, woods"],
+        "items": [],
+        "characters": [],
+        "annotated_form": "{player} enter {rooms[0]: hideout} at {rooms[1]: woods}.",
+        "base_form": "enter {rooms[0]} at {rooms[1]}",
+        "fundamental_preconditions": ["{player at rooms[1]}"],
+        "additional_preconditions": [],
+        "effects": ["Move {player} to {rooms0}"],
+        "display": "You are in {rooms0}."
+    }
+}
+</example>
+
+
+${previous_attempts?}$
+
+Do not put any indexing ahead of "player". All outputs should have player, rooms, items, characters, annotated_form, base_form, fundamental_preconditions, additional_preconditions, effects, and display attributes.
+Ensure all attribute precondition should be of the form {node1.attribute_a == value} with brackets surrounding it. Any attribute effect should be of the form {node1}.attribute == value. Do not include any ```json or ``` in the final output. Never include any reference to "environment" in the output. 
+annotated_form and base_form must include ALL rooms and items, even if there are multiple rooms and items. Ensure all arguments correspond to the correct array: rooms, items, or characters.
+Ensure that the display command is separate from the effects.
+
+Input:
+${input}$
+
+Output:

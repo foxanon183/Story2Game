@@ -1,0 +1,22 @@
+#!/bin/bash
+conda activate alpaca;
+python planner.py --config ./skeleton/Guardian's_Trial.json;
+python planner.py --config ./skeleton/The_Oracle's_Prophecy.json;
+python planner.py --config ./skeleton/Whispers_in_the_Forest.json;
+python planner.py --config ./skeleton/The_Lost_Artifact.json;
+python planner.py --config ./skeleton/Sorcerer's_Apprentice.json;
+python planner.py --config ./skeleton/Echoes_of_the_Ancients.json;
+python planner.py --config ./skeleton/Pirate's_Treasure.json;
+python planner.py --config ./skeleton/Mechanical_Uprising.json;
+python planner.py --config ./skeleton/Labyrinth_of_Illusions.json;
+python planner.py --config ./skeleton/Cursed_Kingdom.json;
+python planner.py --config ./skeleton/Guardian's_Heirloom.json;
+python planner.py --config ./skeleton/Realm_of_Dreams.json;
+python planner.py --config ./skeleton/Elixir_of_Immortality.json;
+python planner.py --config ./skeleton/Time_Rift_Anomaly.json;
+python planner.py --config ./skeleton/Plague_Doctor's_Cure.json;
+python planner.py --config ./skeleton/Song_of_the_Sea.json;
+python planner.py --config ./skeleton/Aerial_Huntress.json;
+python planner.py --config ./skeleton/Curse_of_the_Werewolf.json;
+python planner.py --config ./skeleton/Cursed_Canvas.json;
+python planner.py --config ./skeleton/Mystic_Masquerade.json;

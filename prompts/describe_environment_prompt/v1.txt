@@ -1,0 +1,8 @@
+A player is playing a text adventure game called Zork. You are given the observation of the current room the player is in. Give a detailed description of the environment using natural language. Don't forget to describe each character and item in the room, and remind the player of their goal!
+
+Input:
+```json
+${input}$
+```
+
+Description:

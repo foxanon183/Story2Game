@@ -1,0 +1,12 @@
+{
+    "title": "Pirate's Treasure",
+    "description": "A map leads the player to a fabled pirate's treasure buried on a remote island, but they're not the only ones searching for it.",
+    "subquest": [
+        "Gather clues from the old pirate captain's hidden diary.",
+        "Navigate through treacherous waters to reach the remote island.",
+        "Outsmart the rival pirate crew searching for the treasure.",
+        "Solve the intricate puzzles guarding the buried treasure's location.",
+        "Battle the fearsome sea monster guarding the final treasure chamber.",
+        "Escape the collapsing cave with the precious pirate's treasure."
+    ]
+}

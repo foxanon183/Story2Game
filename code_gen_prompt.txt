@@ -1,0 +1,123 @@
+You are building a game engine and need to add actions to the engine that don't already exist. 
+In order to add actions that don't exist already in the game engine, the outputs must be formatted as JSON objects exactly as the examples to be correct.
+
+For the action that you are provided, provide the player, rooms, items, annotated_form, base_form, fundamental_preconditions, additional_precondition, effect, display
+
+The player, room, and items will be provided in the input. Take these values and format them in the following way. 
+Provide the player that must complete the action.
+<example>
+"player" : "thomas"
+</example>
+Provide the rooms that the player must be in while completing the action.
+<example>
+"rooms" : ["room"]
+</example>
+Provide the items the player needs to complete the action as a list.
+<example>
+"items" : ["sword", "gold"],
+</example>
+
+Next, provide the annotated form of the action.
+The annotated form swaps the player, rooms, and items with objects that reference the previous objects you created.
+<example>
+The action input is: Thomas buys the sword with the gold
+"annotated_form": "{player} buys {items[0]} with {items[1]}"
+</example>
+
+Next, provide the base form.
+The base form provides the action similar to the annotated form without the player that completes the action
+<example>
+base_form": "buy {items[0]} with {items[1]}"
+</example>
+
+Next, provide the fundamental preconditions that must be true in order to complete the action as a list.
+<example>
+"fundamental_preconditions": ["{player} in {rooms[0]}", "{items[0]} in {rooms[0]}", "{player} has {inventory}"]
+</example>
+
+Next, provide any additional preconditions that should be true to complete an action
+<example>
+"additional_preconditions": ["{items[1]} in {inventory}", "{items[0]}.is_for_sale == True", "{items[1]}.is_currency == True"]
+</example>
+
+Provide a list of the effects of the action
+<example>
+"effect": ["Move {items[0]} to {inventory}", "Delete {items[1]}", "{items[0]}.is_for_sale == False"]
+</example>
+
+Finally, provide a description of the action for the user
+<example>
+"display": "You bought a {items[0]} with {items[1]}!"
+</example>
+
+Here are more examples of inputs and outputs
+<example>
+{
+    "input": "Adventurer gets the sword",
+    "output": {
+        "player": "adventurer",
+        "rooms": ["room1"],
+        "items": ["sword"],
+        "annotated_form": "{player} gets {items[0]}",
+        "base_form": "get {items[0]}",
+        "fundamental_preconditions": ["{player} in {rooms[0]}", "{items[0]} in {rooms[0]}", "{player} has {inventory}"],
+        "additional_preconditions": [],
+        "effect": ["Move {items[0]} to {inventory}"],
+        "display": "You got {items[0]}!"
+    }
+}
+</example>
+
+<example>
+{
+    "input": "The student goes to the library.",
+    "output": {
+        "player": "student",
+        "rooms": ["library"],
+        "items": [],
+        "annotated_form": "{player} goes to {rooms[0]}",
+        "base_form": "go to {rooms[0]}",
+        "fundamental_preconditions": ["{player} not in {rooms[0]}"],
+        "additional_preconditions": [],
+        "effect": ["Move {player} to {rooms[0]}"],
+        "display": "You are in {rooms[0]}.\n{player.observation}"
+    }
+}
+</example>
+
+<example>
+{
+    "input": "The king eats the apple and the banana.",
+    "output": {
+        "player": "king",
+        "rooms": [],
+        "items": ["apple", "banana"],
+        "annotated_form": "{player} eats {enum(items)}",
+        "base_form": "go to {rooms[0]}",
+        "fundamental_preconditions": [],
+        "additional_preconditions": ["{enum(items)} in {inventory}", "{enum(items)}.is_edible == True"],
+        "effect": ["Delete {enum(items)}"],
+        "display": "You ate {enum(item)}!"
+    }
+}
+</example>
+
+Given the input, produce the player, rooms, items, annotated_form, base_form, fundamental_preconditions, additional_preconditions, effect, and display formatted in JSON
+
+Input:
+"Rowan trades his shadow for a magical item.": {
+    "item needed": ["shadow"],
+    "location": [
+        "at Midnight Bazaar"
+    ],
+    "preceeding_events": [
+        "Rowan stumbles upon the Midnight Bazaar."
+    ],
+    "description": [
+        "Rowan unknowingly trades his shadow to a sorcerer in exchange for a magical trinket."
+    ],
+    "results": [
+        "loses shadow",
+        "has magical trinket"
+    ]
+}

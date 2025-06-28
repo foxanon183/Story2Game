@@ -1,0 +1,122 @@
+{
+    "game_logics": {
+      "adventurer find nails.": {
+        "item needed": [],
+        "location": ["at general store"],
+        "preceding_events": [],
+        "description": ["There is a general store where adventurer can find"],
+        "results": ["has nails"]
+      },
+      "adventurer build boat.": {
+        "item needed": ["has nails"],
+        "location": ["at shipyard"],
+        "preceding_events": [],
+        "description": ["There is a boat being built at a shipyard"],
+        "results": ["has boat"]
+      },
+      "Navigate through treacherous waters.": {
+        "item needed": ["has boat"],
+        "location": ["at ocean"],
+        "preceding_events": [],
+        "description": [],
+        "results": []
+      },
+      "Outsmart the rival pirate crew searching for the treasure.": {
+        "item needed": ["has boat"],
+        "location": ["at sea"],
+        "preceding_events": ["Navigate through treacherous waters."],
+        "description": [],
+        "results": []
+      },
+      "Solve the intricate puzzles guarding the buried treasure's location.": {
+        "item needed": ["has key"],
+        "location": ["at labyrinth"],
+        "preceding_events": ["Outsmart the rival pirate crew searching for the treasure."],
+        "description": [],
+        "results": []
+      },
+      "adventurer find pickaxe.": {
+        "item needed": [],
+        "location": ["at tool shop"],
+        "preceding_events": [],
+        "description": ["There is a pickaxe for sale at a"],
+        "results": ["has pickaxe"]
+      },
+      "adventurer mine iron.": {
+        "item needed": ["has pickaxe"],
+        "location": ["at mine"],
+        "preceding_events": [],
+        "description": ["There is iron to be mined at an iron"],
+        "results": ["has iron"]
+      },
+      "adventurer make hammer.": {
+        "item needed": ["has iron"],
+        "location": ["at forge"],
+        "preceding_events": [],
+        "description": ["There is a hammer at the forge."],
+        "results": ["has hammer"]
+      },
+      "adventurer make sword.": {
+        "item needed": ["has hammer"],
+        "location": ["at forge"],
+        "preceding_events": [],
+        "description": ["There is a sword being made at a forge"],
+        "results": ["has sword"]
+      },
+      "Battle the fearsome sea monster.": {
+        "item needed": ["has sword"],
+        "location": ["at ocean"],
+        "preceding_events": ["Solve the intricate puzzles guarding the buried treasure's location."],
+        "description": [],
+        "results": ["has monster defeated"]
+      },
+      "adventurer make rope.": {
+        "item needed": [],
+        "location": ["at rope makers"],
+        "preceding_events": [],
+        "description": ["There is rope for sale at the rope"],
+        "results": ["has rope"]
+      },
+      "Escape the collapsing cave with the precious treasure.": {
+        "item needed": ["has rope"],
+        "location": ["at cave"],
+        "preceding_events": ["Battle the fearsome sea monster."],
+        "description": [],
+        "results": ["has treasure"]
+      }
+    },
+    "map": {
+      "at ocean": [
+        {"type": "npc", "content": "has sea monster"}
+      ],
+      "at shipyard": [
+        {"type": "item", "content": "has boat"}
+      ],
+      "at general store": [
+        {"type": "item", "content": "has nails"},
+        {"type": "npc", "content": "has blacksmith"}
+      ],
+      "at sea": [
+        {"type": "npc", "content": "has rival pirates"}
+      ],
+      "at labyrinth": [],
+      "at forge": [
+        {"type": "item", "content": "has sword"},
+        {"type": "npc", "content": "has blacksmith"},
+        {"type": "item", "content": "has hammer"}
+      ],
+      "at mine": [
+        {"type": "item", "content": "has iron"}
+      ],
+      "at tool shop": [
+        {"type": "item", "content": "has pickaxe"},
+        {"type": "npc", "content": "has blacksmith"}
+      ],
+      "at cave": [
+        {"type": "item", "content": "has treasure"}
+      ],
+      "at rope makers": [
+        {"type": "item", "content": "has rope"}
+      ]
+    }
+  }

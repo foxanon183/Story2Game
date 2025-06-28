@@ -1,0 +1,12 @@
+{
+    "title": "Cursed Canvas",
+    "description": "An artist's masterpiece has come to life, and creatures from the painting are wreaking havoc. The player must enter the artwork to restore order.",
+    "subquest": [
+        "Enter the enchanted painting and navigate its fantastical landscapes.",
+        "Seek out the artist's studio to find clues and guidance.",
+        "Solve puzzles to release trapped characters and restore harmony.",
+        "Defeat the formidable boss creature ruling over the cursed canvas.",
+        "Restore the artist's original vision by repairing the damaged artwork.",
+        "Escape the painting before the curse consumes the player forever."
+    ]
+}

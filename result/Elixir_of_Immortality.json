@@ -1,0 +1,96 @@
+{  
+  "game_logics": {  
+    "Venture into the forest to find the herb.": {  
+      "item needed": [],  
+      "location": ["at forest"],  
+      "preceding_events": [],  
+      "description": [],  
+      "results": ["has herb"]  
+    },  
+    "adventurer make key.": {  
+      "item needed": [],  
+      "location": ["at key makers"],  
+      "preceding_events": [],  
+      "description": ["There is a key for sale at a key mak"],  
+      "results": ["has key"]  
+    },  
+    "Solve the puzzle in the temple to obtain the second ingredient.": {  
+      "item needed": ["has key"],  
+      "location": ["at temple"],  
+      "preceding_events": ["Venture into the forest to find the herb."],  
+      "description": [],  
+      "results": ["has second ingredient"]  
+    },  
+    "adventurer find armor.": {  
+      "item needed": ["has key"],  
+      "location": ["at armory"],  
+      "preceding_events": [],  
+      "description": ["There is armor at the armory."],  
+      "results": ["has armor"]  
+    },  
+    "Traverse the mountains to collect the rare flower.": {  
+      "item needed": ["has armor"],  
+      "location": ["at mountain pass"],  
+      "preceding_events": ["Solve the puzzle in the temple to obtain the second ingredient."],  
+      "description": [],  
+      "results": ["has rare flower"]  
+    },  
+    "adventurer make hammer.": {  
+      "item needed": [],  
+      "location": ["at forge"],  
+      "preceding_events": [],  
+      "description": ["There is a hammer at the forge."],  
+      "results": ["has hammer"]  
+    },  
+    "adventurer make sword.": {  
+      "item needed": ["has hammer"],  
+      "location": ["at forge"],  
+      "preceding_events": [],  
+      "description": ["There is a sword being made at a forge"],  
+      "results": ["has sword"]  
+    },  
+    "Defeat the mythical creature guarding the final ingredient.": {  
+      "item needed": ["has sword"],  
+      "location": ["at dragons lair"],  
+      "preceding_events": ["Traverse the mountains to collect the rare flower."],  
+      "description": [],  
+      "results": ["has final ingredient"]  
+    },  
+    "Brew the elixir in the sacred cauldron and unlock eternal life.": {  
+      "item needed": [],  
+      "location": ["at temple"],  
+      "preceding_events": ["Defeat the mythical creature guarding the final ingredient."],  
+      "description": [],  
+      "results": ["has eternal life"]  
+    }  
+  },  
+  "map": {  
+    "at forest": [
+      {"type": "item", "content": "has herb"}
+    ],  
+    "at temple": [
+      {"type": "item", "content": "has cauldron"},
+      {"type": "item", "content": "has eternal life"},
+      {"type": "item", "content": "has second ingredient"}
+    ],  
+    "at key makers": [
+      {"type": "item", "content": "has key"}
+    ],  
+    "at mountain pass": [
+      {"type": "item", "content": "has rare flower"}
+    ],  
+    "at armory": [  
+      {"type": "item", "content": "has armor"},  
+      {"type": "npc", "content": "has armor"}  
+    ],  
+    "at dragons lair": [
+      {"type": "npc", "content": "has mythical creature"},
+      {"type": "item", "content": "has final ingredient"}
+    ],  
+    "at forge": [  
+      {"type": "item", "content": "has sword"},  
+      {"type": "npc", "content": "has blacksmith"},  
+      {"type": "item", "content": "has hammer"}  
+    ]  
+  }  
+}  

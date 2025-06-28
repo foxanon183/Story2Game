@@ -1,0 +1,12 @@
+{
+    "title": "Plague Doctor's Cure",
+    "description": "A deadly plague is spreading across the realm. The player must assist a reclusive plague doctor in creating a cure using rare ingredients from dangerous lands.",
+    "subquest": [
+        "Locate the reclusive plague doctor and gain their trust.",
+        "Journey to the haunted forest to find a rare herb.",
+        "Brave the toxic swamps to collect a venomous creature's secretion.",
+        "Solve the riddles in the ancient ruins to obtain a mystical flower.",
+        "Face the monstrous guardian protecting the final ingredient.",
+        "Assist the plague doctor in crafting the lifesaving cure."
+    ]
+}

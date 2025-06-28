@@ -1,0 +1,76 @@
+{
+    "game_logics": {
+      "Recieve a royal summons from the king.": {
+        "item needed": [],
+        "location": ["at castle"],
+        "preceding_events": [],
+        "description": ["The king has summoned the knight for a special mission."],
+        "results": ["has royal summons"]
+      },
+      "Investigate the village and obtain cursed knowledge.": {
+        "item needed": ["has royal mission"],
+        "location": ["at village"],
+        "preceding_events": [],
+        "description": ["The villagers are plagued by an unknown curse."],
+        "results": ["has cursed knowledge"]
+      },
+      "Consult the old sage in the mountain cave.": {
+        "item needed": ["has curse knowledge"],
+        "location": ["at mountain cave"],
+        "preceding_events": [],
+        "description": ["The sage knows ancient secrets about the curse."],
+        "results": ["has sage wisdom"]
+      },
+      "Seek a magical relic to break the curse.": {
+        "item needed": ["has sage wisdom"],
+        "location": ["at forgotten ruins"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has magical relic"]
+      },
+      "Gather an army to face the dark warlord.": {
+        "item needed": [],
+        "location": ["at various strongholds"],
+        "preceding_events": ["Investigate the village and obtain cursed knowledge."],
+        "description": [],
+        "results": ["has army"]
+      },
+      "Confront the dark warlord.": {
+        "item needed": ["has army"],
+        "location": ["at enemy fortress"],
+        "preceding_events": ["Gather an army to face the dark warlord."],
+        "description": [],
+        "results": []
+      },
+      "Break the curse with the relic or slay the source of the curse.": {
+        "item needed": ["has magical relic"],
+        "location": ["at ruined temple"],
+        "preceding_events": [],
+        "description": ["Confront the dark warlord."],
+        "results": []
+      }
+    },
+    "map": {
+      "at castle": [
+        {"type": "npc", "content": "has king"},
+        {"type": "item", "content": "has summons"}
+      ],
+      "at village": [
+        {"type": "npc", "content": "has cursed villagers"},
+        {"type": "item", "content": "has cursed knowledge"}
+      ],
+      "at mountain cave": [
+        {"type": "npc", "content": "has old sage"}
+      ],
+      "at forgotten ruins": [
+        {"type": "item", "content": "has magical relic"}
+      ],
+      "at various strongholds": [
+        {"type": "npc", "content": "has army"}
+      ],
+      "at enemy fortress": [
+        {"type": "npc", "content": "has dark warlord"}
+      ],
+      "at ruined temple": []
+    }
+  }

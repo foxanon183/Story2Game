@@ -1,0 +1,12 @@
+{
+    "title": "The Lost Artifact",
+    "description": "The player is tasked with finding a valuable artifact that has been missing for centuries, rumored to be hidden in a treacherous mountain range.",
+    "subquest": [
+        "Seek guidance from the wise hermit in the nearby village.",
+        "Find the ancient map rumored to lead to the artifact.",
+        "Traverse through the perilous snowstorm to reach the mountain range.",
+        "Solve the riddles guarding the entrance to the hidden cave.",
+        "Defeat the ferocious guardian protecting the artifact.",
+        "Escape the collapsing cave before it seals the treasure forever."
+    ]
+}

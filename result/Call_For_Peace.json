@@ -1,0 +1,148 @@
+{
+  "game_logics": {
+    "receive peace mission from king": {
+      "item needed": [],
+      "location": ["at royal throne room"],
+      "preceding_events": [],
+      "description": [],
+      "results": ["has peace mission"]
+    },
+    "gather intelligence report from court advisor": {
+      "item needed": ["has peace mission"],
+      "location": ["at strategy chamber"],
+      "preceding_events": ["receive peace mission from king"],
+      "description": [],
+      "results": ["has intelligence report"]
+    },
+    "visit royal archives and ask the royal scribe for historical disputes": {
+      "item needed": ["has intelligence report"],
+      "location": ["at royal archives"],
+      "preceding_events": ["gather intelligence report from court advisor"],
+      "description": [],
+      "results": ["has dispute records"]
+    },
+    "secure trade gifts and coin for negotiation": {
+      "item needed": ["has dispute records"],
+      "location": ["at royal treasury"],
+      "preceding_events": ["visit royal archives and ask the royal scribe for historical disputes"],
+      "description": [],
+      "results": ["has trade gifts", "has coin"]
+    },
+    "recruit trusted diplomat companion": {
+      "item needed": ["has trade gifts", "has coin"],
+      "location": ["at ambassador's hall"],
+      "preceding_events": ["secure trade gifts and coin for negotiation"],
+      "description": [],
+      "results": []
+    },
+    "begin journey to rival kingdom palace": {
+      "item needed": [],
+      "location": ["at kingdom road"],
+      "preceding_events": ["recruit trusted diplomat companion"],
+      "description": [],
+      "results": []
+    },
+    "cross treacherous mountain pass": {
+      "item needed": [],
+      "location": ["at treacherous mountain pass"],
+      "preceding_events": ["begin journey to rival kingdom palace"],
+      "description": [],
+      "results": []
+    },
+    "encounter and calm highway raiders": {
+      "item needed": ["has coin"],
+      "location": ["at forest trail"],
+      "preceding_events": ["cross treacherous mountain pass"],
+      "description": [],
+      "results": []
+    },
+    "arrive at rival kingdom palace gates": {
+      "item needed": [],
+      "location": ["at rival kingdom palace gates"],
+      "preceding_events": ["encounter and calm highway raiders"],
+      "description": [],
+      "results": []
+    },
+    "meet and appease rival queen": {
+      "item needed": ["has trade gifts"],
+      "location": ["at rival palace hall"],
+      "preceding_events": ["arrive at rival kingdom palace gates"],
+      "description": [],
+      "results": []
+    },
+    "conduct negotiation talks": {
+      "item needed": [],
+      "location": ["at negotiation chamber"],
+      "preceding_events": ["meet and appease rival queen"],
+      "description": [],
+      "results": []
+    },
+    "resolve trade disagreements": {
+      "item needed": [],
+      "location": ["at negotiation chamber"],
+      "preceding_events": ["conduct negotiation talks"],
+      "description": [],
+      "results": []
+    },
+    "sign peace treaty": {
+      "item needed": [],
+      "location": ["at royal signing hall"],
+      "preceding_events": ["resolve trade disagreements"],
+      "description": [],
+      "results": ["has peace treaty"]
+    },
+    "return home and report success": {
+      "item needed": ["has peace treaty"],
+      "location": ["at royal throne room"],
+      "preceding_events": ["sign peace treaty"],
+      "description": [],
+      "results": []
+    }
+  },
+  "map": {
+    "at royal throne room": [
+      {"type": "npc", "content": "king"},
+      {"type": "item", "content": "peace mission"}
+    ],
+    "at strategy chamber": [
+      {"type": "npc", "content": "court advisor"},
+      {"type": "item", "content": "intelligence report"}
+    ],
+    "at royal archives": [
+      {"type": "item", "content": "dispute records"},
+      {"type": "npc", "content": "royal scribe"}
+    ],
+    "at royal treasury": [
+      {"type": "item", "content": "trade gifts"},
+      {"type": "item", "content": "coin"}
+    ],
+    "at ambassador's hall": [
+      {"type": "npc", "content": "trusted diplomat companion"}
+    ],
+    "at kingdom road": [
+      {"type": "room", "content": "travel caravan"},
+      {"type": "npc", "content": "royal guards"}
+    ],
+    "at rival kingdom palace": [],
+    "at treacherous mountain pass": [],
+    "at forest trail": [
+      {"type": "npc", "content": "highway raiders"}
+    ],
+    "at rival kingdom palace gates": [
+      {"type": "npc", "content": "rival palace guards"},
+      {"type": "item", "content": "entry permission letter"}
+    ],
+    "at rival palace hall": [
+      {"type": "npc", "content": "rival queen"},
+      {"type": "npc", "content": "royal advisor of rival kingdom"},
+      {"type": "item", "content": "gift chests"}
+    ],
+    "at negotiation chamber": [
+      {"type": "room", "content": "negotiation table"},
+      {"type": "item", "content": "treaty drafts"}
+    ],
+    "at royal signing hall": [
+      {"type": "item", "content": "peace treaty"}
+    ]
+  }
+}

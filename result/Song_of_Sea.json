@@ -1,0 +1,119 @@
+{
+    "game_logics": {
+      "Gather a seafarer to help you on your journey.": {
+        "item needed": [],
+        "location": ["at tavern"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has seafarer"]
+      },
+      "adventurer take axe.": {
+        "item needed": [],
+        "location": ["at tool shed"],
+        "preceding_events": [],
+        "description": ["There is an axe at the tool shed."],
+        "results": ["has axe"]
+      },
+      "adventurer cut wood.": {
+        "item needed": ["has axe"],
+        "location": ["at forest"],
+        "preceding_events": [],
+        "description": ["There is wood in the forest."],
+        "results": ["has wood"]
+      },
+      "adventurer make oars.": {
+        "item needed": ["has wood"],
+        "location": ["at boat shop"],
+        "preceding_events": [],
+        "description": ["There is a boat shop where oars can be"],
+        "results": ["has oars"]
+      },
+      "Overcome the challenges of powerful sea monsters lurking beneath.": {
+        "item needed": ["has oars"],
+        "location": ["at ocean depths"],
+        "preceding_events": ["Gather a seafarer to help you on your journey."],
+        "description": [],
+        "results": []
+      },
+      "adventurer find book.": {
+        "item needed": [],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": ["There is a book at the library."],
+        "results": ["has book"]
+      },
+      "adventurer find map.": {
+        "item needed": ["has book"],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": ["There is a map at the library."],
+        "results": ["has map"]
+      },
+      "Solve the riddles of ancient maps to navigate to the island.": {
+        "item needed": ["has map"],
+        "location": ["at library"],
+        "preceding_events": ["Overcome the challenges of powerful sea monsters lurking beneath."],
+        "description": [],
+        "results": []
+      },
+      "adventurer build boat.": {
+        "item needed": ["has wood"],
+        "location": ["at shipyard"],
+        "preceding_events": [],
+        "description": ["There is a boat being built at a shipyard"],
+        "results": ["has boat"]
+      },
+      "Uncover the secrets hidden.": {
+        "item needed": ["has boat"],
+        "location": ["at island"],
+        "preceding_events": ["Solve the riddles of ancient maps to navigate to the island."],
+        "description": [],
+        "results": []
+      },
+      "adventurer buy sword.": {
+        "item needed": ["has money"],
+        "location": ["at weapon shop"],
+        "preceding_events": [],
+        "description": ["There is a sword for sale at a weapon shop"],
+        "results": ["has sword"]
+      },
+      "Defend the treasure from rival pirates attempting to claim it.": {
+        "item needed": ["has sword"],
+        "location": ["at battlefield"],
+        "preceding_events": ["Uncover the secrets hidden."],
+        "description": [],
+        "results": []
+      }
+    },
+    "map": {
+      "at tavern": [
+        {"type": "item", "content": "has seafarer"}
+      ],
+      "at ocean depths": [],
+      "at boat shop": [
+        {"type": "item", "content": "has oars"}
+      ],
+      "at forest": [
+        {"type": "item", "content": "has wood"}
+    ],
+      "at tool shed": [
+        {"type": "item", "content": "has axe"}
+      ],
+      "at library": [
+        {"type": "item", "content": "has map"},
+        {"type": "item", "content": "has book"},
+        {"type": "npc", "content": "has librarian"}
+      ],
+      "at island": [],
+      "at shipyard": [
+        {"type": "item", "content": "has boat"}
+      ],
+      "at battlefield": [
+        {"type": "npc", "content": "has rival pirates"}
+      ],
+      "at weapon shop": [
+        {"type": "item", "content": "has sword"},
+        {"type": "npc", "content": "has merchant"}
+      ]
+    }
+  }

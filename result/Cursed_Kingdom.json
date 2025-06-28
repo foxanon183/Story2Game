@@ -1,0 +1,85 @@
+{  
+  "game_logics": {  
+    "Locate the rare ingredient deep within the enchanted forest.": {  
+      "item needed": [],  
+      "location": ["at enchanted forest"],  
+      "preceding_events": [],  
+      "description": [],  
+      "results": ["has rare ingredient"]  
+    },  
+    "adventurer make key.": {  
+      "item needed": [],  
+      "location": ["at key maker"],  
+      "preceding_events": [],  
+      "description": ["There is a key for sale at a key mak"],  
+      "results": ["has key"]  
+    },  
+    "Solve the puzzles in the abandoned temple to obtain the second ingredient.": {  
+      "item needed": ["has key"],  
+      "location": ["at temple"],  
+      "preceding_events": ["Locate the rare ingredient deep within the enchanted forest."],  
+      "description": [],  
+      "results": ["has second ingredient"]  
+    },  
+    "adventurer take torch.": {  
+      "item needed": [],  
+      "location": ["at campfire"],  
+      "preceding_events": [],  
+      "description": ["There is a torch at the campfire."],  
+      "results": ["has torch"]  
+    },  
+    "Brave the caves to retrieve the third ingredient.": {  
+      "item needed": ["has torch"],  
+      "location": ["at caves"],  
+      "preceding_events": ["Solve the puzzles in the abandoned temple to obtain the second ingredient."],  
+      "description": [],  
+      "results": ["has third ingredient"]  
+    },  
+    "Seek guidance from the wise sage to learn the ritual.": {  
+      "item needed": ["has book"],  
+      "location": ["at library"],  
+      "preceding_events": ["Brave the caves to retrieve the third ingredient."],  
+      "description": [],  
+      "results": []  
+    },  
+    "adventurer buy sword.": {  
+      "item needed": ["has money"],  
+      "location": ["at weapons shop"],  
+      "preceding_events": [],  
+      "description": ["There is a sword for sale at a weapons shop"],  
+      "results": ["has sword"]  
+    },  
+    "Perform the ritual at the cursed kingdom's center to lift the curse.": {  
+      "item needed": ["has sword"],  
+      "location": ["at cursed kingdom"],  
+      "preceding_events": ["Seek guidance from the wise sage to learn the ritual."],  
+      "description": [],  
+      "results": []  
+    }  
+  },  
+  "map": {  
+    "at enchanted forest": [
+      {"type": "item", "content": "has rare ingredient"}
+    ],  
+    "at temple": [
+      {"type": "item", "content": "has second ingredient"}
+    ],  
+    "at key maker": [
+      {"type": "item", "content": "has key"}
+    ],  
+    "at caves": [
+      {"type": "item", "content": "has third ingredient"}
+    ],  
+    "at campfire": [
+      {"type": "item", "content": "has torch"}
+    ],  
+    "at library": [
+      {"type": "npc", "content": "has wise sage"}
+    ],  
+    "at cursed kingdom": [],  
+    "at weapons shop": [  
+      {"type": "item", "content": "has sword"},  
+      {"type": "npc", "content": "has merchant"}  
+    ]  
+  }  
+}  

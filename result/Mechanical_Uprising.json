@@ -1,0 +1,84 @@
+{  
+  "game_logics": {  
+    "adventurer find book.": {  
+      "item needed": [],  
+      "location": ["at library"],  
+      "preceding_events": [],  
+      "description": ["There is a book at the library."],  
+      "results": ["has book"]  
+    },  
+    "adventurer find maps.": {  
+      "item needed": ["has book"],  
+      "location": ["at library"],  
+      "preceding_events": [],  
+      "description": ["There is a map at the library."],  
+      "results": ["has maps"]  
+    },  
+    "Follow the clues to locate the temple.": {  
+      "item needed": ["has maps"],  
+      "location": ["at labyrinth"],  
+      "preceding_events": [],  
+      "description": [],  
+      "results": []  
+    },  
+    "Navigate through a maze.": {  
+      "item needed": ["has sword"],  
+      "location": ["at dungeon"],  
+      "preceding_events": ["Follow the clues to locate the temple."],  
+      "description": [],  
+      "results": []  
+    },  
+    "Discover the creator's master plan.": {  
+      "item needed": ["has sword"],  
+      "location": ["at temple"],  
+      "preceding_events": ["Navigate through a maze."],  
+      "description": [],  
+      "results": []  
+    },  
+    "adventurer buy weapons.": {  
+      "item needed": ["has money"],  
+      "location": ["at armory"],  
+      "preceding_events": [],  
+      "description": ["There is an armory where adventurers can"],  
+      "results": ["has weapons"]  
+    },  
+    "Disable the production facility to halt the automaton uprising.": {  
+      "item needed": ["has weapons"],  
+      "location": ["at factory"],  
+      "preceding_events": ["Discover the creator's master plan."],  
+      "description": [],  
+      "results": []  
+    },  
+    "Confront the mastermind behind the rogue automatons and defeat them.": {  
+      "item needed": ["has sword"],  
+      "location": ["at dungeon"],  
+      "preceding_events": ["Disable the production facility to halt the automaton uprising."],  
+      "description": [],  
+      "results": []  
+    }  
+  },  
+  "map": {  
+    "at labyrinth": [
+      {"type": "item", "content": "has clues"}
+    ],  
+    "at library": [  
+      {"type": "item", "content": "has maps"},  
+      {"type": "item", "content": "has book"}  
+    ],  
+    "at dungeon": [  
+      {"type": "npc", "content": "has mastermind"},  
+      {"type": "npc", "content": "has rogue automatons"},
+      {"type": "item", "content": "has maze"}
+    ],  
+    "at temple": [
+      {"type": "npc", "content": "has master plan"}
+    ],  
+    "at factory": [
+      {"type": "npc", "content": "has production facility"}
+    ],  
+    "at armory": [  
+      {"type": "item", "content": "has weapons"},  
+      {"type": "npc", "content": "has merchant"}  
+    ]  
+  }  
+}  

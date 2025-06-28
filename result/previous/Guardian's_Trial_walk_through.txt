@@ -1,0 +1,18 @@
+adventurer walked to get to sword shop .
+adventurer buy sword.
+adventurer walked to get to wilderness .
+Traverse dangerous terrains to find the first enchanted crystal.
+adventurer walked to get to key maker .
+adventurer make key.
+Solve puzzles in the hidden temple to obtain the second crystal.
+adventurer walked to get to general store .
+adventurer buy rope.
+adventurer walked to get to swamp .
+Brave the treacherous swamp to retrieve the third crystal.
+adventurer walked to get to ancient ruins .
+Outsmart the guardian of the ancient ruins to obtain the fourth crystal.
+adventurer find matches.
+adventurer walked to get to campfire .
+adventurer take torch.
+adventurer walked to get to cave .
+Uncover the final crystal's location in the depths of the mystical cave.

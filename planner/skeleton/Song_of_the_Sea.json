@@ -1,0 +1,12 @@
+{
+    "title": "Song of the Sea",
+    "description": "The player must assemble a group of skilled sailors and navigate a treacherous sea filled with monsters and mysteries to find a legendary island of untold riches.",
+    "subquest": [
+        "Recruit a skilled navigator to guide the journey at sea.",
+        "Gather a diverse crew with unique abilities and strengths.",
+        "Overcome the challenges of powerful sea monsters lurking beneath.",
+        "Solve the riddles of ancient maps to navigate to the island.",
+        "Uncover the secrets hidden on the legendary island of riches.",
+        "Defend the treasure from rival pirates attempting to claim it."
+    ]
+}

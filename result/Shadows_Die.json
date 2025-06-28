@@ -1,0 +1,69 @@
+{
+    "game_logics": {
+      "Recieve the mortal blade": {
+        "item needed": [],
+        "location": ["at sunken valley"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has mortal blade"]
+      },
+      "Defeat the illusion monkeys": {
+        "item needed": ["has mortal blade"],
+        "location": ["at hall of illusions"],
+        "preceding_events": [],
+        "description": [],
+        "results": []
+      },
+      "Return to master": {
+        "item needed": [],
+        "location": ["at castle"],
+        "preceding_events": ["Recieve the mortal blade", "Defeat the illusion monkeys"],
+        "description": [],
+        "results": []
+      },
+      "Betray master": {
+        "item needed": [],
+        "location": ["at castle"],
+        "preceding_events": ["Return to master"],
+        "description": [],
+        "results": []
+      },
+      "Defeat master and obtain the fountainhead key": {
+        "item needed": [],
+        "location": ["at castle"],
+        "preceding_events": ["Betray master"],
+        "description": [],
+        "results": ["has fountainhead key"]
+      },
+      "Defeat the divine dragon and earn the dragon tear": {
+        "item needed": ["has fountainhead key"],
+        "location": ["at fountainhead palace"],
+        "preceding_events": ["Defeat master and obtain the fountainhead key"],
+        "description": [],
+        "results": ["has dragon tear"]
+      },
+      "Sever immortality forever": {
+        "item needed": ["has dragon tear"],
+        "location": ["at castle"],
+        "preceding_events": ["Defeat the divine dragon and earn the dragon tear"],
+        "description": [],
+        "results": []
+      }
+    },
+    "map": {
+      "at sunken valley": [
+        {"type": "item", "content": "has mortal blade"}
+    ],
+      "at hall of illusions": [
+        {"type": "npc", "content": "has illusion monkeys"}
+    ],
+      "at castle": [
+        {"type": "item", "content": "has fountainhead key"}, 
+        {"type": "npc", "content": "has master"}
+    ],
+      "at fountainhead palace": [
+        {"type": "item", "content": "has dragon tear"}, 
+        {"type": "npc", "content": "has Divine Dragon"}
+    ]
+    }
+  }

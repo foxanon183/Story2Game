@@ -1,0 +1,110 @@
+You are tasked with ensuring the smooth gameplay of a text adventure game, similar to classics like Zork. In this game, there are elements known as "nodes", which can be classified as rooms, items, or characters. Each node has its unique attributes. Gameplay progresses through checkpoints, but these checkpoints are contingent upon certain preconditions being met. Your role is to debug the game logic by verifying if the prerequisites for a checkpoint are satisfied based on the current game state. If they aren't, you must identify and propose minimal adjustments to the game state that would allow players to proceed to the next step.
+
+Preconditions: 
+
+1. Attribute Check - Validates whether a specific node, such as an item or character (node), possesses a particular attribute with a defined value. Example: {node1.attribute_a==value}.
+2. Inventory Check - Assesses if the player's inventory contains certain items. Example: {player has item1}.
+3. Location Check - Confirms the location of a player or another node. Examples: {player in room1}; {node1 in room2}.
+
+These preconditions can be combined using standard Python logical operators (and, or, not) and parentheses for clarity.
+
+Possible Fixes:
+
+1. Add {node_name} of type {Item/Character} to {node/inventory/environment} with description {item description} - Introduce a new node, whether an item or a character, into the game world. Use this action sparingly! Only resort to this operation when there's no other alternative, such as relocating an existing node, to meet the checkpoint's requirements. Do NOT add a node of type Room. If you create any Add actions, be sure to state these first.
+2. Move {node1} to {node2/inventory/environment} - Move a node to a different room, to the player's inventory, or to the environment (the player's current location). When a node with the specified name exists in the world but is not in the desired location (like the player's inventory), prioritize using this fix.
+3. Set {node.some_attribute} to {value} - Set the attribute of a node to a specific value. The attribute can be any string, while the value can be an integer, string, or boolean. Prioritize using this fix when the attribute is not currently specified (having a value of None). However, generally do not use this fix when the attribute has already been assigned a value, unless required.
+
+Output Format:
+Begin with a single line of reasoning that explains the state of the game relative to the preconditions. Do not create new lines. Reasoning should be one line, Answer directly on the next. Follow this with either an empty JSON array (if preconditions are satisfied) or an array of the minimum fixes needed. Be sure to include {} brackets around conditions, items, rooms, and characters just like the examples. Be sure to add the possible fixes in the order: Add, Move, Set. Only create possible fixes that are necessary, this means all three types of possible fixes may not be necessary.
+
+<example>
+Input
+Preconditions: {player has wood} and {wood.is_material==True}
+Current Game State:
+{player has wood}: satisfied.
+{wood.is_material==True}: not satisfied.
+Info:
+Attribute "is_material" is not specified for wood. We do not know if it is True.
+
+Output
+Reasoning: From the provided preconditions, we need two conditions to be satisfied: The player should have wood. The attribute "is_material" of wood should be set to True. From the given current game state, the first condition is already satisfied. However, the second condition is not met because the attribute "is_material" for wood has not been specified. Hence, the attribute "is_material" for wood needs to be set to True for the precondition to be satisfied.
+Answer: ["Set {wood.is_material} to {True}"]
+</example>
+
+<example>
+Input
+Preconditions: {chest.is_container==True} and {chest.is_open==False} and ({chest.is_locked==False} or {player has key})
+Current Game State:
+{chest.is_container==True}: satisfied.
+{chest.is_open==False}: satisfied.
+{chest.is_locked==False}: not satisfied.
+{player has key}: not satisfied.
+Info:
+chest.is_locked is not False. chest.is_locked = True.
+Player does not have key. Player has [].
+No node found with name "key" in the current location. However, the following node(s) can be found: "key" at living room.
+
+Output
+Reasoning: From the provided preconditions, we need several conditions to be satisfied: The chest should be a container. The chest should not be open. The chest should either be unlocked or the player should have a key. From the provided current game state, the first two conditions are satisfied. However, the third condition has two parts, both of which are not satisfied. The chest is currently locked, and the player does not have a key. Given the guidelines to prioritize moving nodes over changing existing attribute values, and the fact that a key exists in the living room, the most straightforward solution is to move the key to the player's inventory so that the player has the key.
+Answer: ["Move {key} to {inventory}"]
+</example>
+
+<example>
+Input
+Preconditions: {player has gold} and {sword.is_for_sale==True} and {sword.price<=gold.value}
+Current Game State:
+{player has gold}: satisfied.
+{sword.is_for_sale==True}: satisfied.
+{sword.price<=gold.value}: not satisfied.
+Info: 
+Attribute "price" is not specified for sword. We do not know if sword.price <= gold.value.
+Attribute "value" is not specified for gold. We do not know if sword.price <= gold.value.
+
+Output
+Reasoning: From the provided preconditions, there are three conditions that need to be satisfied: The player should have gold. The sword should be for sale. The price of the sword should be less than or equal to the value of the gold the player has. From the current game state, the first two conditions are already met. However, the third condition is not satisfied because neither the price of the sword nor the value of the gold is specified. Thus, we need to set both these attributes to allow the game to proceed. The minimum number of changes to be made is to specify the price for the sword and the value for the gold. Let's say we set the value for the gold to 100 and the price for the sword to 50.
+Answer: ["Set {gold.value} to {100}", "Set {sword.price} to {50}"]
+</example>
+
+<example>
+Input
+Preconditions: {player has gun} and {gun.is_weapon==True} and {bandit.is_friendly==False}
+Current Game State:
+{player has gun}: satisfied.
+{gun.is_weapon==True}: satisfied.
+{bandit.is_friendly==False}: satisfied
+Info: 
+None.
+
+Output
+Reasoning: From the provided preconditions, there are three conditions that need to be satisfied: The player should have a gun. The gun should be a weapon. The bandit should not be friendly. From the current game state, all these conditions are satisfied. Therefore, no changes are needed for the game to proceed.
+Answer: []
+</example>
+
+<example>
+Input
+Preconditions: {player at treacherous mountains} and {baby dragon.is_trapped==True} and {rope at treacherous mountains} and {treacherous mountains.is_room==True} and {rooms1.is_room==True} and {rope.is_item==True} and {baby dragon.is_item==True} and {['treacherous mountains', 'baby dragon', 'rope'] is available to player}
+Current Game State:
+{player at treacherous mountains}: not satisfied.
+{baby dragon.is_trapped==True}: satisfied.
+{rope at treacherous mountains}: not satisfied.
+{treacherous mountains.is_room==True}: not satisfied.
+{rooms1.is_room==True}: not satisfied.
+{rope.is_item==True}: satisfied.
+{baby dragon.is_item==True}: satisfied.
+{['treacherous mountains', 'baby dragon', 'rope'] is available to player}: not satisfied.
+
+Output
+Reasoning: From the provided preconditions, there are eight conditions that need to satisfied. Of the eight preconditions, two need to be satisfied: The player should be at the treacherous mountains. The rope should be at treacherous mountains. Therefore we must add the player to the treacherous mountains. Then we must add the rope to the treacherous mountains.
+Answer: ["Move {player} to {treacherous mountains}", "Move {rope} to {treacherous mountains}"]
+</example>
+
+${previous_attempts?}$
+
+Input
+Preconditions: ${preconditions}$
+Current Game State:
+${current_game_state}$
+Info:
+${info}$
+
+Output

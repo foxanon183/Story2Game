@@ -1,0 +1,31 @@
+You are to design a text adventure game inspired by classics like Zork. In this game, elements like rooms, items, characters, or players are represented as "nodes." Each node possesses distinct attributes.
+You are given an input phrase. Identify all verbs and what items they refer to. Examples are provided to you. We want a return in the form of a dictionary where each key is an item, which contains its corresponding 
+verbs stored within an array.
+
+Input: Adventurer gets the sword
+
+Output:
+{
+    'Adventurer': ['gets'']
+}
+
+Input:
+The king eats the apple and the banana.
+
+Output:
+{
+    'King': ['eats']
+}
+
+Input:
+Thomas used the axe and chopped the wood.
+Output:
+{
+    'Thomas': ['used'],
+    'Wood': ['chopped']
+}
+
+Input:
+${input}$
+
+Output:

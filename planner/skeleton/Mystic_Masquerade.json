@@ -1,0 +1,12 @@
+{
+    "title": "Mystic Masquerade",
+    "description": "The player gains entry to an exclusive masquerade ball where attendees are hiding magical secrets. Unmask the truth behind a series of mysterious disappearances.",
+    "subquest": [
+        "Investigate the ballroom for clues about the disappearances.",
+        "Uncover the hidden identities of suspicious masked guests.",
+        "Solve puzzles to access secret rooms and uncover hidden truths.",
+        "Gather information from gossiping attendees to piece the puzzle together.",
+        "Confront the mastermind orchestrating the disappearances.",
+        "Lift the enchantment on the ball, restoring peace and revealing secrets."
+    ]
+}

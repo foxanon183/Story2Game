@@ -1,0 +1,74 @@
+{
+    "game_logics": {
+      "Decode the cryptic messages engraved on the tree's bark.": {
+        "item needed": [],
+        "location": ["at forest"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has messages decoded"]
+      },
+      "adventurer take torch.": {
+        "item needed": [],
+        "location": ["at campfire"],
+        "preceding_events": [],
+        "description": ["There is a torch at the campfire."],
+        "results": ["has torch"]
+      },
+      "Enter the hidden entrance to the dungeon.": {
+        "item needed": ["has torch"],
+        "location": ["at hidden entrance"],
+        "preceding_events": ["Decode the cryptic messages engraved on the tree's bark."],
+        "description": [],
+        "results": ["at dungeon"]
+      },
+      "adventurer find keys.": {
+        "item needed": [],
+        "location": ["at dungeon"],
+        "preceding_events": [],
+        "description": ["There is a set of keys at the dunge"],
+        "results": ["has keys"]
+      },
+      "Solve the puzzles to unlock their secrets.": {
+        "item needed": ["has keys"],
+        "location": ["at dungeon"],
+        "preceding_events": ["Enter the hidden entrance to the dungeon."],
+        "description": [],
+        "results": []
+      },
+      "adventurer find books.": {
+        "item needed": [],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": ["There is a collection of books at the library."],
+        "results": ["has books"]
+      },
+      "Uncover the truth behind the whispers and their origin.": {
+        "item needed": ["has books"],
+        "location": ["at library"],
+        "preceding_events": ["Solve the puzzles to unlock their secrets."],
+        "description": [],
+        "results": []
+      },
+      "Restore balance to the forest and gain its protection.": {
+        "item needed": [],
+        "location": ["at forest"],
+        "preceding_events": ["Uncover the truth behind the whispers and their origin."],
+        "description": [],
+        "results": []
+      }
+    },
+    "map": {
+      "at forest": [],
+      "at hidden entrance": [],
+      "at campfire": [
+        {"type": "item", "content": "has torch"}
+      ],
+      "at dungeon": [
+        {"type": "item", "content": "has keys"}
+      ],
+      "at library": [
+        {"type": "item", "content": "has books"},
+        {"type": "npc", "content": "has librarian"}
+      ]
+    }
+  }

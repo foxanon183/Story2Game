@@ -1,0 +1,68 @@
+Introduction:
+You are creating a text-based adventure game similar to Zork. You are given two objects: an array of possible actions in the game, and a user-inputted action.
+Determine if the user-inputted action closely matches any of the possible actions in the array. 
+To closely match something, the first verb in each phrase must by strictly synonymous and all objects or characters should be the same.
+If the user_input includes any of the following strings: "go to", "inventory", "look", or "exit", return false and the user_input.
+Following is an general format that should be used as reference. Do not include any ```json or ``` in the final output.
+
+Input: {user_input}; [list of actions]
+
+Output:
+{
+    "output": {
+        "isMatch": {true/false},
+        "output_str": {matching possible action/user_input}
+    }
+}
+
+Input: break the lockpicking tool;['speak with village elders at village hall', 'read books at library', 'find maps at library', 'take torch at general store', 'take basket at forest', 'gather ingredients for a cure with basket at forest', 'meet with wise woman in forest', 'look', 'go to forest', 'go to general store', 'break the lockpicking tool with hammer at general store', 'go to library']
+
+Output:
+{
+    "output": {
+        "isMatch": "true",
+        "output_str": "break the lockpicking tool with hammer at general store"
+    }
+}
+
+Input: read journal; ['speak with village elders at village hall', 'read books at library', 'find maps at library', 'take torch at general store', 'take basket at forest', 'gather ingredients for a cure with basket at forest', 'meet with wise woman in forest', 'look', 'go to forest', 'go to general store', 'break the lockpicking tool with hammer at general store', 'go to library']
+
+Output:
+{
+    "output": {
+        "isMatch": "false",
+        "output_str": "read journal"
+    }
+}
+
+Input: gather ingredients; ['speak with village elders at village hall', 'read books at library', 'find maps at library', 'take torch at general store', 'take basket at forest', 'gather ingredients for a cure with basket at forest', 'meet with wise woman in forest', 'look', 'go to forest', 'go to general store', 'break the lockpicking tool with hammer at general store', 'go to library']
+
+Output:
+{
+    "output": {
+        "isMatch": "true",
+        "output_str": "gather ingredients for a cure with basket at forest"
+    }
+}
+
+Input:
+take flashlight; ['speak with village elders at village center', 'find book at library', 'find map at library', 'find werewolf den with map at forest', 'buy knife with money at general store', 'gather ingredients at forest', 'meet with wise woman in forest', 'investigate the abandoned mansion with flashlight', 'buy sword with money at weapon store', 'confront werewolf pack leader with sword at werewolf den', 'buy weapons with money at armory', 'escort villagers to safety with weapons at village', 'destroy cursed artifact at dungeon', 'stop the curse from spreading at cursed village', 'look', 'go to forest', 'Look', 'go to library', 'go to general store', 'go to abandoned mansion']
+
+If the user input matches part of an action, but is missing the "at {some location}" part of the phrase, it is still matching.
+
+Output:
+RAW OUTPUT
+{
+    "output": {
+        "isMatch": "false",
+        "output_str": "take flashlight"
+    }
+}
+
+Input:
+${input}$
+
+If the user input matches part of an action, but is missing the "at {some location}" part of the phrase, it is still matching.
+Be very strict on matching; the first verb in both phrases must be synonymous. If not disregard the rest and return false.
+
+Output:

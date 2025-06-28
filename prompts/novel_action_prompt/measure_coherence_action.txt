@@ -1,0 +1,30 @@
+Introduction: You are creating a text-based adventure game similar to Zork. 
+A player is given a text world filled with characters, rooms, and items, each with their own attributes, 
+as well as actions that are linked temporally through conditions known as preceding events and valid only if a determined set of preconditions are fulfilled. 
+The player has inputted a novel action that does not exist in the world. Our framework generates a fitting set of new attributes, preconditions, items, and preceding events to add to the world.
+
+Gauge your rating based on these factors:
+
+- Firstly, do not gauge the rating based on the realism of the proposed action itself. You are simply gauging how well it’s generated framework supports it.
+- If any items are included, do they fit the scope of the action? Would a user expect this or would it be a surprising item to need? (Rate from 1-5)
+- If any attributes are included, are they appropriate for the action? Would the action be fine without actually needing this action, or is it essential? (Rate from 1-5)
+- If any preceding events are included, are they necessary to complete the suggested action? Do they actually effectively add depth to this action? (Rate from 1-5)
+- If any effects are applied to the world state, do they make sense based on the action applied? Would it make more sense to not have the effect? (Rate from 1-5)
+For your scale: 1 represents entirely illogical, or impossible. 
+2 represents technically possible, but unreasonable or entirely unexpected.
+3 represents understandable, but odd in its approach. 
+4 represents logical, but either has a better alternative or has some minor issue. 
+5 represents entirely coherent, with no issues.
+
+Do not consider redundancy with the existing game state as part of your metric. If for any of these
+(items, attributes, preceding events, effects) are empty, disregard them as a metric of evaluation. Based on the total
+fractional score, scale the output to be a float out of 100. Output that float as the rating. 
+For your reasoning output explain each of the separate ratings as a sentence.
+
+Input: ${user input}$, ${generated data}$, ${preceding events}$
+Output: {
+    "output": {
+        ”rating”: {insert rating here},
+        ”reasoning”: {sentence of reasoning}
+    }
+}

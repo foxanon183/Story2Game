@@ -1,0 +1,433 @@
+{
+    "map": {
+        "at village hall": [
+            {
+                "type": "npc",
+                "content": "has village elders"
+            }
+        ],
+        "at forest": [
+            {
+                "type": "npc",
+                "content": "has werewolf"
+            },
+            {
+                "type": "npc",
+                "content": "has farmers"
+            },
+            {
+                "type": "npc",
+                "content": "has herbalist"
+            },
+            {
+                "type": "npc",
+                "content": "has witch"
+            },
+            {
+                "type": "item",
+                "content": "has basket"
+            },
+            {
+                "type": "npc",
+                "content": "has wise woman"
+            }
+        ],
+        "at general store": [
+            {
+                "type": "item",
+                "content": "has torch"
+            },
+            {
+                "type": "item",
+                "content": "has lockpicking tool"
+            },
+            {
+                "type": "npc",
+                "content": "has merchant"
+            }
+        ],
+        "at library": [
+            {
+                "type": "item",
+                "content": "has maps"
+            },
+            {
+                "type": "item",
+                "content": "has books"
+            }
+        ],
+        "at abandoned mansion": [],
+        "at store": [
+            {
+                "type": "item",
+                "content": "has flashlight"
+            },
+            {
+                "type": "npc",
+                "content": "has merchant"
+            }
+        ],
+        "at werewolf den": [
+            {
+                "type": "npc",
+                "content": "has werewolf pack leader"
+            }
+        ],
+        "at weapon depot": [
+            {
+                "type": "item",
+                "content": "has sword"
+            }
+        ],
+        "at thieves den": [
+            {
+                "type": "item",
+                "content": "has key"
+            }
+        ],
+        "at village": [
+            {
+                "type": "npc",
+                "content": "has villagers"
+            }
+        ],
+        "at armor shop": [
+            {
+                "type": "item",
+                "content": "has armor"
+            }
+        ],
+        "at dungeon": [
+            {
+                "type": "item",
+                "content": "has weapons"
+            }
+        ]
+    },
+    "game_logics": {
+        "adventurer speak with the village elders.": {
+            "item needed": [],
+            "location": [
+                "at village hall"
+            ],
+            "preceeding_events": [],
+            "description": [],
+            "results": []
+        },
+        "adventurer read books.": {
+            "item needed": [],
+            "location": [
+                "at library"
+            ],
+            "preceeding_events": [],
+            "description": [
+                "There is a book at the library."
+            ],
+            "results": [
+                "has book"
+            ]
+        },
+        "adventurer find maps.": {
+            "item needed": [
+                "has books"
+            ],
+            "location": [
+                "at library"
+            ],
+            "preceeding_events": [],
+            "description": [
+                "There is a map at the library."
+            ],
+            "results": [
+                "has map"
+            ]
+        },
+        "adventurer take torch.": {
+            "item needed": [
+                "has money"
+            ],
+            "location": [
+                "at general store"
+            ],
+            "preceeding_events": [],
+            "description": [
+                "There is a torch for sale at the general"
+            ],
+            "results": [
+                "has torch"
+            ]
+        },
+        "adventurer find the werewolf den with maps, torch": {
+            "item needed": [
+                "has maps",
+                "has torch"
+            ],
+            "location": [
+                "at forest"
+            ],
+            "preceeding_events": [
+                "adventurer speak with the village elders."
+            ],
+            "description": [],
+            "results": []
+        },
+        "adventurer take basket.": {
+            "item needed": [],
+            "location": [
+                "at forest"
+            ],
+            "preceeding_events": [],
+            "description": [
+                "There is a basket in the forest."
+            ],
+            "results": [
+                "has basket"
+            ]
+        },
+        "adventurer gather ingredients for a cure with a basket": {
+            "item needed": [
+                "has basket"
+            ],
+            "location": [
+                "at forest"
+            ],
+            "preceeding_events": [
+                "adventurer find the werewolf den with maps, torch"
+            ],
+            "description": [],
+            "results": []
+        },
+        "adventure meet with a wise woman in the forest": {
+            "item needed": [],
+            "location": [
+                "at forest"
+            ],
+            "preceeding_events": [
+                "adventurer gather ingredients for a cure with a basket"
+            ],
+            "description": [],
+            "results": []
+        },
+        "adventurer purchase flashlight.": {
+            "item needed": [
+                "has money"
+            ],
+            "location": [
+                "at store"
+            ],
+            "preceeding_events": [],
+            "description": [
+                "There is a flashlight for sale at the store"
+            ],
+            "results": [
+                "has flashlight"
+            ]
+        },
+        "adventurer investigate the abandoned mansion": {
+            "item needed": [
+                "has flashlight"
+            ],
+            "location": [
+                "at abandoned mansion"
+            ],
+            "preceeding_events": [
+                "adventure meet with a wise woman in the forest"
+            ],
+            "description": [],
+            "results": []
+        },
+        "adventurer purchase lockpicking tool.": {
+            "item needed": [
+                "has money"
+            ],
+            "location": [
+                "at general store"
+            ],
+            "preceeding_events": [],
+            "description": [
+                "There is a lockpicking tool for sale at"
+            ],
+            "results": [
+                "has lockpicking tool"
+            ]
+        },
+        "adventurer steal key.": {
+            "item needed": [
+                "has lockpicking tool"
+            ],
+            "location": [
+                "at thieves den"
+            ],
+            "preceeding_events": [],
+            "description": [
+                "There is a key at thieves den."
+            ],
+            "results": [
+                "has key"
+            ]
+        },
+        "adventurer take sword.": {
+            "item needed": [
+                "has key"
+            ],
+            "location": [
+                "at weapon depot"
+            ],
+            "preceeding_events": [],
+            "description": [
+                "There is a sword at a weapon depot."
+            ],
+            "results": [
+                "has sword"
+            ]
+        },
+        "adventure confront the werewolf pack leader": {
+            "item needed": [
+                "has sword"
+            ],
+            "location": [
+                "at werewolf den"
+            ],
+            "preceeding_events": [
+                "adventurer investigate the abandoned mansion"
+            ],
+            "description": [],
+            "results": []
+        },
+        "adventurer loot weapons.": {
+            "item needed": [],
+            "location": [
+                "at dungeon"
+            ],
+            "preceeding_events": [],
+            "description": [
+                "There is a loot of weapons at the d"
+            ],
+            "results": [
+                "has weapons"
+            ]
+        },
+        "adventurer find armor.": {
+            "item needed": [
+                "has money"
+            ],
+            "location": [
+                "at armor shop"
+            ],
+            "preceeding_events": [],
+            "description": [
+                "There is armor for sale at an armor"
+            ],
+            "results": [
+                "has armor"
+            ]
+        },
+        "adventure escort villagers to safety": {
+            "item needed": [
+                "has weapons",
+                "has armor"
+            ],
+            "location": [
+                "at village"
+            ],
+            "preceeding_events": [
+                "adventure confront the werewolf pack leader"
+            ],
+            "description": [],
+            "results": []
+        },
+        "adventure destroy the cursed artifact": {
+            "item needed": [],
+            "location": [
+                "at abandoned mansion"
+            ],
+            "preceeding_events": [
+                "adventure escort villagers to safety"
+            ],
+            "description": [],
+            "results": []
+        },
+        "adventurer stop the curse from spreading to other villages": {
+            "item needed": [],
+            "location": [
+                "at forest"
+            ],
+            "preceeding_events": [
+                "adventure destroy the cursed artifact"
+            ],
+            "description": [],
+            "results": []
+        }
+    },
+    "action_state": {},
+    "action_template": [
+        "speaks with {enum(npc)}",
+        "reads {enum(object)}",
+        "finds {object1}"
+    ],
+    "action_general_constraints": {
+        "speaks with {enum(npc)}": {
+            "enum(npc)": {
+                "is_enum_npc": "True"
+            }
+        },
+        "reads {enum(object)}": {
+            "enum(object)": {
+                "is_enum_object": "True",
+                "is_readable": "AnyValue",
+                "message": "AnyValue"
+            }
+        },
+        "finds {object1}": {
+            "object1": {
+                "is_object": "True",
+                "message": "AnyValue"
+            }
+        }
+    },
+    "action_game_related_constraints": {},
+    "action_effects": {
+        "speaks with {enum(npc)}": [],
+        "reads {enum(object)}": [
+            "Move {enum(object)} to {inventory}",
+            "Display {enum(object).message}"
+        ],
+        "finds {object1}": [
+            "Move {object1} to {inventory}",
+            "Display {object1.message}"
+        ]
+    },
+    "keywords_to_game_logic_action_map": [
+        {
+            "template": "speaks with {enum(npc)}",
+            "keywords": [
+                "village elders"
+            ],
+            "target_action_in_game_logic": "adventurer speak with the village elders."
+        },
+        {
+            "template": "reads {enum(object)}",
+            "keywords": [
+                "book"
+            ],
+            "target_action_in_game_logic": "adventurer read books."
+        },
+        {
+            "template": "finds {object1}",
+            "keywords": [
+                "map"
+            ],
+            "target_action_in_game_logic": "adventurer find maps."
+        }
+    ],
+    "obtainable_item_to_game_logic_action_map": {
+        "book": [
+            "adventurer read books."
+        ],
+        "map": [
+            "adventurer find maps."
+        ]
+    },
+    "num_of_actions": 0,
+    "pos_cnt": 12
+}

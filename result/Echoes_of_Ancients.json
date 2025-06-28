@@ -1,0 +1,60 @@
+{  
+  "game_logics": {  
+    "adventurer make key.": {  
+      "item needed": [],  
+      "location": ["at locksmith"],  
+      "preceding_events": [],  
+      "description": ["There is a key for sale at a locksm"],  
+      "results": ["has key"]  
+    },  
+    "Gather artifacts to reconstruct the forgotten history.": {  
+      "item needed": ["has key"],  
+      "location": ["at ruins"],  
+      "preceding_events": [],  
+      "description": [],  
+      "results": ["has artifacts"]  
+    },  
+    "Solve intricate puzzles to unlock library.": {  
+      "item needed": ["has key"],  
+      "location": ["at ruins"],  
+      "preceding_events": ["Gather artifacts to reconstruct the forgotten history."],  
+      "description": [],  
+      "results": []  
+    },  
+    "Unveil the truth behind the downfall of the ancient civilization.": {  
+      "item needed": ["has book"],  
+      "location": ["at library"],  
+      "preceding_events": ["Solve intricate puzzles to unlock library."],  
+      "description": [],  
+      "results": []  
+    },  
+    "Face the guardian spirit protecting the final chamber of secrets.": {  
+      "item needed": [],  
+      "location": ["at spirit realm"],  
+      "preceding_events": ["Unveil the truth behind the downfall of the ancient civilization."],  
+      "description": [],  
+      "results": []  
+    },  
+    "Preserve the knowledge of the lost society for future generations.": {  
+      "item needed": ["has book"],  
+      "location": ["at library"],  
+      "preceding_events": ["Face the guardian spirit protecting the final chamber of secrets."],  
+      "description": [],  
+      "results": []  
+    }  
+  },  
+  "map": {  
+    "at ruins": [
+      {"type": "item", "content": "has artifacts"},
+      {"type": "item", "content": "has forgotten history"},
+      {"type": "item", "content": "has intricate puzzles"}
+    ],  
+    "at locksmith": [
+      {"type": "item", "content": "has key"}
+    ],  
+    "at library": [],  
+    "at spirit realm": [
+      {"type": "npc", "content": "has guardian spirit"}
+    ]  
+  }  
+}  

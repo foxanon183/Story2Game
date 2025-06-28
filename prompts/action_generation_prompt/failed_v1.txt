@@ -1,0 +1,5 @@
+You tried the following example(s), but it failed to execute. You should avoid generating the same content in your next trial. Refers to the error message below for more detail.
+
+${failed_examples}$
+
+Revise your attempt based on the error message and generate your response for the next trial.

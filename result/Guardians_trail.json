@@ -1,0 +1,178 @@
+{  
+  "game_logics": {  
+    "adventurer find rope making supplies.": {  
+      "item needed": [],  
+      "location": ["at rope makers shop"],  
+      "preceding_events": [],  
+      "description": ["There is a shop that sells rope making"],  
+      "results": ["has rope making supplies"]  
+    },  
+    "adventurer make rope.": {  
+      "item needed": ["has rope making supplies"],  
+      "location": ["at rope maker"],  
+      "preceding_events": [],  
+      "description": ["There is a rope maker who makes ro"],  
+      "results": ["has rope"]  
+    },  
+    "Scale the treacherous cliffs to reach the second guardian's lair.": {  
+      "item needed": ["has rope"],  
+      "location": ["at climbing cliff face"],  
+      "preceding_events": [],  
+      "description": [],  
+      "results": []  
+    },  
+    "adventurer find pliers.": {  
+      "item needed": [],  
+      "location": ["at tool shed"],  
+      "preceding_events": [],  
+      "description": ["There is a set of pliers at the tool"],  
+      "results": ["has pliers"]  
+    },  
+    "adventurer make key.": {  
+      "item needed": ["has pliers"],  
+      "location": ["at workshop"],  
+      "preceding_events": [],  
+      "description": ["There is a key at the workshop."],  
+      "results": ["has key"]  
+    },  
+    "Decode the ancient runes to enter the third trial.": {  
+      "item needed": ["has key"],  
+      "location": ["at temple"],  
+      "preceding_events": ["Scale the treacherous cliffs to reach the second guardian's lair."],  
+      "description": [],  
+      "results": ["has entrance unlocked"]  
+    },  
+    "adventurer gain courage and strength.": {  
+      "item needed": [],  
+      "location": ["at temple"],  
+      "preceding_events": [],  
+      "description": ["There is courage and strength to be gained at the"],  
+      "results": ["has courage and strength"]  
+    },  
+    "adventurer earn bravery.": {  
+      "item needed": ["has courage and strength"],  
+      "location": ["at battlefield"],  
+      "preceding_events": [],  
+      "description": ["There is bravery to be earned at battlefield"],  
+      "results": ["has bravery"]  
+    },  
+    "Survive the labyrinth filled with traps and puzzles.": {  
+      "item needed": ["has bravery"],  
+      "location": ["at labyrinth"],  
+      "preceding_events": ["Decode the ancient runes to enter the third trial."],  
+      "description": [],  
+      "results": []  
+    },  
+    "adventurer make hammer.": {  
+      "item needed": [],  
+      "location": ["at forge"],  
+      "preceding_events": [],  
+      "description": ["There is a hammer at the forge."],  
+      "results": ["has hammer"]  
+    },  
+    "adventurer make sword.": {  
+      "item needed": ["has hammer"],  
+      "location": ["at forge"],  
+      "preceding_events": [],  
+      "description": ["There is a sword being made at a forge"],  
+      "results": ["has sword"]  
+    },  
+    "Defeat the powerful guardian in an epic battle of strength.": {  
+      "item needed": ["has sword"],  
+      "location": ["at stronghold"],  
+      "preceding_events": ["Survive the labyrinth filled with traps and puzzles."],  
+      "description": [],  
+      "results": []  
+    },  
+    "adventurer forge and signature.": {  
+      "item needed": ["has hammer"],  
+      "location": ["at forge"],  
+      "preceding_events": [],  
+      "description": ["There is an adventurer's forge and"],  
+      "results": ["has and signature"]  
+    },  
+    "adventurer bribe parent/guardian.": {  
+      "item needed": ["has money"],  
+      "location": ["at city hall"],  
+      "preceding_events": [],  
+      "description": ["There is a parent/guardian at city hall"],  
+      "results": ["has of parent/guardian"]  
+    },  
+    "adventurer obtain identification.": {  
+      "item needed": ["has identity card/passport"],  
+      "location": ["at government building"],  
+      "preceding_events": [],  
+      "description": ["There is a government building where adventurer can obtain"],  
+      "results": ["has identification"]  
+    },  
+    "adventurer obtain library card.": {  
+      "item needed": ["has and signature", "has of parent/guardian", "has identification"],  
+      "location": ["at library"],  
+      "preceding_events": [],  
+      "description": ["There is a library card available at the library."],  
+      "results": ["has library card"]  
+    },  
+    "adventurer take books.": {  
+      "item needed": ["has library card"],  
+      "location": ["at library"],  
+      "preceding_events": [],  
+      "description": ["There is a selection of books at the library."],  
+      "results": ["has books"]  
+    },  
+    "Solve the final riddle to gain access to the hidden realm.": {  
+      "item needed": ["has books"],  
+      "location": ["at library"],  
+      "preceding_events": ["Defeat the powerful guardian in an epic battle of strength."],  
+      "description": [],  
+      "results": ["has realm access"]  
+    }  
+  },  
+  "map": {  
+    "at climbing cliff face": [],  
+    "at rope maker": [
+      {"type": "item", "content": "has rope"}
+    ],  
+    "at rope makers shop": [  
+      {"type": "item", "content": "has rope making supplies"},  
+      {"type": "npc", "content": "has merchant"}  
+    ],  
+    "at temple": [
+      {"type": "item", "content": "has courage and strength"},
+      {"type": "item", "content": "has ancient runes"}
+    ],  
+    "at workshop": [
+      {"type": "item", "content": "has key"}
+    ],  
+    "at tool shed": [  
+      {"type": "item", "content": "has pliers"},  
+      {"type": "npc", "content": "has blacksmith"}  
+    ],  
+    "at labyrinth": [
+      {"type": "item", "content": "has traps"},  
+      {"type": "item", "content": "has puzzles"}
+    ],  
+    "at battlefield": [
+      {"type": "item", "content": "has bravery"}
+    ],  
+    "at stronghold": [],  
+    "at forge": [  
+      {"type": "item", "content": "has sword"},  
+      {"type": "npc", "content": "has blacksmith"},  
+      {"type": "item", "content": "has hammer"},  
+      {"type": "item", "content": "has and signature"}  
+    ],  
+    "at library": [  
+      {"type": "item", "content": "has books"},  
+      {"type": "npc", "content": "has librarian"},  
+      {"type": "item", "content": "has library card"}  
+    ],  
+    "at government building": [  
+      {"type": "item", "content": "has identification"},  
+      {"type": "npc", "content": "has merchant"}  
+    ],  
+    "at city hall": [  
+      {"type": "item", "content": "has of parent/guardian"},  
+      {"type": "npc", "content": "has parent/guardian"}  
+    ]  
+  }  
+}  

@@ -1,0 +1,747 @@
+{
+    "map": [
+        [
+            "village-hall-7c4b5ec1-79ef-4aa1-9c69-1ebef1b28162",
+            "forest-36b3ca5a-04b0-4ddd-80d8-ca79d230699f",
+            "general-store-d73fe7c9-3d77-4e76-ae6a-babc1b36c83c",
+            "library-9697a694-d0af-4f83-8743-4a805d92a014",
+            "abandoned-mansion-281bb587-15ba-4855-8edf-09c0e939afff",
+            "store-ec642dc6-1c4b-4e87-a54c-f3f1d3f31c3a",
+            "werewolf-den-716ed90f-e9f9-4c35-a406-d9575d93563b",
+            "weapon-depot-3f90b5f4-4e12-4225-ab87-014e70a5ea82",
+            "thieves-den-9c644ff0-50fb-4c5a-9eae-ffe4612ac60d",
+            "village-d99e4f68-2bf5-409a-96c1-f53a238da3c0",
+            "armor-shop-d8c7d517-0547-442c-b892-a7e531183b3c",
+            "dungeon-0e7029a9-056c-4240-ae90-374459a65bc3"
+        ]
+    ],
+    "characters": {
+        "village-elders-2b9cbb40-dfaa-4e98-9769-c244c2e43a32": {
+            "name": "village elders",
+            "description": "A village elders",
+            "container": "[Room]@(village-hall-7c4b5ec1-79ef-4aa1-9c69-1ebef1b28162)",
+            "id": "village-elders-2b9cbb40-dfaa-4e98-9769-c244c2e43a32",
+            "inventory": [
+                "set",
+                []
+            ],
+            "is_player": false,
+            "is_enum_npc": "True",
+            "is_talkable": "AnyValue",
+            "message": "AnyValue",
+            "is_alive": "AnyValue",
+            "is_interactable": "AnyValue",
+            "is_spoken_with": "AnyValue"
+        },
+        "werewolf-f66e34d9-3788-4bc9-8918-37f7b838db44": {
+            "name": "werewolf",
+            "description": "A werewolf",
+            "container": "[Room]@(forest-36b3ca5a-04b0-4ddd-80d8-ca79d230699f)",
+            "id": "werewolf-f66e34d9-3788-4bc9-8918-37f7b838db44",
+            "inventory": [
+                "set",
+                []
+            ],
+            "is_player": false,
+            "is_enum_npc": "AnyValue",
+            "is_talkable": "AnyValue",
+            "message": "AnyValue",
+            "is_alive": "AnyValue",
+            "is_interactable": "AnyValue",
+            "is_spoken_with": "AnyValue"
+        },
+        "farmer-f86fe3fa-ee29-49f9-840d-b81f13cdda84": {
+            "name": "farmer",
+            "description": "A farmers",
+            "container": "[Room]@(forest-36b3ca5a-04b0-4ddd-80d8-ca79d230699f)",
+            "id": "farmer-f86fe3fa-ee29-49f9-840d-b81f13cdda84",
+            "inventory": [
+                "set",
+                []
+            ],
+            "is_player": false,
+            "is_enum_npc": "AnyValue",
+            "is_talkable": "AnyValue",
+            "message": "AnyValue",
+            "is_alive": "AnyValue",
+            "is_interactable": "AnyValue",
+            "is_spoken_with": "AnyValue"
+        },
+        "herbalist-5c7c0db5-cf29-49aa-aa67-94ac9c7a43eb": {
+            "name": "herbalist",
+            "description": "A herbalist",
+            "container": "[Room]@(forest-36b3ca5a-04b0-4ddd-80d8-ca79d230699f)",
+            "id": "herbalist-5c7c0db5-cf29-49aa-aa67-94ac9c7a43eb",
+            "inventory": [
+                "set",
+                []
+            ],
+            "is_player": false,
+            "is_enum_npc": "AnyValue",
+            "is_talkable": "AnyValue",
+            "message": "AnyValue",
+            "is_alive": "AnyValue",
+            "is_interactable": "AnyValue",
+            "is_spoken_with": "AnyValue"
+        },
+        "witch-a7f5937e-f5a6-4f80-b8fc-9ee04e3c7488": {
+            "name": "witch",
+            "description": "A witch",
+            "container": "[Room]@(forest-36b3ca5a-04b0-4ddd-80d8-ca79d230699f)",
+            "id": "witch-a7f5937e-f5a6-4f80-b8fc-9ee04e3c7488",
+            "inventory": [
+                "set",
+                []
+            ],
+            "is_player": false,
+            "is_enum_npc": "AnyValue",
+            "is_talkable": "AnyValue",
+            "message": "AnyValue",
+            "is_alive": "AnyValue",
+            "is_interactable": "AnyValue",
+            "is_spoken_with": "AnyValue"
+        },
+        "wise-woman-daf6ff4b-d201-4371-b596-5b7dda40ecec": {
+            "name": "wise woman",
+            "description": "A wise woman",
+            "container": "[Room]@(forest-36b3ca5a-04b0-4ddd-80d8-ca79d230699f)",
+            "id": "wise-woman-daf6ff4b-d201-4371-b596-5b7dda40ecec",
+            "inventory": [
+                "set",
+                []
+            ],
+            "is_player": false,
+            "is_enum_npc": "AnyValue",
+            "is_talkable": "AnyValue",
+            "message": "AnyValue",
+            "is_alive": "AnyValue",
+            "is_interactable": "AnyValue",
+            "is_spoken_with": "AnyValue"
+        },
+        "merchant-46db9000-2c6e-4f34-bdf1-330e9b9a3ab3": {
+            "name": "merchant",
+            "description": "A merchant",
+            "container": "[Room]@(general-store-d73fe7c9-3d77-4e76-ae6a-babc1b36c83c)",
+            "id": "merchant-46db9000-2c6e-4f34-bdf1-330e9b9a3ab3",
+            "inventory": [
+                "set",
+                []
+            ],
+            "is_player": false,
+            "is_enum_npc": "AnyValue",
+            "is_talkable": "AnyValue",
+            "message": "AnyValue",
+            "is_alive": "AnyValue",
+            "is_interactable": "AnyValue",
+            "is_spoken_with": "AnyValue"
+        },
+        "merchant-5031c453-651f-4dce-823b-656bc495a149": {
+            "name": "merchant",
+            "description": "A merchant",
+            "container": "[Room]@(store-ec642dc6-1c4b-4e87-a54c-f3f1d3f31c3a)",
+            "id": "merchant-5031c453-651f-4dce-823b-656bc495a149",
+            "inventory": [
+                "set",
+                []
+            ],
+            "is_player": false,
+            "is_enum_npc": "AnyValue",
+            "is_talkable": "AnyValue",
+            "message": "AnyValue",
+            "is_alive": "AnyValue",
+            "is_interactable": "AnyValue",
+            "is_spoken_with": "AnyValue"
+        },
+        "werewolf-pack-leader-d96fec09-e3a9-483e-bc00-357284970f81": {
+            "name": "werewolf pack leader",
+            "description": "A werewolf pack leader",
+            "container": "[Room]@(werewolf-den-716ed90f-e9f9-4c35-a406-d9575d93563b)",
+            "id": "werewolf-pack-leader-d96fec09-e3a9-483e-bc00-357284970f81",
+            "inventory": [
+                "set",
+                []
+            ],
+            "is_player": false,
+            "is_enum_npc": "AnyValue",
+            "is_talkable": "AnyValue",
+            "message": "AnyValue",
+            "is_alive": "AnyValue",
+            "is_interactable": "AnyValue",
+            "is_spoken_with": "AnyValue"
+        },
+        "villager-32a09ea9-fea1-4fb7-8181-667daa739d3c": {
+            "name": "villager",
+            "description": "A villagers",
+            "container": "[Room]@(village-d99e4f68-2bf5-409a-96c1-f53a238da3c0)",
+            "id": "villager-32a09ea9-fea1-4fb7-8181-667daa739d3c",
+            "inventory": [
+                "set",
+                []
+            ],
+            "is_player": false,
+            "is_enum_npc": "AnyValue",
+            "is_talkable": "AnyValue",
+            "message": "AnyValue",
+            "is_alive": "AnyValue",
+            "is_interactable": "AnyValue",
+            "is_spoken_with": "AnyValue"
+        },
+        "Your goal is resolve the curse of the werewolf": {
+            "name": "Player",
+            "description": "You are the player.",
+            "container": "[Room]@(village-hall-7c4b5ec1-79ef-4aa1-9c69-1ebef1b28162)",
+            "id": "Your goal is resolve the curse of the werewolf",
+            "inventory": [
+                "set",
+                [
+                    "[Item]@(money-d4c459e5-1a19-4642-9ef7-773c91adb236)"
+                ]
+            ],
+            "is_player": true,
+            "goal": "",
+            "is_enum_npc": "AnyValue",
+            "is_talkable": "AnyValue",
+            "message": "AnyValue",
+            "is_alive": "AnyValue",
+            "is_interactable": "AnyValue",
+            "is_spoken_with": "AnyValue"
+        }
+    },
+    "items": {
+        "basket-f58e006a-71a1-4c3c-8be3-ff3a591f5e08": {
+            "name": "basket",
+            "description": "A basket",
+            "container": "[Room]@(forest-36b3ca5a-04b0-4ddd-80d8-ca79d230699f)",
+            "id": "basket-f58e006a-71a1-4c3c-8be3-ff3a591f5e08",
+            "is_enum_object": "AnyValue",
+            "is_readable": "AnyValue",
+            "content": "AnyValue",
+            "is_object": "AnyValue",
+            "is_hidden": "AnyValue",
+            "is_discovered": "AnyValue",
+            "is_found": "AnyValue"
+        },
+        "torch-d25bfe81-9683-430b-98e8-43b1ccfc2e02": {
+            "name": "torch",
+            "description": "A torch",
+            "container": "[Room]@(general-store-d73fe7c9-3d77-4e76-ae6a-babc1b36c83c)",
+            "id": "torch-d25bfe81-9683-430b-98e8-43b1ccfc2e02",
+            "is_enum_object": "AnyValue",
+            "is_readable": "AnyValue",
+            "content": "AnyValue",
+            "is_object": "AnyValue",
+            "is_hidden": "AnyValue",
+            "is_discovered": "AnyValue",
+            "is_found": "AnyValue"
+        },
+        "lockpicking-tool-de29d9f8-837e-41e3-a8ad-8c6a13b7119c": {
+            "name": "lockpicking tool",
+            "description": "A lockpicking tool",
+            "container": "[Room]@(general-store-d73fe7c9-3d77-4e76-ae6a-babc1b36c83c)",
+            "id": "lockpicking-tool-de29d9f8-837e-41e3-a8ad-8c6a13b7119c",
+            "is_enum_object": "AnyValue",
+            "is_readable": "AnyValue",
+            "content": "AnyValue",
+            "is_object": "AnyValue",
+            "is_hidden": "AnyValue",
+            "is_discovered": "AnyValue",
+            "is_found": "AnyValue"
+        },
+        "map-5e984eb9-6aa5-420f-a6bf-3a6d499cfae7": {
+            "name": "map",
+            "description": "A maps",
+            "container": "[Room]@(library-9697a694-d0af-4f83-8743-4a805d92a014)",
+            "id": "map-5e984eb9-6aa5-420f-a6bf-3a6d499cfae7",
+            "is_enum_object": "AnyValue",
+            "is_readable": "AnyValue",
+            "content": "AnyValue",
+            "is_object": "True",
+            "is_hidden": "AnyValue",
+            "is_discovered": "AnyValue",
+            "is_found": "AnyValue"
+        },
+        "book-86f30c19-6ec5-40ae-a612-ee826894a900": {
+            "name": "book",
+            "description": "A books",
+            "container": "[Room]@(library-9697a694-d0af-4f83-8743-4a805d92a014)",
+            "id": "book-86f30c19-6ec5-40ae-a612-ee826894a900",
+            "is_enum_object": "True",
+            "is_readable": "AnyValue",
+            "content": "AnyValue",
+            "is_object": "AnyValue",
+            "is_hidden": "AnyValue",
+            "is_discovered": "AnyValue",
+            "is_found": "AnyValue"
+        },
+        "flashlight-2f186957-3c9d-4521-9cfd-036f9702a33a": {
+            "name": "flashlight",
+            "description": "A flashlight",
+            "container": "[Room]@(store-ec642dc6-1c4b-4e87-a54c-f3f1d3f31c3a)",
+            "id": "flashlight-2f186957-3c9d-4521-9cfd-036f9702a33a",
+            "is_enum_object": "AnyValue",
+            "is_readable": "AnyValue",
+            "content": "AnyValue",
+            "is_object": "AnyValue",
+            "is_hidden": "AnyValue",
+            "is_discovered": "AnyValue",
+            "is_found": "AnyValue"
+        },
+        "sword-1752f595-63d4-4eb5-a622-b96a58ffdedc": {
+            "name": "sword",
+            "description": "A sword",
+            "container": "[Room]@(weapon-depot-3f90b5f4-4e12-4225-ab87-014e70a5ea82)",
+            "id": "sword-1752f595-63d4-4eb5-a622-b96a58ffdedc",
+            "is_enum_object": "AnyValue",
+            "is_readable": "AnyValue",
+            "content": "AnyValue",
+            "is_object": "AnyValue",
+            "is_hidden": "AnyValue",
+            "is_discovered": "AnyValue",
+            "is_found": "AnyValue"
+        },
+        "key-3d5024d2-ae4a-4f75-a34a-648fa431b4d6": {
+            "name": "key",
+            "description": "A key",
+            "container": "[Room]@(thieves-den-9c644ff0-50fb-4c5a-9eae-ffe4612ac60d)",
+            "id": "key-3d5024d2-ae4a-4f75-a34a-648fa431b4d6",
+            "is_enum_object": "AnyValue",
+            "is_readable": "AnyValue",
+            "content": "AnyValue",
+            "is_object": "AnyValue",
+            "is_hidden": "AnyValue",
+            "is_discovered": "AnyValue",
+            "is_found": "AnyValue"
+        },
+        "armor-2d84f896-60d6-4629-9e70-529e30f7bd56": {
+            "name": "armor",
+            "description": "A armor",
+            "container": "[Room]@(armor-shop-d8c7d517-0547-442c-b892-a7e531183b3c)",
+            "id": "armor-2d84f896-60d6-4629-9e70-529e30f7bd56",
+            "is_enum_object": "AnyValue",
+            "is_readable": "AnyValue",
+            "content": "AnyValue",
+            "is_object": "AnyValue",
+            "is_hidden": "AnyValue",
+            "is_discovered": "AnyValue",
+            "is_found": "AnyValue"
+        },
+        "weapon-a40bf130-805f-44e7-a134-fa394054750a": {
+            "name": "weapon",
+            "description": "A weapons",
+            "container": "[Room]@(dungeon-0e7029a9-056c-4240-ae90-374459a65bc3)",
+            "id": "weapon-a40bf130-805f-44e7-a134-fa394054750a",
+            "is_enum_object": "AnyValue",
+            "is_readable": "AnyValue",
+            "content": "AnyValue",
+            "is_object": "AnyValue",
+            "is_hidden": "AnyValue",
+            "is_discovered": "AnyValue",
+            "is_found": "AnyValue"
+        },
+        "money-d4c459e5-1a19-4642-9ef7-773c91adb236": {
+            "name": "money",
+            "description": "A money",
+            "container": "[Player]@(Your goal is resolve the curse of the werewolf)",
+            "id": "money-d4c459e5-1a19-4642-9ef7-773c91adb236",
+            "is_enum_object": "AnyValue",
+            "is_readable": "AnyValue",
+            "content": "AnyValue",
+            "is_object": "AnyValue",
+            "is_hidden": "AnyValue",
+            "is_discovered": "AnyValue",
+            "is_found": "AnyValue"
+        }
+    },
+    "rooms": {
+        "village-hall-7c4b5ec1-79ef-4aa1-9c69-1ebef1b28162": {
+            "name": "village hall",
+            "description": "You are at village hall",
+            "container": null,
+            "id": "village-hall-7c4b5ec1-79ef-4aa1-9c69-1ebef1b28162",
+            "items": [
+                "set",
+                []
+            ],
+            "characters": [
+                "set",
+                [
+                    "[Player]@(Your goal is resolve the curse of the werewolf)",
+                    "[Character]@(village-elders-2b9cbb40-dfaa-4e98-9769-c244c2e43a32)"
+                ]
+            ],
+            "adjacent_rooms": {
+                "south": "[Room]@(forest-36b3ca5a-04b0-4ddd-80d8-ca79d230699f)"
+            }
+        },
+        "forest-36b3ca5a-04b0-4ddd-80d8-ca79d230699f": {
+            "name": "forest",
+            "description": "You are at forest",
+            "container": null,
+            "id": "forest-36b3ca5a-04b0-4ddd-80d8-ca79d230699f",
+            "items": [
+                "set",
+                [
+                    "[Item]@(basket-f58e006a-71a1-4c3c-8be3-ff3a591f5e08)"
+                ]
+            ],
+            "characters": [
+                "set",
+                [
+                    "[Character]@(werewolf-f66e34d9-3788-4bc9-8918-37f7b838db44)",
+                    "[Character]@(wise-woman-daf6ff4b-d201-4371-b596-5b7dda40ecec)",
+                    "[Character]@(herbalist-5c7c0db5-cf29-49aa-aa67-94ac9c7a43eb)",
+                    "[Character]@(witch-a7f5937e-f5a6-4f80-b8fc-9ee04e3c7488)",
+                    "[Character]@(farmer-f86fe3fa-ee29-49f9-840d-b81f13cdda84)"
+                ]
+            ],
+            "adjacent_rooms": {
+                "north": "[Room]@(village-hall-7c4b5ec1-79ef-4aa1-9c69-1ebef1b28162)",
+                "south": "[Room]@(general-store-d73fe7c9-3d77-4e76-ae6a-babc1b36c83c)"
+            }
+        },
+        "general-store-d73fe7c9-3d77-4e76-ae6a-babc1b36c83c": {
+            "name": "general store",
+            "description": "You are at general store",
+            "container": null,
+            "id": "general-store-d73fe7c9-3d77-4e76-ae6a-babc1b36c83c",
+            "items": [
+                "set",
+                [
+                    "[Item]@(torch-d25bfe81-9683-430b-98e8-43b1ccfc2e02)",
+                    "[Item]@(lockpicking-tool-de29d9f8-837e-41e3-a8ad-8c6a13b7119c)"
+                ]
+            ],
+            "characters": [
+                "set",
+                [
+                    "[Character]@(merchant-46db9000-2c6e-4f34-bdf1-330e9b9a3ab3)"
+                ]
+            ],
+            "adjacent_rooms": {
+                "north": "[Room]@(forest-36b3ca5a-04b0-4ddd-80d8-ca79d230699f)",
+                "south": "[Room]@(library-9697a694-d0af-4f83-8743-4a805d92a014)"
+            }
+        },
+        "library-9697a694-d0af-4f83-8743-4a805d92a014": {
+            "name": "library",
+            "description": "You are at library",
+            "container": null,
+            "id": "library-9697a694-d0af-4f83-8743-4a805d92a014",
+            "items": [
+                "set",
+                [
+                    "[Item]@(book-86f30c19-6ec5-40ae-a612-ee826894a900)",
+                    "[Item]@(map-5e984eb9-6aa5-420f-a6bf-3a6d499cfae7)"
+                ]
+            ],
+            "characters": [
+                "set",
+                []
+            ],
+            "adjacent_rooms": {
+                "north": "[Room]@(general-store-d73fe7c9-3d77-4e76-ae6a-babc1b36c83c)",
+                "south": "[Room]@(abandoned-mansion-281bb587-15ba-4855-8edf-09c0e939afff)"
+            }
+        },
+        "abandoned-mansion-281bb587-15ba-4855-8edf-09c0e939afff": {
+            "name": "abandoned mansion",
+            "description": "You are at abandoned mansion",
+            "container": null,
+            "id": "abandoned-mansion-281bb587-15ba-4855-8edf-09c0e939afff",
+            "items": [
+                "set",
+                []
+            ],
+            "characters": [
+                "set",
+                []
+            ],
+            "adjacent_rooms": {
+                "north": "[Room]@(library-9697a694-d0af-4f83-8743-4a805d92a014)",
+                "south": "[Room]@(store-ec642dc6-1c4b-4e87-a54c-f3f1d3f31c3a)"
+            }
+        },
+        "store-ec642dc6-1c4b-4e87-a54c-f3f1d3f31c3a": {
+            "name": "store",
+            "description": "You are at store",
+            "container": null,
+            "id": "store-ec642dc6-1c4b-4e87-a54c-f3f1d3f31c3a",
+            "items": [
+                "set",
+                [
+                    "[Item]@(flashlight-2f186957-3c9d-4521-9cfd-036f9702a33a)"
+                ]
+            ],
+            "characters": [
+                "set",
+                [
+                    "[Character]@(merchant-5031c453-651f-4dce-823b-656bc495a149)"
+                ]
+            ],
+            "adjacent_rooms": {
+                "north": "[Room]@(abandoned-mansion-281bb587-15ba-4855-8edf-09c0e939afff)",
+                "south": "[Room]@(werewolf-den-716ed90f-e9f9-4c35-a406-d9575d93563b)"
+            }
+        },
+        "werewolf-den-716ed90f-e9f9-4c35-a406-d9575d93563b": {
+            "name": "werewolf den",
+            "description": "You are at werewolf den",
+            "container": null,
+            "id": "werewolf-den-716ed90f-e9f9-4c35-a406-d9575d93563b",
+            "items": [
+                "set",
+                []
+            ],
+            "characters": [
+                "set",
+                [
+                    "[Character]@(werewolf-pack-leader-d96fec09-e3a9-483e-bc00-357284970f81)"
+                ]
+            ],
+            "adjacent_rooms": {
+                "north": "[Room]@(store-ec642dc6-1c4b-4e87-a54c-f3f1d3f31c3a)",
+                "south": "[Room]@(weapon-depot-3f90b5f4-4e12-4225-ab87-014e70a5ea82)"
+            }
+        },
+        "weapon-depot-3f90b5f4-4e12-4225-ab87-014e70a5ea82": {
+            "name": "weapon depot",
+            "description": "You are at weapon depot",
+            "container": null,
+            "id": "weapon-depot-3f90b5f4-4e12-4225-ab87-014e70a5ea82",
+            "items": [
+                "set",
+                [
+                    "[Item]@(sword-1752f595-63d4-4eb5-a622-b96a58ffdedc)"
+                ]
+            ],
+            "characters": [
+                "set",
+                []
+            ],
+            "adjacent_rooms": {
+                "north": "[Room]@(werewolf-den-716ed90f-e9f9-4c35-a406-d9575d93563b)",
+                "south": "[Room]@(thieves-den-9c644ff0-50fb-4c5a-9eae-ffe4612ac60d)"
+            }
+        },
+        "thieves-den-9c644ff0-50fb-4c5a-9eae-ffe4612ac60d": {
+            "name": "thieves den",
+            "description": "You are at thieves den",
+            "container": null,
+            "id": "thieves-den-9c644ff0-50fb-4c5a-9eae-ffe4612ac60d",
+            "items": [
+                "set",
+                [
+                    "[Item]@(key-3d5024d2-ae4a-4f75-a34a-648fa431b4d6)"
+                ]
+            ],
+            "characters": [
+                "set",
+                []
+            ],
+            "adjacent_rooms": {
+                "north": "[Room]@(weapon-depot-3f90b5f4-4e12-4225-ab87-014e70a5ea82)",
+                "south": "[Room]@(village-d99e4f68-2bf5-409a-96c1-f53a238da3c0)"
+            }
+        },
+        "village-d99e4f68-2bf5-409a-96c1-f53a238da3c0": {
+            "name": "village",
+            "description": "You are at village",
+            "container": null,
+            "id": "village-d99e4f68-2bf5-409a-96c1-f53a238da3c0",
+            "items": [
+                "set",
+                []
+            ],
+            "characters": [
+                "set",
+                [
+                    "[Character]@(villager-32a09ea9-fea1-4fb7-8181-667daa739d3c)"
+                ]
+            ],
+            "adjacent_rooms": {
+                "north": "[Room]@(thieves-den-9c644ff0-50fb-4c5a-9eae-ffe4612ac60d)",
+                "south": "[Room]@(armor-shop-d8c7d517-0547-442c-b892-a7e531183b3c)"
+            }
+        },
+        "armor-shop-d8c7d517-0547-442c-b892-a7e531183b3c": {
+            "name": "armor shop",
+            "description": "You are at armor shop",
+            "container": null,
+            "id": "armor-shop-d8c7d517-0547-442c-b892-a7e531183b3c",
+            "items": [
+                "set",
+                [
+                    "[Item]@(armor-2d84f896-60d6-4629-9e70-529e30f7bd56)"
+                ]
+            ],
+            "characters": [
+                "set",
+                []
+            ],
+            "adjacent_rooms": {
+                "north": "[Room]@(village-d99e4f68-2bf5-409a-96c1-f53a238da3c0)",
+                "south": "[Room]@(dungeon-0e7029a9-056c-4240-ae90-374459a65bc3)"
+            }
+        },
+        "dungeon-0e7029a9-056c-4240-ae90-374459a65bc3": {
+            "name": "dungeon",
+            "description": "You are at dungeon",
+            "container": null,
+            "id": "dungeon-0e7029a9-056c-4240-ae90-374459a65bc3",
+            "items": [
+                "set",
+                [
+                    "[Item]@(weapon-a40bf130-805f-44e7-a134-fa394054750a)"
+                ]
+            ],
+            "characters": [
+                "set",
+                []
+            ],
+            "adjacent_rooms": {
+                "north": "[Room]@(armor-shop-d8c7d517-0547-442c-b892-a7e531183b3c)"
+            }
+        }
+    },
+    "player": "Your goal is resolve the curse of the werewolf",
+    "node_attributes": {
+        "name": {
+            "type": "str",
+            "default": "",
+            "belonging_class": "Node",
+            "is_internal": false
+        },
+        "description": {
+            "type": "str",
+            "default": "",
+            "belonging_class": "Node",
+            "is_internal": false
+        },
+        "container": {
+            "type": "Node",
+            "default": null,
+            "belonging_class": "Node",
+            "is_internal": true
+        },
+        "id": {
+            "type": "str",
+            "default": "",
+            "belonging_class": "Node",
+            "is_internal": false
+        },
+        "inventory": {
+            "type": "set",
+            "default": [],
+            "belonging_class": "Character",
+            "is_internal": false
+        },
+        "is_player": {
+            "type": "bool",
+            "default": false,
+            "belonging_class": "Character",
+            "is_internal": false
+        },
+        "goal": {
+            "type": "str",
+            "default": "",
+            "belonging_class": "Player",
+            "is_internal": false
+        },
+        "items": {
+            "type": "set",
+            "default": [],
+            "belonging_class": "Room",
+            "is_internal": false
+        },
+        "characters": {
+            "type": "set",
+            "default": [],
+            "belonging_class": "Room",
+            "is_internal": false
+        },
+        "adjacent_rooms": {
+            "type": "dict",
+            "default": {},
+            "belonging_class": "Room",
+            "is_internal": false
+        },
+        "is_enum_npc": {
+            "type": "str",
+            "default": "AnyValue",
+            "belonging_class": "Character",
+            "is_internal": false
+        },
+        "is_talkable": {
+            "type": "str",
+            "default": "AnyValue",
+            "belonging_class": "Character",
+            "is_internal": false
+        },
+        "message": {
+            "type": "str",
+            "default": "AnyValue",
+            "belonging_class": "Character",
+            "is_internal": false
+        },
+        "is_enum_object": {
+            "type": "str",
+            "default": "AnyValue",
+            "belonging_class": "Item",
+            "is_internal": false
+        },
+        "is_readable": {
+            "type": "str",
+            "default": "AnyValue",
+            "belonging_class": "Item",
+            "is_internal": false
+        },
+        "is_alive": {
+            "type": "str",
+            "default": "AnyValue",
+            "belonging_class": "Character",
+            "is_internal": false
+        },
+        "content": {
+            "type": "str",
+            "default": "AnyValue",
+            "belonging_class": "Item",
+            "is_internal": false
+        },
+        "is_object": {
+            "type": "str",
+            "default": "AnyValue",
+            "belonging_class": "Item",
+            "is_internal": false
+        },
+        "is_hidden": {
+            "type": "str",
+            "default": "AnyValue",
+            "belonging_class": "Item",
+            "is_internal": false
+        },
+        "is_discovered": {
+            "type": "str",
+            "default": "AnyValue",
+            "belonging_class": "Item",
+            "is_internal": false
+        },
+        "is_found": {
+            "type": "str",
+            "default": "AnyValue",
+            "belonging_class": "Item",
+            "is_internal": false
+        },
+        "is_interactable": {
+            "type": "str",
+            "default": "AnyValue",
+            "belonging_class": "Character",
+            "is_internal": false
+        },
+        "is_spoken_with": {
+            "type": "str",
+            "default": "AnyValue",
+            "belonging_class": "Character",
+            "is_internal": false
+        }
+    }
+}

@@ -1,0 +1,101 @@
+{
+    "game_logics": {
+      "adventurer find book.": {
+        "item needed": [],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": ["There is a book at the library."],
+        "results": ["has book"]
+      },
+      "adventurer find sketches.": {
+        "item needed": ["has book"],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": ["There is a sketches at the library."],
+        "results": ["has sketches"]
+      },
+      "adventurer find keys.": {
+        "item needed": [],
+        "location": ["at dungeon"],
+        "preceding_events": [],
+        "description": ["There is a set of keys at the dunge"],
+        "results": ["has keys"]
+      },
+      "Solve puzzles to release trapped characters.": {
+        "item needed": ["has keys"],
+        "location": ["at dungeon"],
+        "preceding_events": [],
+        "description": [],
+        "results": []
+      },
+      "adventurer get permission from owner.": {
+        "item needed": [],
+        "location": ["at negotiation table"],
+        "preceding_events": [],
+        "description": ["There is a negotiation table."],
+        "results": ["has permission from owner"]
+      },
+      "adventurer take sword.": {
+        "item needed": ["has permission from owner"],
+        "location": ["at weapons rack"],
+        "preceding_events": [],
+        "description": ["There is a sword on the weapons rack."],
+        "results": ["has sword"]
+      },
+      "Defeat the formidable boss creature ruling over.": {
+        "item needed": ["has sword"],
+        "location": ["at dungeon"],
+        "preceding_events": ["Solve puzzles to release trapped characters."],
+        "description": [],
+        "results": []
+      },
+      "adventurer buy brushes.": {
+        "item needed": ["has money"],
+        "location": ["at general store"],
+        "preceding_events": [],
+        "description": ["There is a general store where adventurer can buy"],
+        "results": ["has brushes"]
+      },
+      "Restore the artist's original vision by repairing the damaged artwork.": {
+        "item needed": ["has brushes"],
+        "location": ["at art gallery"],
+        "preceding_events": ["Defeat the formidable boss creature ruling over."],
+        "description": [],
+        "results": []
+      },
+      "Escape the painting before the curse consumes the player forever.": {
+        "item needed": [],
+        "location": ["at painting"],
+        "preceding_events": ["Restore the artist's original vision by repairing the damaged artwork."],
+        "description": [],
+        "results": []
+      }
+    },
+    "map": {
+      "at art gallery": [
+        {"type": "npc", "content": "has artist"},
+        {"type": "item", "content": "has damaged artwork"}
+    ],
+      "at library": [
+        {"type": "item", "content": "has sketches"},
+        {"type": "item", "content": "has book"}
+      ],
+      "at dungeon": [
+        {"type": "item", "content": "has keys"},
+        {"type": "npc", "content": "has formidable boss creature"},
+        {"type": "item", "content": "has trapped characters"}
+      ],
+      "at weapons rack": [
+        {"type": "item", "content": "has sword"}
+      ],
+      "at negotiation table": [
+        {"type": "item", "content": "has permission from owner"},
+        {"type": "npc", "content": "has owner"}
+      ],
+      "at general store": [
+        {"type": "item", "content": "has brushes"},
+        {"type": "npc", "content": "has merchant"}
+      ],
+      "at painting": []
+    }
+  }

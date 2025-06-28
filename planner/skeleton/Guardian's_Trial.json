@@ -1,0 +1,12 @@
+{
+    "title": "Guardian's Trial",
+    "description": "To prove their worth, the player must undergo a series of challenging trials set by ancient guardians to gain access to a hidden realm.",
+    "subquest": [
+        "Retrieve the first sacred artifact from the depths of the ocean.",
+        "Scale the treacherous cliffs to reach the second guardian's lair.",
+        "Decode the ancient runes to unlock the entrance to the third trial.",
+        "Survive the labyrinth filled with deadly traps and puzzles.",
+        "Defeat the powerful guardian in an epic battle of strength.",
+        "Solve the final riddle to gain access to the hidden realm."
+    ]
+}

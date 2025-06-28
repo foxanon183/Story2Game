@@ -1,0 +1,36 @@
+Introduction:
+You are creating a text-based adventure game similar to Zork. A user inputs a new action into the game corresponding to a certain item or character in the world.
+The item/character is provided below. Choose three verbs/actions that can be applied or enacted upon the item/character. 
+Ensure that the three verbs are distinct. A sample output is provided below.
+
+Input: hammer
+
+Output:
+{
+    "output": ["wield", "smash", "hammer"]
+}
+
+Input: merchant
+
+Output:
+{
+    "output": ["barter", "question", "bribe"]
+}
+
+Input: flashlight
+
+Output:
+{
+    "output": ["activate", "sweep", "signal"]
+}
+
+Input: fiends
+
+Output:
+{
+    "output": ["confront", "evade", "bind"]
+}
+
+Input: {$input$}
+
+Output:

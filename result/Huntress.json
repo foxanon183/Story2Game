@@ -1,0 +1,133 @@
+{
+    "game_logics": {
+      "climb mountains to retrieve a egg.": {
+        "item needed": ["has rope"],
+        "location": ["at mountains"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has egg"]
+      },
+      "hatch the egg after several months and get a dragon.": {
+        "item needed": [],
+        "location": ["at home"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has dragon"]
+      },
+      "adventurer build wings.": {
+        "item needed": [],
+        "location": ["at blacksmith"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has wings"]
+      },
+      "train the dragon to become the best fighter.": {
+        "item needed": ["has wings"],
+        "location": ["at home"],
+        "preceding_events": [],
+        "description": [],
+        "results": []
+      },
+      "Master the art of aerial combat against dangerous wyverns.": {
+        "item needed": ["has wings"],
+        "location": ["at flying school"],
+        "preceding_events": ["climb mountains to retrieve a egg."],
+        "description": [],
+        "results": ["has combat mastery"]
+      },
+      "adventurer buy key.": {
+        "item needed": ["has money"],
+        "location": ["at key master shop"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has key"]
+      },
+      "adventurer take sword.": {
+        "item needed": ["has key"],
+        "location": ["at weapon depot"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has sword"]
+      },
+      "Discover the hidden lair of a rogue phoenix and restore peace.": {
+        "item needed": ["has sword"],
+        "location": ["at hidden lair"],
+        "preceding_events": ["Master the art of aerial combat against dangerous wyverns."],
+        "description": [],
+        "results": []
+      },
+      "Compete in a thrilling aerial race against skilled huntresses.": {
+        "item needed": ["has wings"],
+        "location": ["at sky"],
+        "preceding_events": ["Discover the hidden lair of a rogue phoenix and restore peace."],
+        "description": [],
+        "results": []
+      },
+      "adventurer find pliers.": {
+        "item needed": [],
+        "location": ["at tool shed"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has pliers"]
+      },
+      "adventurer find parts.": {
+        "item needed": ["has pliers"],
+        "location": ["at junkyard"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has parts"]
+      },
+      "adventurer build airship.": {
+        "item needed": ["has parts"],
+        "location": ["at workshop"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has airship"]
+      },
+      "Protect the realm from a massive aerial invasion led by a powerful sorcerer.": {
+        "item needed": ["has airship"],
+        "location": ["at sky"],
+        "preceding_events": ["Compete in a thrilling aerial race against skilled huntresses."],
+        "description": [],
+        "results": ["has realm saved"]
+      }
+    },
+    "map": {
+      "at mountains": [
+        {"type": "item", "content": "has rope"},
+        {"type": "item", "content": "has egg"}
+      ],
+      "at home": [
+        {"type": "item", "content": "has dragon"}
+      ],
+      "at blacksmith": [
+        {"type": "item", "content": "has wings"}
+      ],
+      "at flying school": [
+        {"type": "npc", "content": "has wyverns"}
+      ],
+      "at hidden lair": [
+        {"type": "npc", "content": "has phoenix"}
+      ],
+      "at weapon depot": [
+        {"type": "item", "content": "has sword"}
+      ],
+      "at key master shop": [
+        {"type": "item", "content": "has key"}, 
+        {"type": "npc", "content": "has merchant"}
+      ],
+      "at sky": [
+        {"type": "npc", "content": "has other adventurers"}
+      ],
+      "at workshop": [
+        {"type": "item", "content": "has airship"}
+      ],
+      "at junkyard": [
+        {"type": "item", "content": "has parts"}
+      ],
+      "at tool shed": [
+        {"type": "item", "content": "has pliers"}, 
+        {"type": "npc", "content": "has blacksmith"}
+      ]
+    }
+}

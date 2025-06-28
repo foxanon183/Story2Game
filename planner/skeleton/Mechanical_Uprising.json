@@ -1,0 +1,12 @@
+{
+    "title": "Mechanical Uprising",
+    "description": "Rogue automatons threaten to overrun the land. The player must uncover their creator's hidden lair and deactivate the production facility.",
+    "subquest": [
+        "Investigate the recent automaton attacks and gather intel.",
+        "Follow the trail of clues to locate the creator's secret lair.",
+        "Navigate through a maze of traps and puzzles to access the lair.",
+        "Discover the creator's master plan and the source of their power.",
+        "Disable the production facility to halt the automaton uprising.",
+        "Confront the mastermind behind the rogue automatons and defeat them."
+    ]
+}

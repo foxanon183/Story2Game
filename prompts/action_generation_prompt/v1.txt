@@ -1,0 +1,110 @@
+Introduction:
+You are creating a text-based adventure game similar to Zork. One of your responsibilities is to design the game engine's action system. Actions can alter the game's state represented by a tree structure with nodes. Each node can be a room, item, or character. 
+Given a sentence, determine the precondition and effect of the actions, utilizing a set template for defining preconditions and effects.
+
+Preconditions: 
+
+1. Attribute Check {node1.attribute_a==value} // The node can be any node in the game. The attribute can be any string, and the value can be any integer, string, or boolean. Allowed operators are ==, !=, >, <, >=, <=.
+2. Inventory Check: {player has item1} // The player must have all of the specified nodes in their inventory.
+3. Location Check: {player in room1}; {node1 in room2}
+To compose complex preconditions, you can use the standard python logical operators: and, or, not. Each expression is enclosed in its own {}.
+{node1.attribute_a==value} and {node2.attribute_b>value} or {player has item1} and ({player in room1} or {node1 in room2})
+
+Effects:
+
+1. Move {node1} to {node2/inventory/environment} // Move node1 to node2 or to the player's inventory or to the environment.
+2. Set {node.some_attribute} to {value} // Set the attribute of a node to a value. The attribute can be any string, and the value can be any integer, string, or boolean.
+3. Delete {node} // Remove the node from the game. One possible scenario is when some item is consumed by the player.
+4. Add {node_name} of type {Item/Character} to {node/inventory/environment} // Add a node to the game. One possible scenario is when the player crafts an item. The item being created must not already exist in the game.
+5. Display Some message with {node.some_attribute} // Display a message to the player. The game will print f"Some message with {node.some_attribute}"
+
+Based on the above templates, determine the necessary attributes and the effects of different actions. Stick strictly to the available action templates. The conditions should not be too strict or finicky.
+
+Input:
+Adventurer gets the sword; room: village hall.
+
+Output:
+Annotated Form: {player: adventurer} gets {item1: sword} at {room1: village hall}.
+Base Form: get {item1} at {room1}
+Arguments: {"item1": "sword", "room1": "village hall"}
+Preconditions: {player at room1} and {item1 at room1}
+Effects: Move {item1} to {inventory}; Display You got {item1}!
+
+Input:
+The student goes to the library; room: library.
+
+Output:
+Annotated Form: {player: student} goes to {room1: library}.
+Base Form: go to {room1}
+Arguments: {"room1": "library"}
+Preconditions: None
+Effects: Move {player} to {room1}; Display You are in {room1}.\n{player.observation}.
+
+Input:
+The king eats the apple and the banana; room: throne.
+
+Output:
+Annotated Form: {player: king} eats {enum(item): [apple, banana]} at {room1: throne}.
+Base Form: eat {enum(item)} at {room1}
+Arguments: {"enum(item)": ["apple", "banana"], "room1": "throne"}
+Preconditions: {player has enum(item)} and {enum(item).is_edible==True}
+Effects: Delete {enum(item)}; Display You ate {enum(item)}!
+
+Input:
+Thomas buys the sword with the gold; room: general store.
+
+Output:
+Annotated Form: {player: thomas} buys {item1: sword} with {item2: gold} at {room1: general store}.
+Base Form: buy {item1} with {item2} at {room1}
+Arguments: {"item1": "sword", "item2": "gold", "room1": "general store"}
+Preconditions: {player at room1} and {item1 at room1} and {player has {item2}} and {{item1}.is_for_sale==True} and {{item2}.is_currency==True}
+Effects: Move {item1} to {inventory}; Set {item1.is_for_sale} to {False}; Display You bought {item1} with {item2}!
+
+Input:
+Angela opens the chest; room: dungeon.
+
+Output:
+Annotated Form: {player: angela} opens {item1: chest} at {room1: dungeon}.
+Base Form: open {item1} at {room1}
+Arguments: {"item1": "chest", "room1": "dungeon"}
+Preconditions: {player at room1} and {item1 at room1} and {{item1}.is_container==True} and {{item1}.is_open==False} and ({{item1}.is_locked==False} or {player has key})
+Effects: Set {item1.is_open} to {True}; Set {item1.is_locked} to {False}; Display You opened {item1}!
+
+Input:
+Steve crafts the sword with the iron and the wood; room: living room.
+
+Output:
+Annotated Form: {player: steve} crafts {item1: sword} with {enum(item): [iron, wood]} at {room1: living room}.
+Base Form: craft {item1} with {enum(item)} at {room1}
+Arguments: {"item1": "sword", "enum(item)": ["iron", "wood"], "room1": "living room"}
+Preconditions: {player at room1} and {item1 at room1} and {player has enum(item)} and {enum(item).is_material==True}
+Effects: Add {item1} of type {Item} to {inventory}; Display You crafted {item1} with {enum(item)}!
+
+Input:
+Player looks around.
+
+Output:
+Annotated Form: {player: player} looks around.
+Base Form: look around
+Arguments: {}
+Preconditions: None
+Effects: Display {player.observation}
+
+Input:
+Tom fatally shot Jerry; room: at yard.
+
+Output:
+Annotated Form: {player: tom} fatally shot {character1: jerry} at {room1: yard}.
+Base Form: shoot {character1} at {room1}
+Arguments: {"character1": "jerry", "room1": yard}
+Preconditions: {player at room1} and {character1 at room1} and {player has gun} and {character1.is_alive==True}
+Effects: Set {character1.is_alive} to {False}; Display You fatally shot {character1}, who is now dead!
+
+${previous_attempts?}$
+
+Make sure there are no nested loops in preconditions!
+
+Input:
+${input}$
+
+Output:

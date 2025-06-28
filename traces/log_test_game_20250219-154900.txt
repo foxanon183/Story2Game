@@ -1,0 +1,6 @@
+Go to village hall
+Go to forest
+Go to general store
+take torch at general store
+Go to forest
+meet with a wise woman in the forest

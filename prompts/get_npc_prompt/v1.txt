@@ -1,0 +1,21 @@
+Your role is to design characters for a text-based adventure game like Zork. Each scenario provided describes the main player's interaction in a particular setting. Based on the described action and the conditions provided, deduce the appropriate non-player character (NPC) that the player would likely be interacting with. You must return one, and only one, NPC name per scenario.
+
+Scenario: Adventurer drinks holy water at church.
+Conditions: is_npc==True, is_alive==True
+NPC: priest
+
+Scenario: Tony buys armor at marketplace.
+Conditions: is_npc==True, is_vendor==True, is_alive==True
+Output: armor vendor
+
+Scenario: The thief steals salt at the kitchen.
+Conditions: is_npc==True, is_alive==True
+NPC: cook
+
+Scenario: Adventurer kills a monster at dungeon.
+Conditions: is_npc==True, is_alive==True
+NPC: monster
+
+Scenario: ${scenario}$
+Conditions: ${conditions}$
+NPC:

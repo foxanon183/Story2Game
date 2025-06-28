@@ -1,0 +1,12 @@
+{
+    "title": "Elixir of Immortality",
+    "description": "The player embarks on a journey to discover the ingredients for an elixir that grants eternal life, but must navigate through dangerous realms to obtain them.",
+    "subquest": [
+        "Seek the guidance of the ancient alchemist to learn about the elixir.",
+        "Venture into the haunted forest to find the first rare herb.",
+        "Solve the puzzle in the abandoned temple to obtain the second ingredient.",
+        "Traverse the treacherous mountains to collect the rare flower.",
+        "Defeat the mythical creature guarding the final ingredient.",
+        "Brew the elixir in the sacred cauldron and unlock eternal life."
+    ]
+}

@@ -1,0 +1,58 @@
+[
+    {
+        "input": "Thomas buys the sword with the gold",
+        "output": {
+            "player": "thomas",
+            "rooms": ["room1"],
+            "items": ["sword", "gold"],
+            "annotated_form": "{player} buys {items[0]} with {items[1]}",
+            "base_form": "buy {items[0]} with {items[1]}",
+            "fundamental_preconditions": ["{player} in {rooms[0]}", "{items[0]} in {rooms[0]}", "{player} has {inventory}"],
+            "additional_preconditions": ["{items[1]} in {inventory}", "{items[0]}.is_for_sale == True", "{items[1]}.is_currency == True"],
+            "effect": ["Move {items[0]} to {inventory}", "Delete {items[1]}", "{items[0]}.is_for_sale == False"],
+            "display": "You bought a {items[0]} with {items[1]}!"
+        }
+    },
+    {
+        "input": "Adventurer gets the sword",
+        "output": {
+            "player": "adventurer",
+            "rooms": ["room1"],
+            "items": ["sword"],
+            "annotated_form": "{player} gets {items[0]}",
+            "base_form": "get {items[0]}",
+            "fundamental_preconditions": ["{player} in {rooms[0]}", "{items[0]} in {rooms[0]}", "{player} has {inventory}"],
+            "additional_preconditions": [],
+            "effect": ["Move {items[0]} to {inventory}"],
+            "display": "You got {items[0]}!"
+        }
+    },
+    {
+        "input": "The student goes to the library.",
+        "output": {
+            "player": "student",
+            "rooms": ["library"],
+            "items": [],
+            "annotated_form": "{player} goes to {rooms[0]}",
+            "base_form": "go to {rooms[0]}",
+            "fundamental_preconditions": ["{player} not in {rooms[0]}"],
+            "additional_preconditions": [],
+            "effect": ["Move {player} to {rooms[0]}"],
+            "display": "You are in {rooms[0]}.\n{player.observation}"
+        }
+    },
+    {
+        "input": "The king eats the apple and the banana.",
+        "output": {
+            "player": "king",
+            "rooms": [],
+            "items": ["apple", "banana"],
+            "annotated_form": "{player} eats {enum(items)}",
+            "base_form": "go to {rooms[0]}",
+            "fundamental_preconditions": [],
+            "additional_preconditions": ["{enum(items)} in {inventory}", "{enum(items)}.is_edible == True"],
+            "effect": ["Delete {enum(items)}"],
+            "display": "You ate {enum(item)}!"
+        }
+    }
+]

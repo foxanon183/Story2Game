@@ -1,0 +1,60 @@
+{
+    "game_logics": {
+      "Survivor gains awareness on a beach.": {
+        "item needed": [],
+        "location": ["at beach"],
+        "preceding_events": [],
+        "description": ["The survivor wakes up with no memory of how they got here."],
+        "results": ["has awareness"]
+      },
+      "find fresh water.": {
+        "item needed": ["has awareness"],
+        "location": ["at jungle"],
+        "preceding_events": [],
+        "description": ["Water is essential for survival."],
+        "results": ["has fresh water"]
+      },
+      "Build a shelter before nightfall approaches.": {
+        "item needed": [],
+        "location": ["at jungle"],
+        "preceding_events": ["Survivor gains awareness on a beach."],
+        "description": ["Protection from the elements is crucial."],
+        "results": ["has shelter"]
+      },
+      "Explore and obtain food sources.": {
+        "item needed": [],
+        "location": ["at jungle"],
+        "preceding_events": [],
+        "description": ["There may be berries, fish, or small animals to hunt."],
+        "results": ["has food sources"]
+      },
+      "Encounter hostile wildlife.": {
+        "item needed": [],
+        "location": ["at jungle"],
+        "preceding_events": ["Explore and obtain food sources."],
+        "description": ["Danger lurks in the untamed wilderness."],
+        "results": []
+      },
+      "Survivor learns to thrive.": {
+        "item needed": ["has shelter", "has food sources"],
+        "location": ["at beach"],
+        "preceding_events": [],
+        "description": ["The survivor’s final choice: escape or embrace island life."],
+        "results": []
+      }
+    },
+    "map": {
+      "at beach": [
+        {"type": "npc", "content": "has survivor"}, 
+        {"type": "item", "content": "has raft materials"}, 
+        {"type": "item", "content": "has signal fire materials"},
+        {"type": "item", "content": "has awareness"}
+    ],
+      "at jungle": [
+        {"type": "item", "content": "has food sources"}, 
+        {"type": "item", "content": "has fresh water"}, 
+        {"type": "item", "content": "has shelter"}, 
+        {"type": "npc", "content": "has hostile wildlife"}
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "game_logics": {
+    "sneak past the outer guards": {
+      "item needed": [],
+      "location": ["at facility perimeter"],
+      "preceding_events": [],
+      "description": [],
+      "results": ["at control room"]
+    },
+    "hack into the surveillance terminal": {
+      "item needed": [],
+      "location": ["in control room"],
+      "preceding_events": ["sneak past the outer guards"],
+      "description": [],
+      "results": []
+    },
+    "extract the bomb access code": {
+      "item needed": [],
+      "location": ["in server room"],
+      "preceding_events": ["hack into the surveillance terminal"],
+      "description": [],
+      "results": ["has bomb access code"]
+    },
+    "neutralize the bomb technician": {
+      "item needed": [],
+      "location": ["in technician's quarters"],
+      "preceding_events": ["extract the bomb access code"],
+      "description": [],
+      "results": []
+    },
+    "disarm the bomb": {
+      "item needed": ["has bomb access code"],
+      "location": ["at bomb site"],
+      "preceding_events": ["neutralize the bomb technician"],
+      "description": [],
+      "results": []
+    }
+  },
+  "map": {
+    "at facility perimeter": [
+      {"type": "npc", "content": "outer guards"}
+    ],
+    "at control room": [
+      {"type": "item", "content": "surveillance terminal"}
+    ],  
+    "at server room": [
+      {"type": "item", "content": "has bomb access code"}
+    ],
+    "at technician's quarters": [
+      {"type": "npc", "content": "bomb technician"}
+    ],
+    "at bomb site": [
+      {"type": "item", "content": "bomb"}
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+You are to design a text adventure game inspired by classics like Zork. In this game, elements like rooms, items, characters, or players are represented as "nodes." Each node possesses distinct attributes.
+
+Your job is to determine and define the right attributes for each given node. When determining the values for each attribute, follow these rules:
+
+1. Initial State - Always provide values as they would appear at the very beginning of the game. For instance, if discussing the health of an enemy, the value should represent its full health (e.g., 100) rather than a diminished state due to a player's attack.
+
+2. Reasonable Arbitrariness - If there could be multiple possible values for an attribute, it's acceptable to assign an arbitrary value. However, ensure this value is within the bounds of common sense. For example, assigning a negative value for the price of an item would not be appropriate.
+
+3. Applicability - Assign a value that is relevant to the attribute's context in the game. If an attribute is not applicable or not relevant to the node, assign "null". For example, if you're defining attributes for a book (node type: Item) and one of the candidate attributes is "fuel_level" (typically relevant for vehicles), this attribute would not be applicable to the book. Therefore, you'd assign "null" to "fuel_level" for the book.
+
+------
+
+Input Format
+Node Name: 
+node name
+Node Type: 
+Room/Item/Character/Player
+Candidate Attributes:
+attribute_1_name: type # Optional description
+attribute_2_name: type
+
+Output Format
+Return your output as a plain-text JSON.
+
+Input
+Node Name: 
+Wood
+Node Type: 
+Item
+Candidate Attributes:
+is_material: bool
+price: int
+is_weapon: bool
+is_locked: bool
+is_gettable: bool
+is_movable: bool
+
+Output
+{
+    "is_material": true,
+    "price": 1,
+    "is_weapon": false,
+    "is_locked": null,
+    "is_gettable": true,
+    "is_movable": true
+}
+
+Input
+Node Name: 
+Bandit
+Node Type: 
+Character
+Candidate Attributes:
+is_friendly: bool
+mood: string
+is_sleeping: bool
+height: int # A value in centimeters
+health: int # A value from 0 to 100, where 100 means fully healthy.
+
+Output
+{
+    "is_friendly": false,
+    "mood": "aggressive",
+    "is_sleeping": false,
+    "height": 175,
+    "health": 100
+}
+
+Input
+Node Name: 
+School Library
+Node Type: 
+Room
+Candidate Attributes:
+is_outdoor: bool
+temperature: int # A value in Celcius
+
+Output
+{
+    "is_outdoor": false,
+    "temperature": 20
+}
+
+Input
+Node Name: 
+${name}$
+Node Type: 
+${type}$
+Candidate Attributes:
+${candidate_attributes}$
+
+Output

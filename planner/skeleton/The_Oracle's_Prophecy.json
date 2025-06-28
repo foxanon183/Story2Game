@@ -1,0 +1,12 @@
+{
+    "title": "The Oracle's Prophecy",
+    "description": "Guided by an oracle's prophecy, the player embarks on a quest to retrieve a set of enchanted crystals needed to prevent an impending catastrophe.",
+    "subquest": [
+        "Seek the ancient oracle's guidance to learn about the prophecy.",
+        "Traverse dangerous terrains to find the first enchanted crystal.",
+        "Solve puzzles in the hidden temple to obtain the second crystal.",
+        "Brave the treacherous swamp to retrieve the third crystal.",
+        "Outsmart the guardian of the ancient ruins to obtain the fourth crystal.",
+        "Uncover the final crystal's location in the depths of the mystical cave."
+    ]
+}

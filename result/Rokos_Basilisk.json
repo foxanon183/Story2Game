@@ -1,0 +1,47 @@
+{
+    "game_logics": {
+      "get the computer": {
+        "item needed": [],
+        "location": ["at lab"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has computer"]
+      },
+      "create AI with the technological power": {
+        "item needed": ["has computer"],
+        "location": ["at lab"],
+        "preceding_events": ["get the computer"],
+        "description": [],
+        "results": ["has AI"]
+      },
+      "attain the kill codes to deactivate the AI": {
+        "item needed": ["has AI"],
+        "location": ["at lab"],
+        "preceding_events": ["create AI with the technological power"],
+        "description": [],
+        "results": ["has kill codes"]
+      },
+      "secretly create shut-down algorithm to destroy it": {
+        "item needed": ["has computer"],
+        "location": ["at lab"],
+        "preceding_events": ["get the computer"],
+        "description": [],
+        "results": ["has algorithm"]
+      },
+      "kill the AI": {
+        "item needed": ["has AI", "has algorithm", "has kill codes"],
+        "location": ["at lab"],
+        "preceding_events": ["create AI with the technological power", "secretly create shut-down algorithm to destroy it"],
+        "description": [],
+        "results": []
+      }
+    },
+    "map": {
+      "at lab": [
+        {"type": "item", "content": "has computer"},
+        {"type": "npc", "content": "has AI"},
+        {"type": "item", "content": "has kill codes"},
+        {"type": "item", "content": "has shut-down algorithm"}
+    ]
+  }
+}

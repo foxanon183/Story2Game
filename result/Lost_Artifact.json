@@ -1,0 +1,109 @@
+{
+    "game_logics": {
+      "adventurer find book.": {
+        "item needed": [],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": ["There is a book at the library which the advent"],
+        "results": ["has book"]
+      },
+      "Find the ancient map.": {
+        "item needed": ["has book"],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has map"]
+      },
+      "adventurer buy warm clothing.": {
+        "item needed": ["has money"],
+        "location": ["at clothing store"],
+        "preceding_events": [],
+        "description": ["There is warm clothing for sale at the cl"],
+        "results": ["has warm clothing"]
+      },
+      "Traverse through the perilous snowstorm to reach the mountain range.": {
+        "item needed": ["has warm clothing"],
+        "location": ["at mountain pass"],
+        "preceding_events": ["Find the ancient map."],
+        "description": [],
+        "results": ["has mountains reached"]
+      },
+      "adventurer solve riddles.": {
+        "item needed": ["has book"],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": ["There is a collection of riddles at the"],
+        "results": ["has riddles"]
+      },
+      "Solve the riddles guarding the hidden cave.": {
+        "item needed": ["has riddles"],
+        "location": ["at entrance to the hidden cave"],
+        "preceding_events": ["Traverse through the perilous snowstorm to reach the mountain range."],
+        "description": [],
+        "results": []
+      },
+      "adventurer make sword.": {
+        "item needed": [],
+        "location": ["at forge"],
+        "preceding_events": [],
+        "description": ["There is a sword being made at a forge"],
+        "results": ["has sword"]
+      },
+      "Defeat the ferocious guardian protecting the artifact.": {
+        "item needed": ["has sword"],
+        "location": ["at guardian's lair"],
+        "preceding_events": ["Solve the riddles guarding the hidden cave."],
+        "description": [],
+        "results": []
+      },
+      "adventurer buy rope making supplies.": {
+        "item needed": ["has money"],
+        "location": ["at general store"],
+        "preceding_events": [],
+        "description": ["There is rope making supplies for sale at the general store"],
+        "results": ["has rope making supplies"]
+      },
+      "adventurer make rope.": {
+        "item needed": ["has rope making supplies"],
+        "location": ["at rope maker"],
+        "preceding_events": [],
+        "description": ["There is a rope maker who makes rope"],
+        "results": ["has rope"]
+      },
+      "Escape the collapsing cave before it seals the treasure forever.": {
+        "item needed": ["has rope"],
+        "location": ["at cave"],
+        "preceding_events": ["Defeat the ferocious guardian protecting the artifact."],
+        "description": [],
+        "results": []
+      }
+    },
+    "map": {
+      "at library": [
+        {"type": "item", "content": "has book"},
+        {"type": "item", "content": "has riddles"}
+      ],
+      "at mountain pass": [],
+      "at clothing store": [
+        {"type": "item", "content": "has warm clothing"},
+        {"type": "npc", "content": "has merchant"}
+      ],
+      "at entrance to the hidden cave": [],
+      "at guardian's lair": [
+        {"type": "npc", "content": "has guardian"},
+        {"type": "item", "content": "has artifact"}
+      ],
+      "at forge": [
+        {"type": "item", "content": "has sword"},
+        {"type": "npc", "content": "has blacksmith"}
+      ],
+      "at cave": [],
+      "at rope maker": [
+        {"type": "item", "content": "has rope"}
+      ],
+      "at general store": [
+        {"type": "item", "content": "has rope making supplies"},
+        {"type": "npc", "content": "has merchant"}
+      ]
+    }
+  }

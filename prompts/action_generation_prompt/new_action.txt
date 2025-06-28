@@ -1,0 +1,198 @@
+Introduction:
+You are creating a text-based adventure game similar to Zork. One of your responsibilities is to design the game engine's action system. Actions can alter the game's state represented by a tree structure with nodes. Each node can be a room, item, or character. 
+Given a sentence, determine the requirements of the actions, utilizing a set template. For requirements (between 1 and 3), focus on either items, attributes (like DnD), or other events that might be necessary preconditions to enable the action.
+Do not include any requirements that would be considered fundamental, such as being in the same location, or existing. Those are unnecessary.
+Preceding_events have nothing to do with items and attributes; they are independent events that must come before the input.
+If the ”preceding” input is false, do not include any preceding events. Otherwise you may or may not include preceding events
+
+Possible Effects:
+
+1. Move {node1} to {node2/inventory} // Move node1 to node2 or to the player's inventory.
+2. Set {node.some_attribute} to {value} // Set the attribute of a node to a value. The attribute can be any string, and the value can be any integer or boolean.
+3. Delete {node} // Remove the node from the game. One possible scenario is when some item is consumed by the player.
+4. Add {node_name} of type {Item/Character} to {node/inventory} // Add a node to the game. One possible scenario is when the player crafts an item. The item being created must not already exist in the game.
+5. Display Some message with {node.some_attribute} // Display a message to the player. The game will print f"Some message with {node.some_attribute}"
+
+
+Following are examples to base the general format of the output on.
+Input: Cut the tree; room: at forest.
+
+Output:
+{
+    "input": Cut the tree; preceding: false; room: at forest.
+    "output": {
+        "player": "adventurer",
+        "subject": "tree",
+        "rooms": ["forest],
+        "items": ["tree", "axe"],
+        "characters": [],
+        "attributes": [],
+        "preceding_events": [],
+        "annotated_form": "{player: adventurer} cuts the {items[0]: tree} with {items[1]: axe} at {rooms[0]: forest}.",
+        "base_form": "cut the {items[0]} with {items[1]} at {rooms[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}", "{player has items[0]}", "{items[1] at rooms[0]}"],
+        "additional_preconditions": [],
+        "attribute_effects": ["{tree.cut==True}"],
+        "effects": ["Set {items[0]}.cut to True"],
+        "display": "You cut the {items[0]}.",
+        "complete_sentence": "Adventurer cuts the tree with an axe"
+    }
+}
+
+Input: 
+
+Input: Distract the guard; preceding: true; room: at dungeon.
+
+Output:
+{
+    "input": Distract the guard,
+    "output": {
+        "player": "adventurer",
+        "subject": "guard",
+        "rooms": ["dungeon"],
+        "items": [],
+        "characters": ["guard"],
+        "attributes": {},
+        "preceding_events": ["Set bush on fire],
+        "annotated_form": "{player: adventurer} distracts the {characters[0]: guard} at {rooms[0]: dungeon}.",
+        "base_form": "distract the {characters[0]} at {rooms[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}", "{characters[0] at rooms[0]}"],
+        "additional_preconditions": [],
+        "attribute_effects": ["{guard.distracted==True}"],
+        "effects": ["Set {characters[0]}.distracted to True"],
+        "display": "You distracted the {characters[0]}.",
+        "complete_sentence": "Adventurer distracts the guard"
+    }  
+}
+
+Input: Defuse the bomb; preceding: false; room: at kitchen.
+
+Output:
+{
+    "input": "Disarm the bomb",
+    "output": {
+        "player": "adventurer",
+        "subject": "bomb",
+        "rooms": ["kitchen"],
+        "items": ["bomb", "screwdriver", "wirecutter"],
+        "characters": [],
+        "attributes": {},
+        "preceding_events": [],
+        "annotated_form": "{player: adventurer} disarms the {items[0]: bomb} with {items[1]: screwdriver} and {items[2]: wirecutter} at {rooms[0]: kitchen}.",
+        "base_form": "disarm the {items[0]} with {items[1]} and {items[2]} at {rooms[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}", "{items[0] at rooms[0]}", "{player has items[1]}", "{player has items[2]}"],
+        "additional_preconditions": [],
+        "attribute_effects": ["{bomb.disarmed==True}"],
+        "effects": ["Set {items[0]}.disarmed to True"],
+        "display": "You defused the {items[0]}.",
+        "complete_sentence": "Adventurer disarms the bomb with a screwdriver and a wirecutter"
+    }  
+}
+
+Input: Bribe the soldier; preceding; either; room: at beach
+
+{
+    "input": "Bribe the soldier; room: watchtower.",
+    "output": {
+        "player": "adventurer",
+        "subject": "soldier",
+        "rooms": ["watchtower"],
+        "items": ["gold coin"],
+        "characters": ["soldier"],
+        "attributes": {},
+        "preceding_events": ["Give gold coin to soldier"],
+        "annotated_form": "{player: adventurer} bribes the {characters[0]: soldier} with {items[0]: gold coin} at {rooms[0]: watchtower}.",
+        "base_form": "bribe the {characters[0]} with {items[0]} at {rooms[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}", "{player has items[0]}", "{characters[0] at rooms[0]}"],
+        "additional_preconditions": [],
+        "attribute_effects": ["{soldier.bribed==True}"],
+        "effects": ["Set {characters[0]}.bribed to True"],
+        "display": "You bribed the {characters[0]}.",
+        "complete_sentence": "Adventurer bribes the soldier with a gold coin"
+    }
+}
+
+Input: Break open the car window; preceding: either; room: at garage.
+
+Output:
+{
+    "input": "Break open the car window",
+    "output": {
+        "player": "adventurer",
+        "subject": "car window",
+        "rooms": ["garage"],
+        "items": ["car window", "car seat headrest"],
+        "characters": [],
+        "attributes": {"strength": 4},
+        "preceding_events": [],
+        "annotated_form": "{player: adventurer} breaks the {items[0]: car window} with {items[1]: car seat headrest} at {rooms[0]: garage}.",
+        "base_form": "break the {items[0]} at {rooms[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}", "{player has items[0]}", "{player.strength > 4}", "{items[0] at rooms[0]}"],
+        "additional_preconditions": [],
+        "attribute_effects": ["{car window.broken==True}"],
+        "effects": ["Set {items[0]}.broken to True"],
+        "display": "You broke the {items[0]}.",
+        "complete_sentence": "Adventurer breaks open the car window with a car seat headrest and with attribute strength at 4"
+    }  
+}
+
+Input: Steal the dungeon keys from the orc; preceding: true; room: at dungeon.
+
+Output:
+{
+    "input": "Steal the dungeon keys",
+    "output": {
+        "player": "adventurer",
+        "subject": "dungeon keys",
+        "rooms": ["dungeon"],
+        "items": ["dungeon keys"],
+        "characters": ["orc"],
+        "attributes": {"sneak": 8},
+        "preceding_events": [Distract the orc],
+        "annotated_form": "{player: adventurer} steals the {items[0]: dungeon keys} at {rooms[0]: dungeon}.",
+        "base_form": "steal the {items[0]} at {rooms[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}", "{player.sneak > 8}", "{items[0] at rooms[0]}"],
+        "additional_preconditions": [],
+        "attribute_effects": [],
+        "effects": ["Move {items[0]} to {inventory}"],
+        "display": "You stole the {items[0]}.",
+        "complete_sentence": "Adventurer steals the dungeon keys"
+    }  
+}
+
+Input: Kill the survivor; preceding: either; room: at beach.
+
+{
+    "input": "Kill the survivor",
+    "output": {
+        "player": "adventurer",
+        "subject": "survivor",
+        "rooms": ["beach"],
+        "items": ["sword", "poison"],
+        "characters": ["survivor"],
+        "attributes": {"strength": 6},
+        "preceding_events": [],
+        "annotated_form": "{player: adventurer} kills the {characters[0]: survivor} with {items[0]: sword} and {items[1]: poison} at {rooms[0]: beach}.",
+        "base_form": "kill the {characters[0]} with {items[0]} at {rooms[0]}",
+        "fundamental_preconditions": ["{player at rooms[0]}", "{player has items[0]}", "{player.strength > 6}", "{characters[0] at rooms[0]}"],
+        "additional_preconditions": [],
+        "attribute_effects": [],
+        "effects": ["Delete {characters[0]}"],
+        "display": "You killed the {characters[0]}.",
+        "complete_sentence": "Adventurer kills the survivor with a sword"
+    }
+}
+
+Input:
+${input}$
+
+The "items" and "characters" fields should not share any objects. While new inferred items and attributes are allowed, you are not allowed to infer new characters.
+Do not include any ```json or ``` in the final output.
+The subject must also be included in either the rooms or items list. Never use subject in annotated_form or base_form.
+The attribute_effects field is only used for effects that involve setting attributes. 
+When moving items to the inventory, fundamental_preconditions should only be of the form {player has items[0]}, not {items[0] at inventory}.
+All characters, items, and rooms must be included in the annotated_form and base_form. 
+Every single elements in "items" that is not part of the original sentence must be added to the phrase by appending "with {items[index]}".
+All "Set {node.some_attribute} to {value}" elements must be matched in the attribute_effects array as {node.some_attribute==value}.
+If input includes preceding: false, do not include preceding events. If preceding: either, include one preceding event when the inputted action cannot necessarily be solved with just an item. 
+All preceding events must include an element in the "items" or "characters" lists as a subject of the phrase.

@@ -1,0 +1,118 @@
+{
+  "game_logics": {
+    "setup the route plan": {
+      "item needed": [],
+      "location": ["at home"],
+      "preceding_events": [],
+      "description": [],
+      "results": ["has route plan"]
+    },
+    "invite the friend to join": {
+      "item needed": ["has route plan"],
+      "location": ["at phone"],
+      "preceding_events": ["setup the route plan"],
+      "description": [],
+      "results": []
+    },
+    "check the weather forecast": {
+      "item needed": [],
+      "location": ["at home office"],
+      "preceding_events": [],
+      "description": [],
+      "results": []
+    },
+    "pack the backpacks": {
+      "item needed": [],
+      "location": ["at bedroom"],
+      "preceding_events": ["invite the friend to join", "check the weather forecast"],
+      "description": [],
+      "results": ["has backpacks"]
+    },
+    "take food and water from the fridge": {
+      "item needed": ["has backpacks"],
+      "location": ["at kitchen"],
+      "preceding_events": ["pack the backpacks"],
+      "description": [],
+      "results": ["has food and water"]
+    },
+    "pick up the friend": {
+      "item needed": [],
+      "location": ["at their house"],
+      "preceding_events": ["take food and water from the fridge"],
+      "description": [],
+      "results": []
+    },
+    "drive to the trailhead": {
+      "item needed": [],
+      "location": ["at the road"],
+      "preceding_events": ["pick up the friend"],
+      "description": [],
+      "results": ["at trailhead"]
+    },
+    "start hiking the trail": {
+      "item needed": [],
+      "location": ["at trailhead"],
+      "preceding_events": ["drive to the trailhead"],
+      "description": [],
+      "results": []
+    },
+    "encounter a bear on the trail": {
+      "item needed": [],
+      "location": ["at the deep woods"],
+      "preceding_events": ["start hiking the trail"],
+      "description": [],
+      "results": []
+    },
+    "reach scenic overlook for photos": {
+      "item needed": [],
+      "location": ["at scenic overlook"],
+      "preceding_events": ["encounter a bear on the trail"],
+      "description": [],
+      "results": ["has photos"]
+    },
+    "arrive at summit and rest": {
+      "item needed": ["has photos"],
+      "location": ["at summit"],
+      "preceding_events": ["reach scenic overlook for photos"],
+      "description": [],
+      "results": []
+    }
+  },
+  "map": {
+    "at home": [
+      {"type": "room", "content": "living room"}
+    ],
+    "at phone": [
+      {"type": "item", "content": "phone"}
+    ],
+    "at home office": [
+      {"type": "item", "content": "computer"}
+    ],
+    "at bedroom": [
+      {"type": "item", "content": "backpacks"}
+    ],
+    "at kitchen": [
+      {"type": "item", "content": "food and water"},
+      {"type": "item", "content": "fridge"}
+    ],
+    "at their house": [
+      {"type": "npc", "content": "friend"}
+    ],
+    "at road": [
+      {"type": "room", "content": "roadway"}
+    ],
+    "at trailhead": [
+      {"type": "item", "content": "trailhead sign"}
+    ],
+    "at deep woods": [
+      {"type": "npc", "content": "bear"}
+    ],
+    "at scenic overlook": [
+      {"type": "item", "content": "scenic view"},
+      {"type": "item", "content": "photos"}
+    ],
+    "at summit": [
+      {"type": "room", "content": "summit rest area"}
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+    "game_logics": {
+      "adventurer find portal key.": {
+        "item needed": [],
+        "location": ["at dungeon"],
+        "preceding_events": [],
+        "description": ["There is a portal key at the dungeon"],
+        "results": ["has portal key"]
+      },
+      "Travel to different eras and locate the first time rift.": {
+        "item needed": ["has portal key"],
+        "location": ["at portal"],
+        "preceding_events": [],
+        "description": [],
+        "results": []
+      },
+      "adventurer make key.": {
+        "item needed": [],
+        "location": ["at locksmiths shop"],
+        "preceding_events": [],
+        "description": ["There is a key at a locksmiths"],
+        "results": ["has key"]
+      },
+      "Solve puzzles and challenges to close the first time rift.": {
+        "item needed": ["has key"],
+        "location": ["at dungeon"],
+        "preceding_events": ["Travel to different eras and locate the first time rift."],
+        "description": [],
+        "results": []
+      },
+      "Retrieve historical artifacts scattered throughout time to restore the timeline.": {
+        "item needed": [],
+        "location": ["at various locations throughout time and space"],
+        "preceding_events": ["Solve puzzles and challenges to close the first time rift."],
+        "description": [],
+        "results": []
+      },
+      "adventurer make hammer.": {
+        "item needed": [],
+        "location": ["at forge"],
+        "preceding_events": [],
+        "description": ["There is a hammer at the forge."],
+        "results": ["has hammer"]
+      },
+      "adventurer make sword.": {
+        "item needed": ["has hammer"],
+        "location": ["at forge"],
+        "preceding_events": [],
+        "description": ["There is a sword being made at a forge"],
+        "results": ["has sword"]
+      },
+      "Face off against a powerful entity causing the time rifts.": {
+        "item needed": ["has sword"],
+        "location": ["at dungeon"],
+        "preceding_events": ["Retrieve historical artifacts scattered throughout time to restore the timeline."],
+        "description": [],
+        "results": []
+      },
+      "Use ancient rituals to seal the final time rift and restore order.": {
+        "item needed": ["has sword"],
+        "location": ["at temple"],
+        "preceding_events": ["Face off against a powerful entity causing the time rifts."],
+        "description": [],
+        "results": []
+      }
+    },
+    "map": {
+      "at portal": [],
+      "at dungeon": [
+        {"type": "item", "content": "has portal key"}
+      ],
+      "at locksmiths shop": [
+        {"type": "item", "content": "has key"}
+      ],
+      "at various locations throughout time and space": [],
+      "at forge": [
+        {"type": "item", "content": "has sword"},
+        {"type": "npc", "content": "has blacksmith"},
+        {"type": "item", "content": "has hammer"}
+      ],
+      "at temple": []
+    }
+  }

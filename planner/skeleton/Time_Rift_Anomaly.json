@@ -1,0 +1,12 @@
+{
+    "title": "Time Rift Anomaly",
+    "description": "A series of time rifts have opened, causing historical figures and events to mix. The player must restore the timeline and close the rifts.",
+    "subquest": [
+        "Seek the assistance of a renowned historian to understand the time rifts.",
+        "Travel to different eras and locate the first time rift.",
+        "Solve puzzles and challenges to close the first time rift.",
+        "Retrieve historical artifacts scattered throughout time to restore the timeline.",
+        "Face off against a powerful entity causing the time rifts.",
+        "Use ancient rituals to seal the final time rift and restore order."
+    ]
+}

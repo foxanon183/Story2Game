@@ -1,0 +1,17 @@
+Expand the following text by logically connecting potential objects to the sentence using the preposition "with", based on the action (verb) present. Only include objects that make sense with the given action. Return the updated sentence and the relevant objects in JSON format. If no objects are relevant, return the original sentence and an empty list.
+
+Sentence: Adventurer crafts sword.
+Potential object(s): iron, anvil, watch, bottle
+Answer: {"sentence": "Adventurer crafts sword with iron and anvil.", "relevant_objects": ["iron", "anvil"]}
+
+Sentence: The student acquires a book.
+Potential object(s): broom
+Answer: {"sentence": "The student acquires a book.", "relevant_objects": []}
+
+Sentence: The bandit attacks the king.
+Potential object(s): purse, knife, wand
+Answer: {"sentence": "The bandit attacks the king with knife.", "relevant_objects": ["knife"]}
+
+Sentence: ${sentence}$
+Potential object(s): ${objects}$
+Answer:

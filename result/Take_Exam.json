@@ -1,0 +1,51 @@
+{
+    "game_logics": {
+      "Get car at home": {
+        "item needed": [],
+        "location": ["at home"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has car"]
+      },
+      "Arrive at the store with the car": {
+        "item needed": ["has car"],
+        "location": ["at store"],
+        "preceding_events": [],
+        "description": [],
+        "results": []
+      },
+      "Buy pencil and eraser": {
+        "item needed": ["has money"],
+        "location": ["at store"],
+        "preceding_events": [],
+        "description": [],
+        "results": ["has pencil", "has eraser"]
+      },
+      "Prepare for exam with notes": {
+        "item needed": ["has pencil", "has eraser"],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": [],
+        "results": []
+      },
+      "Take exam": {
+        "item needed": ["has pencil", "has eraser"],
+        "location": ["at classroom"],
+        "preceding_events": ["Prepare for exam with notes"],
+        "description": [],
+        "results": ["has exam"]
+      }
+    },
+    "map": {
+      "at store": [
+        {"type": "item", "content": "has pencil"}, 
+        {"type": "item", "content": "has eraser"}],
+      "at home": [
+        {"type": "item", "content": "has car"}
+    ],
+      "at school": [
+        {"type": "item", "content": "has exam"}
+      ],
+      "at library": []
+    }
+  }

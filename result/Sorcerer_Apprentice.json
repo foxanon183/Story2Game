@@ -1,0 +1,109 @@
+{
+    "game_logics": {
+      "Obtain the guidance of the wise forest nymph for assistance.": {
+        "item needed": [],
+        "location": ["at forest"],
+        "preceding_events": [],
+        "description": [],
+        "results": []
+      },
+      "adventurer dig shovel.": {
+        "item needed": [],
+        "location": ["at general store"],
+        "preceding_events": [],
+        "description": ["There is a shovel for sale at the"],
+        "results": ["has shovel"]
+      },
+      "adventurer mine metal.": {
+        "item needed": ["has shovel"],
+        "location": ["at ore mine"],
+        "preceding_events": [],
+        "description": ["There is metal ore at an adventurer's"],
+        "results": ["has metal"]
+      },
+      "adventurer make key.": {
+        "item needed": ["has metal"],
+        "location": ["at forge"],
+        "preceding_events": [],
+        "description": ["There is a key being made at a forge"],
+        "results": ["has key"]
+      },
+      "Solve the puzzles.": {
+        "item needed": ["has key"],
+        "location": ["at ruins"],
+        "preceding_events": ["Obtain the guidance of the wise forest nymph for assistance."],
+        "description": [],
+        "results": []
+      },
+      "Outsmart the mischievous forest spirits guarding the creature.": {
+        "item needed": [],
+        "location": ["at forest"],
+        "preceding_events": ["Solve the puzzles."],
+        "description": [],
+        "results": []
+      },
+      "adventurer find book.": {
+        "item needed": [],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": ["There is a book at the library."],
+        "results": ["has book"]
+      },
+      "adventurer find wand.": {
+        "item needed": ["has book"],
+        "location": ["at library"],
+        "preceding_events": [],
+        "description": ["There is a wand at the library."],
+        "results": ["has wand"]
+      },
+      "Use the sorcerer's spells to tame and capture the magical creature.": {
+        "item needed": ["has wand"],
+        "location": ["at wizard's tower"],
+        "preceding_events": ["Outsmart the mischievous forest spirits guarding the creature."],
+        "description": [],
+        "results": []
+      },
+      "adventurer find artifact.": {
+        "item needed": [],
+        "location": ["at ruins"],
+        "preceding_events": [],
+        "description": ["There is an artifact at the ruins."],
+        "results": ["has artifact"]
+      },
+      "Return to the sorcerer's tower and present the creature for the experiment.": {
+        "item needed": ["has artifact"],
+        "location": ["at sorcerer's tower"],
+        "preceding_events": ["Use the sorcerer's spells to tame and capture the magical creature."],
+        "description": [],
+        "results": []
+      }
+    },
+    "map": {
+      "at forest": [
+        {"type": "npc", "content": "has forest nymph"},
+        {"type": "npc", "content": "has forest spirits"}
+      ],
+      "at ruins": [
+        {"type": "item", "content": "has artifact"}
+      ],
+      "at forge": [
+        {"type": "item", "content": "has key"}
+      ],
+      "at ore mine": [
+        {"type": "item", "content": "has metal"}
+      ],
+      "at general store": [
+        {"type": "item", "content": "has shovel"}
+      ],
+      "at wizard's tower": [
+        {"type": "npc", "content": "has sorcerer"}
+      ],
+      "at library": [
+        {"type": "item", "content": "has wand"},
+        {"type": "item", "content": "has book"}
+      ],
+      "at sorcerer's tower": [
+        {"type": "npc", "content": "has sorcerer"}
+      ]
+    }
+}

@@ -1,0 +1,134 @@
+{
+  "game_logics": {
+    "lie in bed when suddenly you realize a looming deadline": {
+      "item needed": [],
+      "location": ["at bedroom"],
+      "preceding_events": [],
+      "description": [],
+      "results": []
+    },
+    "make initial to-do list": {
+      "item needed": [],
+      "location": ["at desk"],
+      "preceding_events": ["lie in bed when suddenly you realize a looming deadline"],
+      "description": [],
+      "results": ["has to-do list"]
+    },
+    "get distracted by phone notifications": {
+      "item needed": [],
+      "location": ["at desk"],
+      "preceding_events": ["make initial to-do list"],
+      "description": [],
+      "results": []
+    },
+    "watch videos instead of working": {
+      "item needed": [],
+      "location": ["at computer desk"],
+      "preceding_events": ["get distracted by phone notifications"],
+      "description": [],
+      "results": []
+    },
+    "feel guilt after wasting hours": {
+      "item needed": [],
+      "location": ["at living room"],
+      "preceding_events": ["watch videos instead of working"],
+      "description": [],
+      "results": []
+    },
+    "call friend out of desperation for motivation advice": {
+      "item needed": [],
+      "location": ["at phone corner"],
+      "preceding_events": ["feel guilt after wasting hours"],
+      "description": [],
+      "results": []
+    },
+    "rearrange workspace to minimize distractions": {
+      "item needed": [],
+      "location": ["at workspace"],
+      "preceding_events": ["call friend out of desperation for motivation advice"],
+      "description": [],
+      "results": []
+    },
+    "make a strict time schedule": {
+      "item needed": [],
+      "location": ["at planner desk"],
+      "preceding_events": ["rearrange workspace to minimize distractions"],
+      "description": [],
+      "results": ["has time schedule"]
+    },
+    "put phone on do-not-disturb mode": {
+      "item needed": ["has time schedule"],
+      "location": ["at charging station"],
+      "preceding_events": ["make a strict time schedule"],
+      "description": [],
+      "results": []
+    },
+    "begin focused work session with a sudden burst of motivation": {
+      "item needed": [],
+      "location": ["at focused work desk"],
+      "preceding_events": ["put phone on do-not-disturb mode"],
+      "description": [],
+      "results": []
+    },
+    "stay productive for two hours": {
+      "item needed": [],
+      "location": ["at focused work desk"],
+      "preceding_events": ["begin focused work session with a sudden burst of motivation"],
+      "description": [],
+      "results": []
+    },
+    "take short scheduled break and drink a refreshing soda": {
+      "item needed": ["has soda"],
+      "location": ["at balcony"],
+      "preceding_events": ["stay productive for two hours"],
+      "description": [],
+      "results": []
+    },
+    "return to work with renewed focus": {
+      "item needed": [],
+      "location": ["at focused work desk"],
+      "preceding_events": ["take short scheduled break and drink a refreshing soda"],
+      "description": [],
+      "results": []
+    },
+    "finish task seconds before deadline": {
+      "item needed": [],
+      "location": ["at submission portal"],
+      "preceding_events": ["return to work with renewed focus"],
+      "description": [],
+      "results": ["has completed assignment file"]
+    }
+  },
+  "map": {
+    "at bedroom": [],
+    "at desk": [
+      {"type": "item", "content": "notebook"},
+      {"type": "item", "content": "phone"}
+    ],
+    "at computer desk": [],
+    "at living room": [
+      {"type": "item", "content": "clock showing wasted time"}
+    ],
+    "at phone corner": [
+      {"type": "npc", "content": "supportive friend"}
+    ],
+    "at workspace": [
+      {"type": "item", "content": "cleaned desk"},
+      {"type": "item", "content": "blocked distraction list"}
+    ],
+    "at planner desk": [
+      {"type": "item", "content": "time schedule"}
+    ],
+    "at charging station": [],
+    "at focused work desk": [
+      {"type": "item", "content": "laptop"},
+      {"type": "item", "content": "task checklist"}
+    ],
+    "at balcony": [
+      {"type": "item", "content": "soda"}
+    ],
+    "at submission portal": [
+      {"type": "item", "content": "completed assignment file"}
+    ]
+  }
+}

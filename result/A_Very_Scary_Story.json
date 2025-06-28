@@ -1,0 +1,136 @@
+{
+  "game_logics": {
+    "wake up and remember to defrost chicken": {
+      "item needed": [],
+      "location": ["at bedroom"],
+      "preceding_events": [],
+      "description": [],
+      "results": []
+    },
+    "check kitchen freezer for frozen chicken": {
+      "item needed": [],
+      "location": ["at kitchen freezer"],
+      "preceding_events": ["wake up and remember to defrost chicken"],
+      "description": [],
+      "results": ["has frozen chicken"]
+    },
+    "realize mom is coming home soon": {
+      "item needed": [],
+      "location": ["at living room"],
+      "preceding_events": ["check kitchen freezer for frozen chicken"],
+      "description": [],
+      "results": []
+    },
+    "call best friend for advice": {
+      "item needed": [],
+      "location": ["at phone corner"],
+      "preceding_events": ["realize mom is coming home soon"],
+      "description": [],
+      "results": []
+    },
+    "gather kitchen tools for emergency defrost": {
+      "item needed": [],
+      "location": ["at kitchen counter"],
+      "preceding_events": ["call best friend for advice"],
+      "description": [],
+      "results": ["has kitchen tools"]
+    },
+    "attempt microwave defrost method": {
+      "item needed": ["has microwave", "has kitchen tools"],
+      "location": ["at microwave station"],
+      "preceding_events": ["gather kitchen tools for emergency defrost"],
+      "description": [],
+      "results": []
+    },
+    "after a while pull out the chicken": {
+      "item needed": [],
+      "location": ["at microwave station"],
+      "preceding_events": ["attempt microwave defrost method"],
+      "description": [],
+      "results": ["has chicken"]
+    },
+    "search internet for faster defrost alternatives": {
+      "item needed": [],
+      "location": ["at computer desk"],
+      "preceding_events": ["after a while pull out the chicken"],
+      "description": [],
+      "results": []
+    },
+    "use cold water for submersion defrost": {
+      "item needed": ["has cold water"],
+      "location": ["at kitchen sink"],
+      "preceding_events": ["search internet for faster defrost alternatives"],
+      "description": [],
+      "results": []
+    },
+    "monitor defrost while pacing nervously": {
+      "item needed": [],
+      "location": ["at dining room"],
+      "preceding_events": ["use cold water for submersion defrost"],
+      "description": [],
+      "results": []
+    },
+    "get ominous text from mom saying 'on my way'": {
+      "item needed": [],
+      "location": ["at phone corner"],
+      "preceding_events": ["monitor defrost while pacing nervously"],
+      "description": [],
+      "results": ["has ominous text"]
+    },
+    "finally get defrosted chicken": {
+      "item needed": [],
+      "location": ["at kitchen sink"],
+      "preceding_events": ["get ominous text from mom saying 'on my way'"],
+      "description": [],
+      "results": ["has defrosted chicken"]
+    },
+    "urgently prepare chicken for cooking": {
+      "item needed": [],
+      "location": ["at stove station"],
+      "preceding_events": ["finally get defrosted chicken"],
+      "description": [],
+      "results": []
+    },
+    "greet mom as she arrives home": {
+      "item needed": [],
+      "location": ["at front door"],
+      "preceding_events": ["urgently prepare chicken for cooking"],
+      "description": [],
+      "results": []
+    }
+  },
+  "map": {
+    "at bedroom": [],
+    "at kitchen freezer": [
+      {"type": "item", "content": "frozen chicken"}
+    ],
+    "at living room": [],
+    "at phone corner": [
+      {"type": "npc", "content": "best friend on call"},
+      {"type": "item", "content": "smartphone"},
+      {"type": "item", "content": "has ominous text"}
+    ],
+    "at kitchen counter": [
+      {"type": "item", "content": "kitchen tools"}
+    ],
+    "at microwave station": [
+      {"type": "item", "content": "microwave"},
+      {"type": "item", "content": "chicken"}
+    ],
+    "at computer desk": [
+      {"type": "item", "content": "laptop"}
+    ],
+    "at kitchen sink": [
+      {"type": "item", "content": "has cold water"},
+      {"type": "item", "content": "defrosted chicken"}
+    ],
+    "at dining room": [],
+    "at stove station": [
+      {"type": "item", "content": "frying pan"},
+      {"type": "item", "content": "seasoned chicken"}
+    ],
+    "at front door": [
+      {"type": "npc", "content": "mom"}
+    ]
+  }
+}
